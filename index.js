@@ -1,10 +1,9 @@
-function getSubArray(arr, n) {
-    let newArray = [];
-
-    for (let i = 0; i < n; i++) {
-        newArray.push(arr[i]);
+function includes(arr, n) {
+    if (arr.includes(n)) {
+        return true;
+    } else {
+        return false;
     }
-    return newArray;
 }
 
-console.log(getSubArray([1, 2, 3, 4], 2));
+console.log(includes([1, 2, 3], 6));
