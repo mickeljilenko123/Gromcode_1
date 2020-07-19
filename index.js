@@ -1,16 +1,33 @@
-const numbers = [4, 10, 50, 100, 1000, 2];
+const mainArray = [1, 2, 8, 4, 22, 90];
 
-function checker(arr) {
-    let result = 0;
+function sortAsc(array) {
 
-    for (let i = 0; i < arr.length; i++) {
-        result += arr[i];
+    for (let i = 0; i < array.length - 1; i++) {
+        let max = i;
+
+        for (let k = i + 1; k < array.length; k++) {
+            if (array[k] < array[max]) {
+                max = k;
+            }
+        }
+        let out = array[max];
+        array[max] = array[i];
+        array[i] = out;
     }
-
-    if (!Array.isArray(arr)) {
-        return null;
-    }
-    return result > 1000;
+    return array;
 }
 
-console.log(checker(numbers));
+function sortDesc(array) {
+
+    for (let i = 0; i < array.length - 1; i++) {
+
+        for (let k = 0; k < array.length - 1 - i; k++) {
+            if (array[k + 1] > array[k]) {
+                let out = array[k + 1];
+                array[k + 1] = array[k];
+                array[k] = out;
+            }
+        }
+    }
+    return array;
+}
