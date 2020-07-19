@@ -1,12 +1,10 @@
-function withdraw(clients, balances, client, amount) {
-    for (let i = 0; i < clients.length; i++) {
+function getSubArray(arr, n) {
+    let newArray = [];
 
-        if (clients[i] === client) {
-            if (balances[i] > amount) {
-                return balances[i] -= amount;
-            } else {
-                return -1
-            }
-        }
+    for (let i = 0; i < n; i++) {
+        newArray.push(arr[i]);
     }
+    return newArray;
 }
+
+console.log(getSubArray([1, 2, 3, 4], 2));
