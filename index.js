@@ -1,16 +1,18 @@
 const numbers = [2, 26, 5, 44];
 
-function squareArray(arr) {
-    let squareResult = [];
+function checkSum(arr) {
+    let result = 0;
     for (let i = 0; i < arr.length; i++) {
-        squareResult.push(arr[i] * arr[i]);
-        if (!Array.isArray(arr)) {
-            return null;
+        result += arr[i];
+        if (result > 100) {
+            return true;
+        } else {
+            return false;
         }
     }
-    return squareResult;
+    if (!Array.isArray(arr)) {
+        return null;
+    }
+    return result;
 }
-
-const squareArr = squareArray(numbers);
-
-console.log(squareArr);
+console.log(checkSum(numbers));
