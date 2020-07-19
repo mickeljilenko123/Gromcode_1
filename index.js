@@ -1,6 +1,4 @@
-const numb = [];
-
 function createEmptyArray(len) {
-    return [len.length];
+    const arr = new Array();
+    return arr;
 }
-console.log(createEmptyArray(numb));
