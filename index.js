@@ -1,15 +1,13 @@
-function reverseArray(arr) {
-    let reverseArrays = [];
+const numbers = [1, 3, 4]
 
-    for (let i = 1; i <= arr.length; i++) {
-        reverseArrays.push(arr[arr.length - i]);
-    }
+function cloneArr(arr) {
+    let arr1 = arr;
 
     if (!Array.isArray(arr)) {
         return null;
     }
 
-    return reverseArrays;
+    return arr1;
 }
 
-console.log(reverseArray([1, 2, 3]));
+console.log(cloneArr(numbers));
