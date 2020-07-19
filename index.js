@@ -1,13 +1,18 @@
-function checkSum(arr) {
-    let result = 0;
+function increaseEvenEl(arr, delta) {
+
+    let evenEl = [];
+
     for (let i = 0; i < arr.length; i++) {
-        result += arr[i];
+        if (arr[i] % 2 === 0) {
+            evenEl.push(arr[i] + delta);
+        }
     }
 
     if (!Array.isArray(arr)) {
         return null;
     }
 
-    return (result > 100);;
+    return evenEl;
 }
-console.log(checkSum([2, 26, 5, 44]));
+
+console.log(increaseEvenEl([2, 5, 6, 8, 11, 9, 4], 20));
