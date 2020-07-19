@@ -1,33 +1,12 @@
-const mainArray = [1, 2, 8, 4, 22, 90];
+function withdraw(clients, balances, client, amount) {
+    for (let i = 0; i < clients.length; i++) {
 
-function sortAsc(array) {
-
-    for (let i = 0; i < array.length - 1; i++) {
-        let max = i;
-
-        for (let k = i + 1; k < array.length; k++) {
-            if (array[k] < array[max]) {
-                max = k;
-            }
-        }
-        let out = array[max];
-        array[max] = array[i];
-        array[i] = out;
-    }
-    return array;
-}
-
-function sortDesc(array) {
-
-    for (let i = 0; i < array.length - 1; i++) {
-
-        for (let k = 0; k < array.length - 1 - i; k++) {
-            if (array[k + 1] > array[k]) {
-                let out = array[k + 1];
-                array[k + 1] = array[k];
-                array[k] = out;
+        if (clients[i] === client) {
+            if (balances[i] > amount) {
+                return balances[i] -= amount;
+            } else {
+                return -1
             }
         }
     }
-    return array;
 }
