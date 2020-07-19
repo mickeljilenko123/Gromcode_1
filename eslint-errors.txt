@@ -3,3 +3,4 @@ eqeqeq
 no-under
 no-plusplus
 no-return-assign
+no-under
