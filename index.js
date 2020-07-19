@@ -1,15 +1,6 @@
-function run() {
-    var a = 0;
+const numb = [];
 
-    if (a == 1) {
-        return c;
-    }
-
-    for (let i = 1; i < 10; i++) {
-        console.log(i);
-    }
-
-    return d = a;
+function createEmptyArray(len) {
+    return [len.length];
 }
-
-run();
+console.log(createEmptyArray(numb));
