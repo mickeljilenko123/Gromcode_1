@@ -1,13 +1,16 @@
-const numbers = [1, 3, 1, 5];
+const numbers = [4, 10, 50, 100, 1000, 2];
 
-function cloneArr(arr) {
-    let [...arr1] = arr;
+function checker(arr) {
+    let result = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
+    }
 
     if (!Array.isArray(arr)) {
         return null;
     }
-
-    return arr1;
+    return result > 1000;
 }
 
-console.log(cloneArr(numbers));
+console.log(checker(numbers));
