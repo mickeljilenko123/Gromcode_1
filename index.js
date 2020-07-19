@@ -1,18 +1,15 @@
-function increaseEvenEl(arr, delta) {
+function reverseArray(arr) {
+    let reverseArrays = [];
 
-    let evenEl = [];
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 === 0) {
-            evenEl.push(arr[i] + delta);
-        }
+    for (let i = 1; i <= arr.length; i++) {
+        reverseArrays.push(arr[arr.length - i]);
     }
 
     if (!Array.isArray(arr)) {
         return null;
     }
 
-    return evenEl;
+    return reverseArrays;
 }
 
-console.log(increaseEvenEl([2, 5, 6, 8, 11, 9, 4], 20));
+console.log(reverseArray([1, 2, 3]));
