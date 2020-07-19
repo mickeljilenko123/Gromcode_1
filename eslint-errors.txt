@@ -1,6 +1,6 @@
 no-var
 eqeqeq
-no-under
+no-undef
 no-plusplus
 no-return-assign
-no-under
+no-undef
