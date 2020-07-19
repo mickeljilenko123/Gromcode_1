@@ -1,5 +1,3 @@
-const numbers = [1, 3, 4]
-
 function cloneArr(arr) {
     let arr1 = arr;
 
@@ -10,4 +8,4 @@ function cloneArr(arr) {
     return arr1;
 }
 
-console.log(cloneArr(numbers));
+console.log(cloneArr([1, 2, 3]));
