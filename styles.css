@@ -8,21 +8,22 @@
     padding: 16px;
     background-color: darkgreen;
     opacity: 0, 8;
-    cursor: pointer;
     display: inline-block;
     position: relative;
 }
 
 .dropdown:hover {
     opacity: 1;
-    font-size: 16px;
+    font-weight: 16px;
     color: white;
+    cursor: pointer;
 }
 
 .dropdown:hover .menu-list {
     position: absolute;
     left: 0;
     display: block;
+    cursor: pointer;
 }
 
 .menu-list {
@@ -45,4 +46,5 @@
 
 .menu-item:hover {
     background-color: ghostwhite;
+    cursor: pointer;
 }
