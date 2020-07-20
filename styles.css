@@ -14,11 +14,16 @@
     cursor: pointer;
 }
 
+.dropdown:hover {
+    opacity: 1;
+    font-size: 16px;
+    color: white;
+}
+
 .dropdown:hover .menu-list {
     position: absolute;
     left: 0;
     display: block;
-    opacity: 1;
 }
 
 .menu-list {
