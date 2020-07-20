@@ -1,9 +1,18 @@
-function includes(arr, n) {
-    if (arr.includes(n)) {
-        return true;
-    } else {
-        return false;
+function removeDuplicates(array) {
+
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] === array[j]) {
+                array.splice(j, 1);
+            }
+        }
     }
+
+    if (!Array.isArray(array)) {
+        return null;
+    }
+
+    return array;
 }
 
-console.log(includes([1, 2, 3], 6));
+console.log(removeDuplicates([1, 2, 3, 3, 4]));
