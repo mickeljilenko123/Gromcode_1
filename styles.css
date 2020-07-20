@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    cursor: pointer;
 }
 
 .dropdown {
@@ -12,13 +11,13 @@
     position: relative;
     font-size: 16px;
     color: white;
+    cursor: pointer;
 }
 
 .dropdown:hover .menu-list {
     position: absolute;
     left: 0;
     display: block;
-    cursor: pointer;
     opacity: 1;
 }
 
@@ -37,7 +36,6 @@
 
 .menu-item:hover {
     background-color: ghostwhite;
-    cursor: pointer;
 }
 
 .menu-item {
