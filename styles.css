@@ -4,7 +4,6 @@
 }
 
 .dropdown {
-    height: 50px;
     margin: 16px;
     padding: 16px;
     background-color: darkgreen;
@@ -15,15 +14,12 @@
     color: white;
 }
 
-.dropdown:hover {
-    opacity: 1;
-}
-
 .dropdown:hover .menu-list {
     position: absolute;
     left: 0;
     display: block;
     cursor: pointer;
+    opacity: 1;
 }
 
 .menu-list {
