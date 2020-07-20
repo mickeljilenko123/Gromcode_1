@@ -1,47 +1,16 @@
-* {
-    box-sizing: border-box;
-}
-
-.dropdown {
+div {
     margin: 16px;
-    padding: 16px;
-    background-color: darkgreen;
-    display: inline-block;
+    border-bottom: 1px dotted black;
     position: relative;
-    cursor: pointer;
+    display: inline-block;
+}
+
+.tooltip {
+    background-color: gray;
     color: white;
-}
-
-.dropdown:hover {
-    opacity: 1;
-    font-size: 16px;
-    color: white;
-}
-
-.dropdown:hover .menu-list {
+    border-radius: 4px;
+    padding: 8px;
     position: absolute;
-    left: 0;
-    display: block;
-}
-
-.menu-list {
-    position: absolute;
-    top: 50px;
-    margin: 0;
-    padding: 0;
-    background-color: lightcyan;
-    color: black;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-    min-width: 120px;
-    z-index: 1;
-    display: none;
-}
-
-.menu-list .menu-item:hover {
-    background-color: ghostwhite;
-}
-
-.menu-item {
-    padding: 16px;
-    list-style-type: none;
+    bottom: -40px;
+    left: 0px;
 }
