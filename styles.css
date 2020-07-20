@@ -42,3 +42,7 @@
     padding: 16px;
     list-style-type: none;
 }
+
+.menu-item:hover {
+    background-color: ghostwhite;
+}
