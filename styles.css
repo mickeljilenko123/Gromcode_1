@@ -10,12 +10,12 @@
     opacity: 0, 8;
     display: inline-block;
     position: relative;
+    color: white;
 }
 
 .dropdown:hover {
     opacity: 1;
     font-weight: 16px;
-    color: white;
     cursor: pointer;
 }
 
@@ -39,7 +39,7 @@
     display: none;
 }
 
-.menu-list:hover .menu-item {
+.menu-item:hover {
     background-color: ghostwhite;
     cursor: pointer;
 }
