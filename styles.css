@@ -39,12 +39,12 @@
     display: none;
 }
 
+.menu-list:hover .menu-item {
+    background-color: ghostwhite;
+    cursor: pointer;
+}
+
 .menu-item {
     padding: 16px;
     list-style-type: none;
-}
-
-.menu-item:hover {
-    background-color: ghostwhite;
-    cursor: pointer;
 }
