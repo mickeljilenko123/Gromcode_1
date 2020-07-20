@@ -39,7 +39,7 @@
     display: none;
 }
 
-.menu-item:hover {
+.menu-list .menu-item:hover {
     background-color: ghostwhite;
 }
 
