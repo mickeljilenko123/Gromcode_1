@@ -3,14 +3,14 @@
 }
 
 .dropdown {
-    margin: 16px;
-    padding: 16px;
-    background-color: darkgreen;
-    display: inline-block;
     position: relative;
-    cursor: pointer;
     color: white;
+    background-color: darkgreen;
+    padding: 16px;
     opacity: 0.8;
+    display: inline-block;
+    cursor: pointer;
+    margin: 16px;
 }
 
 .dropdown:hover {
@@ -19,30 +19,29 @@
     color: white;
 }
 
-.dropdown:hover .menu-list {
-    position: absolute;
-    left: 0;
-    display: block;
-}
-
 .menu-list {
     position: absolute;
-    top: 50px;
-    margin: 0;
-    padding: 0;
-    background-color: lightcyan;
     color: black;
+    list-style-type: none;
+    background-color: lightcyan;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
     min-width: 120px;
     z-index: 1;
     display: none;
+    padding: 0;
+    margin: 0;
+    top: 50px;
+    left: 0px;
+}
+
+.menu-item {
+    padding: 16px;
 }
 
 .menu-list .menu-item:hover {
     background-color: ghostwhite;
 }
 
-.menu-item {
-    padding: 16px;
-    list-style-type: none;
+.dropdown:hover .menu-list {
+    display: block;
 }
