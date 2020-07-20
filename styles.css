@@ -17,6 +17,7 @@
     opacity: 1;
     font-weight: 16px;
     cursor: pointer;
+    color: white;
 }
 
 .dropdown:hover .menu-list {
