@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .dropdown {
@@ -10,14 +11,12 @@
     opacity: 0, 8;
     display: inline-block;
     position: relative;
+    font-weight: 16px;
     color: white;
 }
 
 .dropdown:hover {
     opacity: 1;
-    font-weight: 16px;
-    cursor: pointer;
-    color: white;
 }
 
 .dropdown:hover .menu-list {
