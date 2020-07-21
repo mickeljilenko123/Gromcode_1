@@ -1,47 +1,33 @@
-.header {
-    height: 40px;
-    background-color: darkturquoise;
-    color: white;
-    width: 100%;
+section {
+    margin: 32px;
 }
 
-.nav-list {
-    list-style: none;
-    line-height: 40px;
-    margin: 0;
+html {
+    font-family: Roboto, sans-serif;
 }
 
-.nav-item {
-    float: left;
-    margin-left: 16px;
+h1 {
+    word-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.content {
-    height: 5000px;
-    background-color: beige;
+p {
+    line-height: 28px;
 }
 
-.head {
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    background-color: aquamarine;
-    top: calc(50% - 100px);
-    left: calc(50% - 100px);
+.tehnology {
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 24px;
+    opacity: 80%;
+    text-decoration: underline;
 }
 
-.ear {
-    position: absolute;
-    width: 40px;
-    height: 60px;
-    background-color: brown;
-    top: -60px;
+a {
+    text-decoration: none;
 }
 
-.ear_right {
-    right: -40px;
-}
-
-.ear_left {
-    left: -40px;
+.text {
+    color: grey;
 }
