@@ -1,34 +1,16 @@
-.section {
-    margin: 32px;
+.list {
+    list-style-type: none;
+    font-size: 1.5em;
 }
 
-* {
-    font-family: Roboto, sans-serif;
-    font-size: 18px;
+.first {
+    text-decoration: red overline;
 }
 
-.h1 {
-    word-spacing: 20px;
-    text-align: center;
-    text-transform: uppercase;
+.second {
+    text-decoration: line-through;
 }
 
-.parag {
-    line-height: 28px;
-}
-
-.tehnology {
-    font-weight: 900;
-    letter-spacing: 3px;
-    font-size: 24px;
-    opacity: 80%;
-    text-decoration: underline;
-}
-
-a {
-    text-decoration: none;
-}
-
-.text {
-    color: grey;
+.third {
+    text-decoration: green underline;
 }

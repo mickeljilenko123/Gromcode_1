@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
-    <title>The Web technologies</title>
+    <title>Стилизуем списки</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
 </head>
 
-<body class="container">
-    <section class="section">
-        <h1 class="h1">Web technologies</h1>
-        <p class="parag"><span class="tehnology">HTML</span> (от англ. <em class="text">HyperText Markup Language</em> — «язык гипертекстовой разметки») — стандартизированный язык разметки документов во Всемирной паутине. Большинство веб-страниц содержат описание разметки
-            на языке HTML (или XHTML). Язык <a target="_blank" href="https://ru.wikipedia.org/wiki/HTML">HTML</a> интерпретируется браузерами; полученный в результате интерпретации форматированный текст отображается на экране монитора компьютера или мобильного
-            устройства.
-        </p>
-        <p class="parag"><span class="tehnology">CSS</span> (/siːɛsɛs/ англ. <em class="text">Cascading Style Sheets</em> — каскадные таблицы стилей) — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.</p>
-    </section>
+<body>
+    <header>
+        <h1>Стилизуем списки</h1>
+    </header>
+    <main class="container">
+        <p>Относительные единицы измерения (em и rem) зависят от некоторых параметров родительских элементов. Абсолютные величины (px) будут отображаться одиннаково повсюду.</p>
+        <ul class="list">
+            <li class="first">Overline</li>
+            <li class="second">Line-through</li>
+            <li class="third">Underline</li>
+        </ul>
+    </main>
 </body>
 
 </html>
