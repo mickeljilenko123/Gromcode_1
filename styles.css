@@ -1,9 +1,47 @@
-.gallery {
-    display: flex;
-    cursor: all-scroll;
-    overflow: auto;
+.header {
+    height: 40px;
+    background-color: darkturquoise;
+    color: white;
+    width: 100%;
 }
 
-.thumb {
-    margin: 8px;
+.nav-list {
+    list-style: none;
+    line-height: 40px;
+    margin: 0;
+}
+
+.nav-item {
+    float: left;
+    margin-left: 16px;
+}
+
+.content {
+    height: 5000px;
+    background-color: beige;
+}
+
+.head {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: aquamarine;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+}
+
+.ear {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: brown;
+    top: -60px;
+}
+
+.ear_right {
+    right: -40px;
+}
+
+.ear_left {
+    left: -40px;
 }
