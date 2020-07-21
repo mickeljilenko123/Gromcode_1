@@ -9,6 +9,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     width: 50%;
+    margin: auto;
 }
 
 .div {
