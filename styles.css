@@ -1,22 +1,33 @@
-.document {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.section {
+    margin: 32px;
+}
+
+* {
+    font-family: Roboto, sans-serif;
 }
 
 .h1 {
-    font-size: 74px;
+    word-spacing: 20px;
     text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 50%;
-    margin: auto;
+    text-transform: uppercase;
 }
 
-.div {
-    height: 200px;
-    background-color: coral;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 200px;
+.parag {
+    line-height: 28px;
+}
+
+.tehnology {
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 24px;
+    opacity: 80%;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text {
+    color: grey;
 }
