@@ -1,8 +1,11 @@
+.image-container {
+    position: relative;
+}
+
 .image {
     display: block;
     margin: auto;
     max-width: 100%;
-    position: relative;
 }
 
 .image-button {
