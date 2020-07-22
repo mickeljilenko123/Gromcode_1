@@ -12,7 +12,7 @@
 .login-form {
     background-color: aqua;
     position: absolute;
-    bottom: calc(50% - 470px);
+    bottom: calc(50% - 475px);
     left: calc(50% - 150px);
     width: 300px;
     padding: 16px;
