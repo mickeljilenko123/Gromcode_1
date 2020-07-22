@@ -13,7 +13,7 @@
         }
         
         .checkbox {
-            position: relative;
+            position: absolute;
             margin: 16px;
             padding-left: 35px;
             font-size: 24px;
@@ -29,12 +29,6 @@
             left: 0;
         }
         
-        .checkbox {
-            padding-left: 30px;
-            position: relative;
-            font-size: 24px;
-        }
-        
         .checkbox input:checked+.checkmark {
             background-color: #0f0;
         }
@@ -44,11 +38,11 @@
 </head>
 
 <body>
-    <div class="checkbox">
+    <label class="checkbox">
         Checkbox
         <input type="checkbox" id="custom-checkbox" name="agree" checked>
-        <label class="checkmark" for="custom-checkbox"></label>
-    </div>
+        <span class="checkmark" for="custom-checkbox"></span>
+    </label>
 </body>
 
 </html>
