@@ -1,5 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.image-container {
+    margin: 50px 0;
+}
+
 .image-big {
-    margin: 50px auto 50px;
+    margin: auto;
     display: block;
     max-width: 100%;
     border-radius: 20px;
