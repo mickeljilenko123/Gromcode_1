@@ -1,29 +1,33 @@
-body {
+.image-big {
+    margin: 50px auto 50px;
+    display: block;
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.gallery {
     display: flex;
 }
 
-.block {
-    height: 300px;
-    width: 300px;
-    flex-grow: 1;
+.card {
+    margin: 16px;
+    box-shadow: 0px 7px 18px -8px rgba(0, 0, 0, 0.75);
 }
 
-.block_red {
-    background-color: red;
+.opacity-filter {
+    filter: opacity(50%);
 }
 
-.block_green {
-    background-color: green;
+.blur-filter {
+    filter: blur(4px);
 }
 
-.block_blue {
-    background-color: blue;
+.invert-filter {
+    filter: invert(100%);
 }
 
-.block_yellow {
-    background-color: yellow;
-}
-
-.block_black {
-    background-color: black;
+.caption {
+    line-height: 30px;
+    text-align: center;
+    text-transform: lowercase;
 }
