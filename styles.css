@@ -1,7 +1,7 @@
 .benny-video {
-    max-width: 100%;
+    width: 500px;
     height: auto;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 200px;
     display: block;
 }
