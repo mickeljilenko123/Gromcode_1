@@ -2,8 +2,9 @@ body {
     display: flex;
 }
 
-.black {
+.block {
     height: 300px;
+    width: 300px;
     flex-grow: 1;
 }
 
