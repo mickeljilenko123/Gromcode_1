@@ -3,46 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Images</title>
+    <title>Forms</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossorigin="anonymous" />
-    <style>
-        input[type="checkbox"] {
-            visibility: hidden;
-            width: 0;
-            height: 0;
-        }
-        
-        .checkbox {
-            position: absolute;
-            margin: 16px;
-            padding-left: 35px;
-            font-size: 24px;
-        }
-        
-        .checkmark {
-            width: 25px;
-            height: 25px;
-            background-color: #d3d3d3;
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        
-        .checkbox input:checked+.checkmark {
-            background-color: #006400;
-        }
-    </style>
-
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <label class="checkbox">
-        Checkbox
-        <input type="checkbox" id="custom-checkbox" name="agree">
-        <span class="checkmark" for="custom-checkbox"></span>
-    </label>
+<body class="body">
+    <main class="page">
+        <form class="login-form">
+            <h1 class="form-title">Login</h1>
+            <div class="form-control">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="mail@example.com" required />
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="userName">Full Name</label>
+                <input class="form-input" type="text" id="userName" name="userName" />
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-input" type="password" id="password" name="password" required />
+            </div>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+    </main>
 </body>
 
 </html>
