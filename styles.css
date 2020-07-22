@@ -1,9 +1,5 @@
-.image-container {
-    display: flex;
-    flex-direction: column;
-}
-
 .image {
+    display: block;
     margin: auto;
     max-width: 100%;
 }
