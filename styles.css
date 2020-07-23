@@ -42,5 +42,5 @@ tbody>tr:nth-child(odd) {
 
 tbody>tr:hover {
     background-color: #aaa;
-    color: #fff;
+    color: white;
 }
