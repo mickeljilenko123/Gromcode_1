@@ -1,10 +1,5 @@
-/* * {
-    box-sizing: content-box;
-} */
-
 table {
     width: 500px;
-    box-sizing: border-box;
 }
 
 table {
@@ -20,7 +15,7 @@ td,
 th {
     border: 1px solid black;
     border-collapse: collapse;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 th {
@@ -30,10 +25,9 @@ th {
 td,
 th {
     text-align: right;
-    line-height: 30px;
     padding: 4px;
     margin: 0;
-    box-sizing: border-box;
+    height: 40px;
 }
 
 div {
