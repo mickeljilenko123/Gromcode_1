@@ -3,83 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Forms</title>
+    <title>Documents</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <form class="form-control">
-        <div class="form-input">
-            <input type="text" name="primaryLanguage" value="HTML" disabled>
-        </div>
-        <div class="form-input">
-            <input type="checkbox" name="agree" unchecked>
-        </div>
-        <div class="form-input">
-            <input type="checkbox" name="like" checked>
-        </div>
-        <div class="form-input">
-            <input type="color" name="favouriteColor" value="#ff7f50">
-        </div>
-        <div class="form-input">
-            <input type="date" name="birthDate" value="2021-01-02">
-        </div>
-        <div class="form-input">
-            <input type="datetime-local" name="birthTime" value="2024-10-04T13:02">
-        </div>
-        <div class="form-input">
-            <input type="email" name="email" placeholder="example@domain.com">
-        </div>
-        <div class="form-input">
-            <input type="file" name="avatar">
-        </div>
-        <div class="form-input">
-            <input type="month" name="startLearning" value="2020-01">
-        </div>
-        <div class="form-input">
-            <input type="number" name="favouriteNumber" value="17">
-        </div>
-        <div class="form-input">
-            <textarea name="story" rows="5" cols="30" placeholder="A long time ago..."></textarea>
-        </div>
-        <div class="form-input">
-            <input type="password" name="password" value="secret">
-        </div>
-        <div class="form-input">
-            <div class="languages">
-                <input type="radio" name="language" value="html">HTML
-                <input type="radio" name="language" value="css" checked>CSS
-                <input type="radio" name="language" value="javascript">JavaScript
-            </div>
-        </div>
-        <div class="form-input">
-            <input type="range" name="learningProgress" value="30">
-        </div>
-        <div class="form-input">
-            <select name="framework">
-                <option value="jquery">jQuery</option>
-                <option value="react">React</option>
-               <option value="bootstrap">Bootstrap</option>
-           </select>
-        </div>
-        <div class="form-input">
-            <input type="search" name="search" placeholder="Type first letters...">
-        </div>
-        <div class="form-input">
-            <input type="time" name="lunchEnd" value="14:01">
-        </div>
-        <div class="form-input">
-            <input type="url" name="website" placeholder="https://website.com" required>
-        </div>
-        <div class="form-input">
-            <input type="week" name="birthWeek" value="2021-W51">
-        </div>
-        <div class="form-input">
-            <button type="submit">Save</button>
-        </div>
-
-    </form>
+    <div>
+        <table>
+            <caption>Shoping List</caption>
+            <thead>
+                <tr>
+                    <th>Products</th>
+                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Milk</td>
+                    <td>3</td>
+                    <td>$2</td>
+                    <td>$6</td>
+                </tr>
+                <tr>
+                    <td>Bread</td>
+                    <td>2</td>
+                    <td>$1</td>
+                    <td>$2</td>
+                </tr>
+                <tr>
+                    <td>Meat</td>
+                    <td>5</td>
+                    <td>$4</td>
+                    <td>$20</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>$28</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </body>
 
 </html>
