@@ -4,21 +4,21 @@
 }
 
 .fa-battery-full {
-    font-size: 16px;
+    font-size: 16px !important;
 }
 
 .fa-battery-three-quarters {
-    font-size: 32px;
+    font-size: 32px !important;
 }
 
 .fa-battery-half {
-    font-size: 64px;
+    font-size: 64px !important;
 }
 
 .fa-battery-quarter {
-    font-size: 128px;
+    font-size: 128px !important;
 }
 
 .fa-battery-empty {
-    font-size: 256px;
+    font-size: 256px !important;
 }
