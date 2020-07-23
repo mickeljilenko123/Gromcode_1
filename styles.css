@@ -1,6 +1,6 @@
-* {
-    box-sizing: border-box;
-}
+/* * {
+    box-sizing: content-box;
+} */
 
 table {
     width: 500px;
@@ -11,7 +11,7 @@ table {
 }
 
 caption {
-    margin: 8px;
+    margin-bottom: 8px;
 }
 
 table,
@@ -19,6 +19,7 @@ td,
 th {
     border: 1px solid black;
     border-collapse: collapse;
+    box-sizing: content-box;
 }
 
 th {
@@ -30,6 +31,7 @@ th {
     text-align: right;
     line-height: 40px;
     padding: 4px;
+    margin: 0;
 }
 
 div {
