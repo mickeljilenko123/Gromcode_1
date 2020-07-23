@@ -8,25 +8,76 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="body">
-    <main class="page">
-        <form class="login-form">
-            <h1 class="form-title">Login</h1>
-            <div class="form-control">
-                <label class="form-label" for="email">Email</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="mail@example.com" required />
-            </div>
-            <div class="form-control">
-                <label class="form-label" for="userName">Full Name</label>
-                <input class="form-input" type="text" id="userName" name="userName" />
-            </div>
-            <div class="form-control">
-                <label class="form-label" for="password">Password</label>
-                <input class="form-input" type="password" id="password" name="password" required />
-            </div>
-            <button class="submit-button" type="submit">Submit</button>
-        </form>
-    </main>
+<body>
+    <form class="form-control">
+        <div class="form-input">
+            <input type="text" name="primaryLabguage" value="HTML" disabled>
+        </div>
+        <div class="form-input">
+            <input type="checkbox" name="agree" unchecked>
+        </div>
+        <div class="form-input">
+            <input type="checkbox" name="like" readonly>
+        </div>
+        <div class="form-input">
+            <input type="color" name="favoriteColor" value="#ff7f50">
+        </div>
+        <div class="form-input">
+            <input type="data" name="birthDate" value="2021-01-02">
+        </div>
+        <div class="form-input">
+            <input type="datetime-local" name="birthTime" value="2024-10-04T13:02">
+        </div>
+        <div class="form-input">
+            <input type="email" name="email" placeholder="example@domain.com">
+        </div>
+        <div class="form-input">
+            <input type="file" name="avatar">
+        </div>
+        <div class="form-input">
+            <input type="month" name="startLearning" value="2020-01">
+        </div>
+        <div class="form-input">
+            <input type="number" name="favoriteNumber" value="17">
+        </div>
+        <div class="form-input">
+            <textarea name="story" minlength="5" maxlength="30" maxrow="5" placeholder="A long time ago..."></textarea>
+        </div>
+        <div class="form-input">
+            <input type="password" name="password" value="secret">
+        </div>
+        <div class="languages">
+            <input type="radio" name="language" value="html">HTML
+            <input type="radio" name="language" value="css">CSS
+            <input type="radio" name="language" value="javaScript">JavaScript
+        </div>
+        <div class="form-input">
+            <input type="range" name="learningProgress" value="30">
+        </div>
+        <div class="form-input">
+            <select>
+               <option value="react">React</option>
+               <option value="jquary">jQuary</option>
+               <option value="bootstrap">Bootstrap</option>
+           </select>
+        </div>
+        <div class="form-input">
+            <input type="search" name="search" placeholder="Type first letters...">
+        </div>
+        <div class="form-input">
+            <input type="time" name="lunchEnd" value="14:01">
+        </div>
+        <div class="form-input">
+            <input type="url" name="website" placeholder="https://website.com" required>
+        </div>
+        <div class="form-input">
+            <input type="wike" name="birthWeek" value="2021-W51">
+        </div>
+        <div class="form-input">
+            <button type="submit">Save</button>
+        </div>
+
+    </form>
 </body>
 
 </html>
