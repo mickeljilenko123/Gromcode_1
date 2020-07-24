@@ -2,37 +2,55 @@
     box-sizing: border-box;
 }
 
-.block {
-    position: relative;
-    left: calc(50vw - 100px);
-    width: 250px;
-    height: 100px;
-    border-radius: 10px;
-    background-color: coral;
-    animation: move 2s ease forwards;
+body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
+    height: 100vh;
 }
 
-.text {
+.fancy-button {
+    width: 150px;
+    height: 50px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
+    font-size: 16px;
     text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(45deg, yellow, red);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    margin: auto;
+    animation: jump .5s .4s, spin .5s .4s, hidel .5s .4s;
 }
 
-@keyframes move {
+@keyframes jump {
     0% {
-        top: -100px;
+        transform: translateY(0);
+        transition-timing-function: ease-in-out;
+    }
+    50% {
+        transform: translateY(-40px);
     }
     100% {
-        top: calc(50vh - 50px);
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+        transition-timing-function: ease-in-out;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hidel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(2000px);
+        transition-timing-function: ease
     }
 }
