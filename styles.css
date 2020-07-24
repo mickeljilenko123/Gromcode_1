@@ -32,6 +32,6 @@
         top: -100px;
     }
     100% {
-        top: 40vh;
+        top: calc(50vh - 50px);
     }
 }
