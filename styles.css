@@ -2,8 +2,11 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.spinner {
+    margin: auto;
+    position: relative;
 }
 
 .spinner-text {
@@ -21,8 +24,8 @@
     border-radius: 2px;
     animation: moving 2s;
     animation: blinking 2s;
-    position: absolute;
     animation-iteration-count: infinite;
+    position: absolute;
 }
 
 @keyframes moving {
@@ -38,13 +41,13 @@
 @keyframes blinking {
     0% {
         opacity: 0;
-        left: 638px;
+        left: 0px;
     }
     50% {
         opacity: 1;
     }
     100% {
         opacity: 0;
-        left: 720px;
+        left: 100px;
     }
 }
