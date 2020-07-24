@@ -5,8 +5,8 @@
 .container {
     display: flex;
     height: 100vh;
-    justify-content: center;
     position: relative;
+    justify-content: center;
 }
 
 .block {
@@ -21,10 +21,10 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 100px;
-    position: absolute;
     transition-timing-function: ease;
     animation: move 2s;
     animation-fill-mode: forwards;
+    position: absolute;
 }
 
 @keyframes move {
@@ -32,6 +32,6 @@
         top: -100px;
     }
     100% {
-        top: calc(50vh - 50px);
+        top: 250px;
     }
 }
