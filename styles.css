@@ -19,7 +19,7 @@ body {
     border-radius: 4px;
     border: none;
     margin: auto;
-    animation: jump .5s .4s, spin .5s .4s, hidel .5s .4s;
+    animation: jump .5s .4s, spin .5s, hidel 1s 2s;
 }
 
 @keyframes jump {
