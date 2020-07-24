@@ -1,40 +1,50 @@
-* {
-    box-sizing: border-box;
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.square {
-    width: 100px;
-    height: 100px;
-    background-color: coral;
+.spinner-text {
+    font-family: monospace;
+    font-size: 16px;
+    text-transform: uppercase;
+    animation: blinking 2s;
+    animation-iteration-count: infinite;
+}
+
+.rect {
+    width: 10px;
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+    animation: moving 2s;
+    animation: blinking 2s;
     position: absolute;
-    animation: move 4s;
-    animation-iteration-count: 2;
-    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
-@keyframes move {
-    0% {
+@keyframes moving {
+    from {
         left: 0;
-        right: 0;
-        background-color: coral;
+        opacity: 1;
     }
-    25% {
-        left: 300px;
-        top: 0;
-        background-color: cornflowerblue;
+    to {
+        left: 70px;
+    }
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 0;
+        left: 638px;
     }
     50% {
-        left: 300px;
-        top: 300px;
-    }
-    75% {
-        left: 0px;
-        top: 300px;
-        background-color: aqua;
+        opacity: 1;
     }
     100% {
-        left: 0px;
-        top: 0px;
-        background-color: yellowgreen;
+        opacity: 0;
+        left: 720px;
     }
 }
