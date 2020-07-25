@@ -1,23 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
-    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #555;
+    font-size: 16px;
 }
 
-.font-in-px {
-    font-size: 27px;
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.font-in-em {
-    font-size: 1.5em;
+.header {
+    display: flex;
+    background: linear-gradient(60deg, red, orange);
 }
 
-.font-in-vw {
+.main {
+    display: flex;
+    font-size: 1.25em;
+    flex-grow: 1;
+}
+
+.navigation {
+    padding: 0.5em;
+    width: 20%;
+}
+
+.nav-list {
+    line-height: 1.75em;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-list-item {
+    background-color: #808080;
+    color: white;
+    height: 2em;
+    margin-bottom: 0.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.nav-list-link {
+    padding-left: 0.5em;
+    text-decoration: none;
+    color: white;
+}
+
+.css-units {
+    color: #8b0000;
+    background-color: #e5e5e5;
+    font-size: 1.125em;
+    font-weight: 700;
+}
+
+.section {
+    display: flex;
+    padding: 0.5em;
+    width: 60%;
+    flex-direction: column;
+}
+
+.section__header {
+    margin: auto;
     font-size: 5vw;
 }
 
-.font-in-percents {
-    font-size: 150%;
+.news {
+    padding: 0.5em;
+    width: 20%;
 }
 
-.font-in-rem {
-    font-size: 1.5rem;
+.footer {
+    background-color: #e5e5e5;
+    padding: 0.5em;
+    text-align: center;
+}
+
+h1 {
+    margin: auto;
+    padding: 16px;
+    color: white;
 }
