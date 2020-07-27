@@ -2,34 +2,33 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #555;
 }
 
-html {
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
+    color: #fff;
+    background-image: linear-gradient(60deg, red, orange);
+}
+
+h1 {
     display: flex;
-    height: 3em;
-    padding-left: 1em;
-    background-color: #eee;
+    justify-content: center;
 }
 
-.header__button {
-    border: none;
-    cursor: pointer;
-    background-color: #eee;
-}
-
-.header-button__icon {
-    font-size: 2em;
+.main {
+    flex-grow: 1;
 }
 
 .navigation {
-    width: 20%;
     padding: 0.5em;
 }
 
@@ -58,14 +57,75 @@ html {
     white-space: nowrap;
 }
 
-@media screen and (max-width: 600px) {
-    .nav-list {
-        visibility: hidden;
-    }
+.section__header {
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+}
+
+.section {
+    padding: 0.5em;
+    width: 100%;
+    font-size: 1.25em;
+    display: inline-block;
+}
+
+.main-image-big {
+    max-width: 100%;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.units-list {
+    line-height: 1.75em;
+}
+
+ul.units-list li:nth-child(1) {
+    line-height: 1.75em;
+}
+
+.css-units {
+    color: #8b0000;
+    background-color: #e5e5e5;
+    font-size: 1.125em;
+    font-weight: 700;
+}
+
+.news {
+    padding: 0.5em;
+}
+
+footer {
+    display: flex;
+    background-color: #e5e5e5;
+    padding: 0.5em;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 600px) {
-    .header__button {
-        visibility: hidden;
+    .main__section {
+        display: flex;
+    }
+    .navigation {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        display: flex;
+        flex-direction: row;
+    }
+    .section {
+        width: 60vw;
+    }
+    .navigation {
+        width: 20vw;
+    }
+    .news {
+        width: 20vw;
     }
 }
