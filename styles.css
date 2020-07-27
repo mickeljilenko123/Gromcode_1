@@ -71,6 +71,10 @@ html {
     font-size: 5vw;
 }
 
+.units-list {
+    line-height: 1.75em;
+}
+
 .news {
     padding: 0.5em;
     width: 20%;
@@ -84,6 +88,7 @@ html {
 
 h1 {
     margin: auto;
-    padding: 16px;
+    font-size: 32px;
     color: white;
+    padding: 18px;
 }
