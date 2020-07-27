@@ -41,11 +41,17 @@ span {
 @media screen and (min-width: 600px) {
     .products {
         display: flex;
-        flex-grow: 1.5;
     }
 }
 
 @media screen and (min-width: 900px) {
+    .products {
+        display: flex;
+        flex-grow: 2;
+    }
+    .news {
+        min-width: 300px;
+    }
     .content {
         display: flex;
     }
