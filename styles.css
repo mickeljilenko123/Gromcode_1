@@ -4,19 +4,19 @@
 
 html {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #555;
     font-size: 16px;
+    color: #555;
 }
 
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
-    color: white;
-    background: linear-gradient(60deg, red, orange);
+    color: #fff;
+    background-image: linear-gradient(60deg, red, orange);
 }
 
 h1 {
@@ -26,7 +26,6 @@ h1 {
 
 .main {
     display: flex;
-    font-size: 1.25em;
     flex-grow: 1;
 }
 
@@ -36,28 +35,44 @@ h1 {
 }
 
 .nav-list {
-    list-style-type: none;
     padding: 0;
+    white-space: nowrap;
 }
 
 .nav-list-item {
-    display: flex;
-    align-items: center;
-    background-color: #808080;
-    color: white;
+    list-style-type: none;
     height: 2em;
+    background-color: #808080;
+    line-height: 2em;
+    color: #fff;
     margin-bottom: 0.5em;
 }
 
 .nav-list-link {
     width: 100%;
     display: inline-block;
-    padding-left: 0.5em;
+    padding: 0 0.5em;
     text-decoration: none;
-    color: white;
-    white-space: nowrap;
+    color: #fff;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.section {
+    padding: 0.5em;
+    width: 60%;
+    font-size: 1.25em;
+}
+
+.section__header {
+    display: flex;
+    justify-content: center;
+    font-size: 5vw;
+}
+
+.units-list {
+    line-height: 1.75em;
 }
 
 .css-units {
@@ -67,29 +82,18 @@ h1 {
     font-weight: 700;
 }
 
-.section {
-    display: flex;
-    padding: 0.5em;
-    width: 60%;
-    flex-direction: column;
-}
-
-.section__header {
-    margin: auto;
-    font-size: 5vw;
-}
-
-.units-list {
-    line-height: 1.75em;
-}
-
 .news {
     padding: 0.5em;
     width: 20%;
 }
 
-.footer {
+footer {
+    display: flex;
     background-color: #e5e5e5;
     padding: 0.5em;
-    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
 }
