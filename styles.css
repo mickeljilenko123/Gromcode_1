@@ -15,8 +15,13 @@ html {
 }
 
 .header {
-    display: flex;
+    color: white;
     background: linear-gradient(60deg, red, orange);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .main {
@@ -31,25 +36,28 @@ html {
 }
 
 .nav-list {
-    line-height: 1.75em;
     list-style-type: none;
     padding: 0;
 }
 
 .nav-list-item {
+    display: flex;
+    align-items: center;
     background-color: #808080;
     color: white;
     height: 2em;
     margin-bottom: 0.5em;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .nav-list-link {
+    width: 100%;
+    display: inline-block;
     padding-left: 0.5em;
     text-decoration: none;
     color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .css-units {
@@ -84,11 +92,4 @@ html {
     background-color: #e5e5e5;
     padding: 0.5em;
     text-align: center;
-}
-
-h1 {
-    margin: auto;
-    font-size: 32px;
-    color: white;
-    padding: 18px;
 }
