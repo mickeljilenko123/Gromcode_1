@@ -7,6 +7,7 @@
     min-height: 200px;
     display: flex;
     flex-grow: 1;
+    width: 100vw;
     /* justify-content: center;
     align-items: center; */
 }
@@ -16,6 +17,7 @@
     min-height: 200px;
     display: flex;
     flex-grow: 1;
+    width: 100vw;
     /* justify-content: center;
     align-items: center; */
 }
@@ -25,6 +27,7 @@
     min-height: 200px;
     display: flex;
     flex-grow: 1;
+    width: 100vw;
     /* justify-content: center;
     align-items: center; */
 }
