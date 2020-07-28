@@ -1,45 +1,8 @@
-@import 'breakpoint.scss';
+@import 'header.scss';
 * {
     box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    @include for-extra-small {
-        flex-direction: column;
-    }
-}
-
-.square {
-    width: 100px;
-    height: 100px;
-    background-color: coral;
-    margin: 8px;
-    @include for-extra-small {
-        background-color: #ff7f50;
-    }
-    @include for-medium-up {
-        background-color: #8a2be2;
-    }
-    @include for-large-up {
-        background-color: #a61;
-    }
-    @include for-large-up {
-        background-color: #c47;
-    }
-}
-
-@media screen and (max-width: 600px) and (orientation: portrait) {
-    .container {
-        flex-direction: column;
-    }
-}
-
-@media screen and (min-width: 600px) and (orientation: landscape) {
-    .container {
-        flex-direction: row;
-    }
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
