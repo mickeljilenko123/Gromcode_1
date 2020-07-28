@@ -1,131 +1,36 @@
-* {
-    box-sizing: border-box;
-}
-
-html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    color: #555;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 .header {
-    color: #fff;
-    background-image: linear-gradient(60deg, red, orange);
-}
-
-h1 {
-    display: flex;
-    justify-content: center;
-}
-
-.main {
-    flex-grow: 1;
-}
-
-.navigation {
-    padding: 0.5em;
+  height: 56px;
+  background-color: #eee;
 }
 
 .nav-list {
-    padding: 0;
-    white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  height: 56px;
+  font-weight: 700;
+}
+.nav-list__item {
+  background-color: #ff7f50;
+  color: #fff;
+  padding: 8px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.nav-list__item_selected {
+  background-color: #fb0;
+  color: #fff;
+}
+.nav-list__item:hover {
+  opacity: 0.7;
 }
 
-.nav-list-item {
-    list-style-type: none;
-    height: 2em;
-    background-color: #808080;
-    line-height: 2em;
-    color: #fff;
-    margin-bottom: 0.5em;
+html {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.nav-list-link {
-    width: 100%;
-    display: inline-block;
-    padding: 0 0.5em;
-    text-decoration: none;
-    color: #fff;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.section__header {
-    display: flex;
-    justify-content: center;
-    font-size: 5vw;
-}
-
-.section {
-    padding: 0.5em;
-    width: 100%;
-    font-size: 1.25em;
-    display: inline-block;
-}
-
-.main-image-big {
-    max-width: 100%;
-    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-}
-
-.units-list {
-    line-height: 1.75em;
-}
-
-ul.units-list li:nth-child(1) {
-    line-height: 1.75em;
-}
-
-.css-units {
-    color: #8b0000;
-    background-color: #e5e5e5;
-    font-size: 1.125em;
-    font-weight: 700;
-}
-
-.news {
-    padding: 0.5em;
-}
-
-footer {
-    display: flex;
-    background-color: #e5e5e5;
-    padding: 0.5em;
-}
-
-.footer {
-    display: flex;
-    justify-content: center;
-}
-
-@media screen and (min-width: 600px) {
-    .main__section {
-        display: flex;
-    }
-    .navigation {
-        width: 20%;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .main {
-        display: flex;
-        flex-direction: row;
-    }
-    .section {
-        width: 60vw;
-    }
-    .navigation {
-        width: 20vw;
-    }
-    .news {
-        width: 20vw;
-    }
-}
+/*# sourceMappingURL=styles.css.map */
