@@ -1,3 +1,4 @@
+@import 'breakpoint.scss';
 * {
     box-sizing: border-box;
 }
@@ -7,45 +8,26 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    // @include for-extra-small {
+    //     flex-direction: column;
+    // }
 }
-
-
-/* @media screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-} */
 
 .square {
     width: 100px;
     height: 100px;
     background-color: coral;
     margin: 8px;
-}
-
-@media screen and (max-width: 600px) {
-    .square {
+    @include for-extra-small {
         background-color: #ff7f50;
     }
-}
-
-@media screen and (min-width: 600px) {
-    .square {
+    @include for-medium-up {
         background-color: #8a2be2;
     }
-}
-
-@media screen and (min-width: 900px) {
-    .square {
+    @include for-large-up {
         background-color: #a61;
     }
-}
-
-@media screen and (min-width: 900px) {
-    .square {
+    @include for-large-up {
         background-color: #c47;
     }
 }
-
-
-/*# sourceMappingURL=styles.css.map */
