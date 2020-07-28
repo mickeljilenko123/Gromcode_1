@@ -23,7 +23,7 @@
     margin: 8px;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 600px) {
     .square {
         background-color: #ff7f50;
     }
@@ -35,15 +35,27 @@
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 899px) {
     .square {
         background-color: #a61;
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1199px) {
     .square {
         background-color: #c47;
+    }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+    .container {
+        flex-direction: row;
     }
 }
 
