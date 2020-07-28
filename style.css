@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column; }
+
+.navigation {
+  background-color: #ff7f50;
+  min-height: 200px;
+  display: flex;
+  flex-grow: 1;
+  width: 100vw; }
+
+.products-list {
+  background-color: #006400;
+  min-height: 200px;
+  display: flex;
+  flex-grow: 1;
+  width: 100vw; }
+
+.news {
+  background-color: #0ff;
+  min-height: 200px;
+  display: flex;
+  flex-grow: 1; }
+
+span {
+  text-transform: lowercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #faebd7;
+  margin: auto; }
+
+@media screen and (min-width: 600px) {
+  .products {
+    display: flex; } }
+@media screen and (min-width: 900px) {
+  .content {
+    display: flex; }
+
+  .navigation {
+    display: flex;
+    flex-grow: 1;
+    width: 33.333333333vw; }
+
+  .products-list {
+    display: flex;
+    flex-grow: 1;
+    width: 33.333333333vw; }
+
+  .news {
+    display: flex;
+    flex-grow: 1;
+    width: 33.333333333vw; } }
+
+/*# sourceMappingURL=style.css.map */
