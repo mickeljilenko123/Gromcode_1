@@ -1,1 +1,16 @@
-@import "layout.scss";
+@import 'variables.scss';
+@import 'webshop.scss';
+@import 'business.scss';
+@import 'basic.scss';
+* {
+    box-sizing: border-box;
+}
+
+.price-page {
+    width: 1440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: $fon-tables;
+}

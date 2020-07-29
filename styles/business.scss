@@ -1,0 +1,38 @@
+.price-card.business-table {
+    margin: 0 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.price-card__title.business-title {
+    margin: 30px 108px 36px 108px;
+    text-align: center;
+}
+
+.price-card__badge {
+    width: 122px;
+    height: 123px;
+    position: absolute;
+    right: -6px;
+    top: 16px;
+    &_text {
+        width: 147px;
+        height: 25px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $text-color-white;
+        background-color: $fon-color-badge;
+        transform: rotate(45deg);
+    }
+}
+
+.price-card__price.business-price {
+    background-color: $business-price-color;
+}
+
+.price-card .business-btn {
+    background-color: $business-price-color;
+}
