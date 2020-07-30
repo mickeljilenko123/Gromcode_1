@@ -1,11 +1,10 @@
-const squareArray = numbers => {
+const reverseArray = numbers => {
     if (!Array.isArray(numbers)) {
         return null;
     }
     let specialNumbers = [];
 
     numbers.map(num => {
-        num *= num;
         specialNumbers.push(num);
     });
 
@@ -15,9 +14,9 @@ const squareArray = numbers => {
     // }
     return specialNumbers;
 };
-let arr = [1, 4, 6, 8, 9];
-
-console.log(squareArray(arr));
+const arr = [1, 4, 6, 8, 9];
+const reserved = arr.reverse();
+console.log(reverseArray(reserved));
 
 
 
@@ -30,3 +29,6 @@ console.log(squareArray(arr));
 // });
 
 // console.log(squareArray);
+
+// console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
