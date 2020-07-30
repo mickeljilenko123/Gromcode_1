@@ -33,17 +33,19 @@
 // console.log(reverseArray(["A", "B", "C"]));
 // → ["C", "B", "A"];
 
-const arr = [1, 3, 7, 6];
+const numbers = [1, 3, 7, 6];
 
-function reverseArray(arr) {
-    if (!Array.isArray(arr)) {
+function reverseArray(numbers) {
+    if (!Array.isArray(numbers)) {
         return null;
     }
     let result = [];
-    for (let i = arr.length - 1; i >= 0; i--) {
-        result.push(arr[i]);
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] *= numbers[i];
+        result.push(numbers[i]);
     }
     return result;
 
 }
-console.log(reverseArray(arr));
+let arr = reverseArray(numbers);
+console.log(arr);
