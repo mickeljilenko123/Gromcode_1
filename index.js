@@ -36,6 +36,9 @@
 const arr = [1, 3, 7]
 
 function reverseArray(arr) {
+    if (!Array.isArray(arr)) {
+        return null;
+    }
     const [start, ...rest] = arr;
 
     return [...rest, start];
