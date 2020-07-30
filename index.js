@@ -1,7 +1,9 @@
 const sortDesc = numbers => {
     function sompare(a, b) {
-
-        return a < b ? 1 : -1;
+        if (a < b) {
+            return 1;
+        }
+        return -1;
     }
     numbers.sort(sompare);
 
