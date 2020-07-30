@@ -1,9 +1,12 @@
-const flatArray = arr => {
-    const flatArray = arr
-        .reduce((acc, elem) => {
-            return acc.concat(elem);
-        }, []);
-    return flatArray;
+const getMessageForPassedStudents = (allStudents, failedStudents) => {
+    const passedStudents = allStudents
+        .filter(name => !failedStudents.includes(name));
+    const message = passedStudents
+        .map(name => 'Good job, ' + name)
+    return message;
 };
-const initArray = [1, [2, 3, 4], 5, [6]];
-console.log(flatArray(initArray));
+
+const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
+const failedStudents = ['Tom', 'Bob'];
+console.log(getMessageForPassedStudents(allStudents, failedStudents));
+console.log(allStudents);
