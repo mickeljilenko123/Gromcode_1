@@ -9,4 +9,3 @@ const getMessageForPassedStudents = (allStudents, failedStudents) => {
 const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
 const failedStudents = ['Tom', 'Bob'];
 console.log(getMessageForPassedStudents(allStudents, failedStudents));
-console.log(allStudents);
