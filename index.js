@@ -1,11 +1,17 @@
-const getMessagesForBestStudents = (allStudents, failedStudents) => {
-    const passedStudents = allStudents
-        .filter(name => !failedStudents.includes(name));
-    const message = passedStudents
-        .map(name => 'Good job, ' + name)
-    return message;
-};
+const square = numbers => {
+    let specialNumbers = [];
 
-const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
-const failedStudents = ['Tom', 'Bob'];
-console.log(getMessagesForBestStudents(allStudents, failedStudents));
+    numbers.forEach(num => {
+        num *= num;
+        specialNumbers.push(num);
+    });
+
+    // for (let i = 0; i < numbers.length; i++) {
+    //     numbers[i] *= numbers[i];
+    //     specialNumbers.push(numbers[i]);
+    // }
+    return specialNumbers;
+};
+let arr = [1, 4, 6, 8, 9];
+
+console.log(square(arr));
