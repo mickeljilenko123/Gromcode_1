@@ -1,4 +1,4 @@
-const square = numbers => {
+const squareArray = numbers => {
     let specialNumbers = [];
 
     numbers.forEach(num => {
@@ -14,4 +14,4 @@ const square = numbers => {
 };
 let arr = [1, 4, 6, 8, 9];
 
-console.log(square(arr));
+console.log(squareArray(arr));
