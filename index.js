@@ -35,7 +35,7 @@
 
 const numbers = [1, 3, 7, 6];
 
-function reverseArray(numbers) {
+function squareArray(numbers) {
     if (!Array.isArray(numbers)) {
         return null;
     }
@@ -47,5 +47,5 @@ function reverseArray(numbers) {
     return result;
 
 }
-let arr = reverseArray(numbers);
+let arr = squareArray(numbers);
 console.log(arr);
