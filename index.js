@@ -35,9 +35,9 @@
 
 const arr = [1, 3, 7]
 
-function swap(arr) {
+function reverseArray(arr) {
     const [start, ...rest] = arr;
 
     return [...rest, start];
 }
-console.log(swap(arr));
+console.log(reverseArray(arr));
