@@ -33,19 +33,25 @@
 // console.log(reverseArray(["A", "B", "C"]));
 // → ["C", "B", "A"];
 
-const numbers = [1, 3, 7, 6];
+const arr = [1, 3, 7, 6, 10, 14, 5, 2];
+let delta = 20;
 
-function squareArray(numbers) {
-    if (!Array.isArray(numbers)) {
+function increaseEvenEI(arr) {
+    if (!Array.isArray(arr)) {
         return null;
     }
     let result = [];
-    for (let i = 0; i < numbers.length; i++) {
-        numbers[i] *= numbers[i];
-        result.push(numbers[i]);
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            arr[i] *= delta;
+
+        }
+        result.push(arr[i]);
     }
+
     return result;
 
 }
-let arr = squareArray(numbers);
-console.log(arr);
+const result = increaseEvenEI(arr);
+console.log(result);
