@@ -1,4 +1,4 @@
-const getMessageForPassedStudents = (allStudents, failedStudents) => {
+const getMessageForBestStudents = (allStudents, failedStudents) => {
     const passedStudents = allStudents
         .filter(name => !failedStudents.includes(name));
     const message = passedStudents
@@ -8,4 +8,4 @@ const getMessageForPassedStudents = (allStudents, failedStudents) => {
 
 const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
 const failedStudents = ['Tom', 'Bob'];
-console.log(getMessageForPassedStudents(allStudents, failedStudents));
+console.log(getMessageForBestStudents(allStudents, failedStudents));
