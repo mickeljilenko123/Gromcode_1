@@ -33,14 +33,17 @@
 // console.log(reverseArray(["A", "B", "C"]));
 // → ["C", "B", "A"];
 
-const arr = [1, 3, 7]
+const arr = [1, 3, 7, 6];
 
 function reverseArray(arr) {
     if (!Array.isArray(arr)) {
         return null;
     }
-    const [start, ...rest] = arr;
+    let result = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        result.push(arr[i]);
+    }
+    return result;
 
-    return [...rest, start];
 }
 console.log(reverseArray(arr));
