@@ -1,15 +1,13 @@
-const getSpecialNumbers = numbers => {
+const sortArray = numbers => {
+    function sompare(a, b) {
 
+        return a > b ? 1 : -1;
+    }
+    numbers.sort(sompare);
 
-    const result = numbers.filter(num => {
-        if (num % 3 === 0) {
-            return true;
-        }
-        return false;
-    });
-
-
-    return result;
+    return numbers;
 };
-const arr = [1, 2, 3, 4, 5, 6, 18];
-console.log(getSpecialNumbers(arr));
+
+const arr = [2, 57, 7, 67, 90, 6, 14];
+
+console.log(sortArray(arr));
