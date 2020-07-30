@@ -1,7 +1,7 @@
 const sortArray = numbers => {
     function sompare(a, b) {
 
-        return a > b ? 1 : -1;
+        return a < b ? 1 : -1;
     }
     numbers.sort(sompare);
 
