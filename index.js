@@ -1,9 +1,9 @@
-const sortDesc = numbers => {
-    const copy = numbers.slice();
-    return copy.sort((a, b) => b - a);
+const flatArray = arr => {
+    const flatArray = arr
+        .reduce((acc, elem) => {
+            return acc.concat(elem);
+        }, []);
+    return flatArray;
 };
-
-const arr = [2, 57, 7, 67, 90, 6, 14];
-
-console.log(sortDesc(arr));
-console.log(arr);
+const initArray = [1, [2, 3, 4], 5, [6]];
+console.log(flatArray(initArray));
