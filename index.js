@@ -1,22 +1,22 @@
-const reverseArray = numbers => {
-    if (!Array.isArray(numbers)) {
-        return null;
-    }
-    let specialNumbers = [];
+// const sum = numbers => {
+//     if (!Array.isArray(numbers)) {
+//         return null;
+//     }
+//     let specialNumbers = 0;
 
-    numbers.map(num => {
-        specialNumbers.push(num);
-    });
+//     numbers.reduce(num => {
+//         specialNumbers += num;
+//     });
 
-    // for (let i = 0; i < numbers.length; i++) {
-    //     numbers[i] *= numbers[i];
-    //     specialNumbers.push(numbers[i]);
-    // }
-    return specialNumbers;
-};
-const arr = [1, 4, 6, 8, 9];
-const reserved = arr.reverse();
-console.log(reverseArray(reserved));
+//     // for (let i = 0; i < numbers.length; i++) {
+//     //     numbers[i] *= numbers[i];
+//     //     specialNumbers.push(numbers[i]);
+//     // }
+//     return specialNumbers;
+// };
+// const arr = [1, 4, 6, 8, 9];
+// // const reserved = arr.reverse();
+// console.log(sum(arr));
 
 
 
@@ -32,3 +32,12 @@ console.log(reverseArray(reserved));
 
 // console.log(reverseArray(["A", "B", "C"]));
 // → ["C", "B", "A"];
+
+const arr = [1, 3, 7]
+
+function swap(arr) {
+    const [start, ...rest] = arr;
+
+    return [...rest, start];
+}
+console.log(swap(arr));
