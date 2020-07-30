@@ -1,4 +1,7 @@
 const squareArray = numbers => {
+    if (!Array.isArray(numbers)) {
+        return null;
+    }
     let specialNumbers = [];
 
     numbers.forEach(num => {
