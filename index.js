@@ -1,8 +1,8 @@
 'use strict'
 
-const sum = arr => {
-    if (!Array.isArray(arr)) return null;
-    return arr.reduce((accumulator, currentValue) => accumulator + currentValue);
-}
+const filterNames = (arr, text) => {
+    // return arr.filter(name => (name.length > 5) && (name === text))
+    return arr.filter(str => str.indexOf(text) !== -1 && str.length > 5);
+};
 
-console.log(sum([5, 10, 20, 50]));
+console.log(filterNames(['Roman', 'Nick', 'Samuel', 'Emmanuel', 'Alexandra'], 'an'));
