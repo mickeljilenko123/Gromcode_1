@@ -1,57 +1,27 @@
-// const sum = numbers => {
-//     if (!Array.isArray(numbers)) {
-//         return null;
-//     }
-//     let specialNumbers = 0;
+//algo
+//1. Перебрать числа от 1 до n
+//2. Проветь если простое число
 
-//     numbers.reduce(num => {
-//         specialNumbers += num;
-//     });
-
-//     // for (let i = 0; i < numbers.length; i++) {
-//     //     numbers[i] *= numbers[i];
-//     //     specialNumbers.push(numbers[i]);
-//     // }
-//     return specialNumbers;
-// };
-// const arr = [1, 4, 6, 8, 9];
-// // const reserved = arr.reverse();
-// console.log(sum(arr));
+'use strict'
 
 
-
-// const arr = [1, 4, 6, 8, 9];
-// const squareArray = arr.map(ar => {
-//     if (!Array.isArray(arr)) {
-//         return null;
-//     }
-//     return ar * ar;
-// });
-
-// console.log(squareArray);
-
-// console.log(reverseArray(["A", "B", "C"]));
-// → ["C", "B", "A"];
-
-const arr = [1, 3, 7, 6, 10, 14, 5, 2];
-let delta = 20;
-
-function increaseEvenEI(arr) {
-    if (!Array.isArray(arr)) {
-        return null;
-    }
-    let result = [];
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 === 0) {
-            arr[i] *= delta;
-
+function isPrime(num) {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
         }
-        result.push(arr[i]);
     }
+    return true;
+}
+console.log(isPrime(6));
 
-    return result;
+
+function getPrimes(n) {
+    for (let i = 1; i <= n; i++) {
+        if (isPrime(i)) {
+            console.log(i);
+        }
+    }
 
 }
-const result = increaseEvenEI(arr);
-console.log(result);
+getPrimes(10)
