@@ -1,13 +1,13 @@
 'use strict'
-const increaseEvenEl = (arr, delta) => {
+const cloneArr = (arr) => {
     if (!Array.isArray(arr)) return null;
     const result = [];
-    arr.map(num => {
-        if (num % 2 === 0) {
-            result.push(num + delta);
-        }
+    const copy = arr.slice();
+    copy.map(num => {
+        result.push(num);
+
     });
-    return result;
+    return copy;
 }
 
-console.log(increaseEvenEl([1, 2, 66, 100], 10));
+console.log(cloneArr([1, 2, 66, 100]));
