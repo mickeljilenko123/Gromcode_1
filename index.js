@@ -1,19 +1,13 @@
 'use strict'
-const arr = [1, 4, 6, 8, 9];
-let delta = 20;
-
-function increaseEvenEI(arr) {
-    if (!Array.isArray(arr)) {
-        return null;
-    }
-    let result = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 === 0) {
-            arr[i] *= delta;
+const increaseEvenEl = (arr, delta) => {
+    if (!Array.isArray(arr)) return null;
+    const result = [];
+    arr.map(num => {
+        if (num % 2 === 0) {
+            result.push(num + delta);
         }
-        result.push(arr[i]);
-    }
+    });
     return result;
 }
-const rrr = increaseEvenEI(arr);
-console.log(rrr);
+
+console.log(increaseEvenEl([1, 2, 66, 100], 10));
