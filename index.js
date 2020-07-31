@@ -1,13 +1,8 @@
 'use strict'
-const cloneArr = (arr) => {
-    if (!Array.isArray(arr)) return null;
-    const result = [];
-    const copy = arr.slice();
-    copy.map(num => {
-        result.push(num);
 
-    });
-    return copy;
+const sum = arr => {
+    if (!Array.isArray(arr)) return null;
+    return arr.reduce((accumulator, currentValue) => accumulator + currentValue);
 }
 
-console.log(cloneArr([1, 2, 66, 100]));
+console.log(sum([5, 10, 20, 50]));
