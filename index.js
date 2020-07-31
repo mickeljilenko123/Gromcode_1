@@ -1,27 +1,15 @@
-//algo
-//1. Перебрать числа от 1 до n
-//2. Проветь если простое число
-
 'use strict'
 
 
-function isPrime(num) {
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) {
-            return false;
-        }
+const reserveArray = arr => {
+    if (!Array.isArray(arr)) {
+        return null;
     }
-    return true;
+    let result = [];
+    arr.reverse().map(num => {
+        result.push(num);
+    });
+    return result;
 }
-
-
-
-function getPrimes(n) {
-    for (let i = 1; i <= n; i++) {
-        if (isPrime(i)) {
-            console.log(i);
-        }
-    }
-
-}
-getPrimes(10)
+const arr = [1, 3, 5, 75, 32, 4]
+console.log(reserveArray(arr));
