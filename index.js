@@ -1,16 +1,19 @@
 'use strict'
+const arr = [1, 4, 6, 8, 9];
+let delta = 20;
 
-const reverseArray = arr => {
+function increaseEvenEI(arr) {
     if (!Array.isArray(arr)) {
         return null;
     }
-    const copy = arr.slice();
     let result = [];
-    copy.reverse().map(num => {
-        result.push(num);
-    });
-    return copy;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            arr[i] *= delta;
+        }
+        result.push(arr[i]);
+    }
+    return result;
 }
-const arr = [1, 3, 5, 75, 32, 4]
-console.log(reverseArray(arr));
-console.log(arr);
+const rrr = increaseEvenEI(arr);
+console.log(rrr);
