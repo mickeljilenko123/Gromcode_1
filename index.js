@@ -13,10 +13,10 @@ function isPrime(num) {
     }
     return true;
 }
-console.log(isPrime(6));
 
 
-function getPrimes(n) {
+
+function getPrime(n) {
     for (let i = 1; i <= n; i++) {
         if (isPrime(i)) {
             console.log(i);
@@ -24,4 +24,4 @@ function getPrimes(n) {
     }
 
 }
-getPrimes(10)
+getPrime(10)
