@@ -1,8 +1,8 @@
 'use strict'
 
-const filterNames = (arr, text) => {
-    // return arr.filter(name => (name.length > 5) && (name === text))
-    return arr.filter(str => str.indexOf(text) !== -1 && str.length > 5);
-};
+const arrAverage = arr => {
+    if (!Array.isArray(arr)) return null;
+    return arr.reduce((a, b) => (a + b)) / arr.length;
+}
 
-console.log(filterNames(['Roman', 'Nick', 'Samuel', 'Emmanuel', 'Alexandra'], 'an'));
+console.log(arrAverage([1, 2, 3, 4, 5, 6]));
