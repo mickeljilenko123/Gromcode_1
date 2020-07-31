@@ -1,7 +1,6 @@
 'use strict'
 
-
-const reserveArray = arr => {
+const reverseArray = arr => {
     if (!Array.isArray(arr)) {
         return null;
     }
@@ -12,4 +11,4 @@ const reserveArray = arr => {
     return result;
 }
 const arr = [1, 3, 5, 75, 32, 4]
-console.log(reserveArray(arr));
+console.log(reverseArray(arr));
