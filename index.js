@@ -1,6 +1,6 @@
 'use strict'
 
-const increaseEvenEI = function(arr, delta) {
+function increaseEvenEI(arr, delta) {
     let resA = [];
     if (!Array.isArray(arr)) {
         return null;
