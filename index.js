@@ -1,8 +1,10 @@
 'use strict'
 
-const createEmptyArray = function(length) {
-    const arr = new Array(length);
 
-    return arr
+const arr = [1, 2, 4, 5];
+
+for (let i = 0; i < arr.length; i += 1) {
+    arr[i] *= arr[i];
+
 }
-console.log(createEmptyArray(length));
+console.log(arr);
