@@ -3,12 +3,12 @@
 
 const arr = [1, 2, 4, 5];
 const squareArray = function(arr) {
-
-    for (let i = 0; i < arr.length; i += 1) {
-        arr[i] *= arr[i];
-
+    const copy = arr.slice();
+    let resA = 0;
+    for (let i = 0; i < copy.length; i += 1) {
+        copy[i] *= copy[i];
+        resA = copy;
     }
-    return arr;
-
+    return resA;
 }
 console.log(squareArray(arr));
