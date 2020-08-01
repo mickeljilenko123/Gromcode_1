@@ -13,6 +13,5 @@ const increaseEvenEI = function(arr, delta) {
         }
     }
     return resA;
-
 }
 console.log(increaseEvenEI([2, 4, 6, 7, 9], 2));
