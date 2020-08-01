@@ -1,17 +1,18 @@
 'use strict'
 
-
-const arr = [1, 2, 4, 5];
-const squareArray = function(arr) {
+const arr = [99, 2, 3]
+const checkSum = function(arr) {
+    let resA = 0;
     if (!Array.isArray(arr)) {
         return null;
     }
-    const copy = arr.slice();
-    let resA = 0;
-    for (let i = 0; i < copy.length; i += 1) {
-        copy[i] *= copy[i];
-        resA = copy;
+    for (let i = 0; i < arr.length; i += 1) {
+        resA += arr[i];
+        if (resA > 100) {
+            return true;
+        }
+
     }
-    return resA;
+    return false;
 }
-console.log(squareArray(arr));
+console.log(checkSum(arr));
