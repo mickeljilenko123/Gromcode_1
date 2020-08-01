@@ -1,18 +1,18 @@
 'use strict'
 
-const arr = [99, 2, 3]
-const checkSum = function(arr) {
-    let resA = 0;
+const increaseEvenEI = function(arr, delta) {
+    let resA = [];
     if (!Array.isArray(arr)) {
         return null;
     }
     for (let i = 0; i < arr.length; i += 1) {
-        resA += arr[i];
-        if (resA > 100) {
-            return true;
+        if (arr[i] % 2 === 0) {
+            arr[i] += delta;
+            resA = arr;
+            resA.push();
         }
-
     }
-    return false;
+    return resA;
+
 }
-console.log(checkSum(arr));
+console.log(increaseEvenEI([2, 4, 6, 7, 9], 2));
