@@ -1,8 +1,8 @@
 'use strict'
 
-const arrAverage = arr => {
-    if (!Array.isArray(arr)) return null;
-    return arr.reduce((a, b) => (a + b)) / arr.length;
-}
+const createEmptyArray = function() {
+    const arr = new Array();
 
-console.log(arrAverage([1, 2, 3, 4, 5, 6]));
+    return arr
+}
+console.log(createEmptyArray());
