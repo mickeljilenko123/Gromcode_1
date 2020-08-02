@@ -1,17 +1,16 @@
 'use strict'
 
-//Перебрать все значения єтого массива
-// И записать в обьект
-const transformToObject = arr => {
-    let obj = {};
-
-    arr.forEach(el => {
-        obj[el] = el
-    });
-
-    return obj;
-};
-const arr = ['a', 17.1, 'John Doe']
-
-const result = transformToObject(arr)
-console.log(result);
+const user = {
+    name: 'John Doe',
+    age: 17,
+    interest: 'footbool',
+}
+const concatProps = user => {
+    let arr = [];
+    for (const key in user) {
+        arr.push(user[key]);
+        // arr = arr.concat(obj[key]);
+    }
+    return arr;
+}
+console.log(concatProps(user));
