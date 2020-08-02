@@ -2,16 +2,16 @@
 
 //Перебрать все значения єтого массива
 // И записать в обьект
-const tranformToObject = arr => {
+const transformToObject = arr => {
     let obj = {};
 
-    arr.forEach(element => {
-        obj[element] = element
+    arr.forEach(el => {
+        obj[el] = el
     });
 
     return obj;
 };
 const arr = ['a', 17.1, 'John Doe']
 
-const result = tranformToObject(arr)
+const result = transformToObject(arr)
 console.log(result);
