@@ -1,28 +1,30 @@
 'use strict'
 
-const transaction = {
-    currency: 'USD',
-    value: 170,
-    operation: 'sale',
-    agent: {
-        country: 'Ukraine',
-        company: 'NYSE'
-    },
-    'operation time': 1584029990001
+const user = {
+    name: 'Tom',
+    age: 17,
 };
 
-/* выведите в консоль значение свойства 'currency' с помощью точки */
-console.log((transaction.currency));
+user.hobby = 'football';
+user.anotherKey = 'false';
+user.favorite_music = 'rock';
+user.address = {};
+user.address.country = 'Ukraine';
+user.address.building = 17;
+console.log(user);
 
-/* выведите в консоль значение свойства 'value' с помощью квадратных скобок */
-console.log(transaction['value']);
+/* присвойте объекту свойство hobby со значением 'football' с помощью точки */
 
-const key = 'operation';
-/* выведите в консоль значение свойства, название которого находится в переменной key - используйте квадратные скобки */
-console.log(transaction[key]);
-/* выведите в консоль значение свойства 'company' используя квадратные скобки */
-console.log(transaction.agent['company']);
-/* выведите в консоль значение свойства 'country' используя точку */
-console.log(transaction.agent.country);
-/* выведите в консоль значение свойства 'operation time' используя квадратные скобки */
-console.log(transaction['operation time']);
+const anotherKey = 'married';
+/* название свойства хранится в переменной anotherKey. 
+Присвойте объекту такое свойство со значением false */
+
+/* присвойте объекту свойство 'favorite music' со значением 'rock' */
+
+/* присвойте объекту свойство 'address', которое будет пустым объкетом */
+
+/* присвойте объекту в 'address' свойство 'country', со значением 'Ukraine' */
+
+/* присвойте объекту в 'address' свойство 'building', со значением 17 */
+
+/* выведите в консоль объект user */
