@@ -7,13 +7,11 @@ const person = {
 };
 
 const getKeys = obj => {
-
-    const keys = Object.keys(person)
-    keys.forEach(key => {
-        console.log(key);
-        // console.log(person[key]);
+    const keysArr = Object.keys(obj);
+    const newArr = keysArr.forEach(elem => {
+        console.log(elem)
     });
-
-}
+    return newArr;
+};
 
 getKeys(person);
