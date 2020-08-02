@@ -6,11 +6,11 @@ const user = {
 };
 
 user.hobby = 'football';
-user[anotherKey] = false;
+user.anotherKey = false;
 user['favorite music'] = 'rock';
-user['address'] = {};
-user.address['country'] = 'Ukraine';
-user.address['building'] = 17;
+user.address = {};
+user.address.country = 'Ukraine';
+user.address.building = 17;
 
 console.log(user);
 
