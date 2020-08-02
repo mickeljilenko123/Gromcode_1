@@ -6,7 +6,7 @@ const user = {
 };
 
 user.hobby = 'football';
-user['anotherKey'] = false;
+user['married'] = false;
 user['favorite music'] = 'rock';
 user.address = {};
 user.address.country = 'Ukraine';
@@ -16,7 +16,7 @@ console.log(user);
 
 /* присвойте объекту свойство hobby со значением 'football' с помощью точки */
 
-let anotherKey = 'married';
+const anotherKey = 'married';
 /* название свойства хранится в переменной anotherKey. 
 Присвойте объекту такое свойство со значением false */
 
