@@ -16,4 +16,4 @@ const getKeys = obj => {
 
 }
 
-console.log(getKeys(person));
+getKeys(person);
