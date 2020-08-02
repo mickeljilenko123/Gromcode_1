@@ -1,10 +1,19 @@
 'use strict'
-const array = [1, 4, 7, 'Polya']
-const getKeys = array => {
-    let obj = {};
-    array.forEach(key => {
-        obj[key] = key
-    });
-    return obj;
+
+
+const person = {
+    name: 'Tom',
+    age: 17,
 };
-console.log(getKeys(array));
+
+const getKeys = obj => {
+
+    const keys = Object.keys(person)
+    keys.forEach(key => {
+        console.log(key);
+        // console.log(person[key]);
+    });
+
+}
+
+console.log(getKeys(person));
