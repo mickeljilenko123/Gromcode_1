@@ -1,17 +1,17 @@
 'use strict'
 
-function increaseEvenEI(arr, delta) {
-    let resA = [];
-    if (!Array.isArray(arr)) {
-        return null;
+const clients = ['Ann', 'John', 'User'];
+const balances = [1400, 87, -6];
+
+function withdraw(clients, balances, client, amount) {
+    // console.log(balances[clients.indexOf(client)]);
+
+    if (balances[clients.indexOf(client)] >= amount) {
+
+        return (balances[clients.indexOf(client)] = balances[clients.indexOf(client)] - amount);
     }
-    for (let i = 0; i < arr.length; i += 1) {
-        if (arr[i] % 2 === 0) {
-            arr[i] += delta;
-            resA = arr;
-            resA.push();
-        }
-    }
-    return resA;
+
+    return -1;
 }
-console.log(increaseEvenEI([2, 4, 6, 7, 9], 2));
+
+console.log(withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'Ann', 50));
