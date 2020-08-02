@@ -1,17 +1,17 @@
 'use strict'
 
-const clients = ['Ann', 'John', 'User'];
-const balances = [1400, 87, -6];
+//Перебрать все значения єтого массива
+// И записать в обьект
+const tranformToObject = arr => {
+    let obj = {};
 
-function withdraw(clients, balances, client, amount) {
-    // console.log(balances[clients.indexOf(client)]);
+    arr.forEach(element => {
+        obj[element] = element
+    });
 
-    if (balances[clients.indexOf(client)] >= amount) {
+    return obj;
+};
+const arr = ['a', 17.1, 'John Doe']
 
-        return (balances[clients.indexOf(client)] = balances[clients.indexOf(client)] - amount);
-    }
-
-    return -1;
-}
-
-console.log(withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'Ann', 50));
+const result = tranformToObject(arr)
+console.log(result);
