@@ -1,30 +1,29 @@
-const transaction = {
-    value: 170
-}
-
-
-function addPropertyV1(obj, key, value) {
-    obj[key] = value;
-    return obj;
+const mergeObjectsV1 = (obj1, obj2) => {
+    const result = Object.assign({}, obj1, obj2);
+    return result;
 };
 
-function addPropertyV2(obj, key, value) {
-    console.log({
-        [key]: value
-    })
-    return Object.assign(obj, {
-        [key]: value
-    });
+const mergeObjectsV2 = (obj1, obj2) => {
+    const result = Object.assign({}, obj2, obj1);
+    return result;
 };
 
-function addPropertyV3(obj, key, value) {
-    return Object.assign({}, obj, {
-        [key]: value
-    });
+const mergeObjectsV3 = (obj1, obj2) => {
+    const result = {...obj1, ...obj2 };
+    return result;
 };
 
-function addPropertyV4(obj, key, value) {
-    return Object.assign({...obj }, {
-        [key]: value
-    });
+const mergeObjectsV4 = (obj1, obj2) => {
+    const result = {...obj2, ...obj1 };
+    return result;
+};
+
+const user1 = {
+    name: 'Bob',
+    age: 17,
+};
+
+const user2 = {
+    name: 'Patrick',
+    student: false,
 };
