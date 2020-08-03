@@ -2,45 +2,28 @@
 
 
 
-const mergeObjectsV1 = (obj1, obj2) => {
-    const result = Object.assign({}, obj1, obj2);
-    return result;
-};
+const addPropertyV1 = (obj, key, value) => {
 
-const mergeObjectsV2 = (obj1, obj2) => {
-    const result = Object.assign({}, obj2, obj1);
-    return result;
-};
+    obj[key] = value;
+    return obj;
+}
 
-const mergeObjectsV3 = (obj1, obj2) => {
-    const result = {...obj1, ...obj2 };
-    return result;
-};
+const addPropertyV2 = (obj, key, value) => {
 
-const mergeObjectsV4 = (obj1, obj2) => {
-    const result = {...obj2, ...obj1 };
-    return result;
-};
+    Object.assign(obj, {
+        [key]: value });
+    return obj;
+}
 
-// const mergeObjectsV4 = (obj1, obj2) => {
-//     let clonedObj1 = {...obj1};
-//     let clonedObj2 = {...obj2};
-//     const result = Object.assign({}, clonedObj2, clonedObj1);
+const addPropertyV3 = (obj, key, value) => {
+    let newObj = {};
+    Object.assign(newObj, obj, {
+        [key]: value });
+    return newObj;
+}
+const addPropertyV4 = (obj, key, value) => {
 
-//     return result;
-// };
-
-const user1 = {
-    name: 'Bob',
-    age: 17,
-};
-
-const user2 = {
-    name: 'Patrick',
-    student: false,
-};
-
-console.log(mergeObjectsV1(user1, user2));
-console.log(mergeObjectsV2(user1, user2));
-console.log(mergeObjectsV3(user1, user2));
-console.log(mergeObjectsV4(user1, user2));
+    let newObj = {...obj };
+    newObj[key] = value;
+    return newObj;
+}
