@@ -31,7 +31,11 @@ const user = {
     name: 'Tom',
 };
 
-console.log(addPropertyV1(user, 'age', 17));
-console.log(addPropertyV2(user, 'age', 17));
-console.log(addPropertyV3(user, 'age', 17));
-console.log(addPropertyV4(user, 'age', 17));
+const resultV1 = addPropertyV1(user, 'age', 17);
+console.log(resultV1);
+const resultV2 = addPropertyV2(user, 'age', 17);
+console.log(resultV2);
+const resultV3 = addPropertyV3(user, 'age', 17);
+console.log(resultV3);
+const resultV4 = addPropertyV4(user, 'age', 17);
+console.log(resultV4);
