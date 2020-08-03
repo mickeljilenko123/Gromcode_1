@@ -27,7 +27,7 @@ const mergeObjectsV1 = (obj1, obj2) => {
     return result;
 };
 
-const mergeObjectsV2 = (obj2, obj1) => {
+const mergeObjectsV2 = (obj1, obj2) => {
     const result = Object.assign({}, obj2, obj1);
     return result;
 };
@@ -37,7 +37,7 @@ const mergeObjectsV3 = (obj1, obj2) => {
     return result;
 };
 
-const mergeObjectsV4 = (obj2, obj1) => {
+const mergeObjectsV4 = (obj1, obj2) => {
     const result = {...obj2, ...obj1 };
     return result;
 };
@@ -48,7 +48,7 @@ const user1 = {
 };
 
 const user2 = {
-    name: 'Patrick',
+    name: 'Tom',
     student: false,
 };
 
