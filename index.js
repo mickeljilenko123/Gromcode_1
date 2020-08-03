@@ -1,17 +1,20 @@
-// 1. input: obj and array
-// 2. output: obj with properties(array) 
-// Вернуть обьект со свойтвами указанными в массиве.
-const pickProps = (obj, arr) => {
-    let resA = {};
-    arr.forEach(element => {
-        if (obj[element]) {
-            resA[element] = obj[element];
-        }
-    });
-    return resA;
-
-};
-const arr1 = ['name', 'age'];
-const obj1 = { name: 'Misha', age: 17, interest: 'football' }
-const result = pickProps(obj1, arr1);
-console.log(result);
+const mergeObjectsV1 = (obj1, obj2) => {
+    let newObj = {};
+    return Object.assign(newObj, obj1, obj2)
+}
+const mergeObjectsV2 = (obj1, obj2) => {
+    let newObj = {};
+    return Object.assign(newObj, obj2, obj1)
+}
+const mergeObjectsV3 = (obj1, obj2) => {
+    return {
+        ...obj1,
+        ...obj2
+    }
+}
+const mergeObjectsV4 = (obj1, obj2) => {
+    return {
+        ...obj2,
+        ...obj1
+    }
+}
