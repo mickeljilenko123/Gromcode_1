@@ -1,34 +1,17 @@
-const mergeObjectsV1 = (obj1, obj2) => {
-    let newObj = {};
-    Object.assign(newObj, obj1, obj2);
-    return newObj;
-}
-const mergeObjectsV2 = (obj1, obj2) => {
-    let newObj = {};
-    Object.assign(newObj, obj2, obj1);
-    return newObj;
-}
-const mergeObjectsV3 = (obj1, obj2) => {
-    let newObj = {...obj1, ...obj2 };
-    return newObj;
-}
+// 1. input: obj and array
+// 2. output: obj with properties(array) 
+// Вернуть обьект со свойтвами указанными в массиве.
+const pickProps = (obj, arr) => {
+    let resA = {};
+    arr.forEach(element => {
+        if (obj[element]) {
+            resA[element] = obj[element];
+        }
+    });
+    return resA;
 
-const mergeObjectsV4 = (obj1, obj2) => {
-    let newObj = {...obj2, ...obj1 };
-    return newObj;
-}
-
-const user1 = {
-    name: 'Bob',
-    age: 17,
 };
-
-const user2 = {
-    name: 'Tom',
-    student: false,
-};
-
-// console.log(mergeObjectsV1(user1, user2));
-// console.log(mergeObjectsV2(user1, user2));
-// console.log(mergeObjectsV3(user1, user2));
-// console.log(mergeObjectsV4(user1, user2));
+const arr1 = ['name', 'age'];
+const obj1 = { name: 'Misha', age: 17, interest: 'football' }
+const result = pickProps(obj1, arr1);
+console.log(result);
