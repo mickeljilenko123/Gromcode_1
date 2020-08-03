@@ -1,32 +1,28 @@
 'use strict'
 
+const transaction = {
+    value: 170
+}
 
-const addPropertyV1 = (obj, key, value) => {
+
+function addPropertyV1(obj, key, value) {
     obj[key] = value;
     return obj;
 };
 
-const addPropertyV2 = (obj, key, value) => {
-    const result = Object.assign(obj, {
-        [key]: value
-    });
-    return result;
+function addPropertyV2(obj, key, value) {
+    console.log({
+        [key]: value })
+    return Object.assign(obj, {
+        [key]: value });
 };
 
-const addPropertyV3 = (obj, key, value) => {
-    const result = Object.assign({}, obj, {
-        [key]: value
-    });
-    return result;
+function addPropertyV3(obj, key, value) {
+    return Object.assign({}, obj, {
+        [key]: value });
 };
 
-const addPropertyV4 = (obj, key, value) => {
-    const result = Object.assign({...obj }, {
-        [key]: value
-    });
-    return result;
-};
-
-const transaction = {
-    value: 170
+function addPropertyV4(obj, key, value) {
+    return Object.assign({...obj }, {
+        [key]: value });
 };
