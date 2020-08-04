@@ -1,41 +1,28 @@
-function filterArray(arr, callback) {
-    const result = [];
-
-    for (let i = 0; i < arr.length; i++) {
-
-        const callbackRes = callback(arr[i], i, arr);
-        if (callbackRes) {
-            result.push(arr[i])
-        }
-
-    }
-
+const mergeObjectsV1 = (obj1, obj2) => {
+    const result = Object.assign({}, obj1, obj2);
     return result;
-}
-
-
-//Testing
-
-
-let arr = [10, 30, 1, 6];
-
-const callback = (element) => {
-    const res = element > 20;
-    return res;
-}
-
-console.log(filterArray(arr, callback));
-
-
-// let arr = [10, 30, 1, 6];
-
-// const callback = (element, index, arr) => {
-
-//     console.log(element);
-//     console.log(index);
-//     console.log(arr);
-//     const res = element > 20;
-//     return res;
-// }
-
-// filterArray(array, callback);
+};
+const mergeObjectsV2 = (obj1, obj2) => {
+    const result = Object.assign({}, obj2, obj1);
+    return result;
+};
+const mergeObjectsV3 = (obj1, obj2) => {
+    const result = {...obj1, ...obj2 };
+    return result;
+};
+const mergeObjectsV4 = (obj1, obj2) => {
+    const result = {...obj2, ...obj1 };
+    return result;
+};
+const user1 = {
+    name: 'Bob',
+    age: 17,
+};
+const user2 = {
+    name: 'Patrick',
+    student: false,
+};
+// console.log(mergeObjectsV1(user1, user2));
+// console.log(mergeObjectsV2(user1, user2));
+// console.log(mergeObjectsV3(user1, user2));
+// console.log(mergeObjectsV4(user1, user2));
