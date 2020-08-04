@@ -1,3 +1,6 @@
-const squareArray = numbers => numbers.map(number => number * number);
-const arr = [1, 3, 4, 5];
-console.log(squareArray(arr));
+const reverseArray = numbers =>
+    numbers.slice().sort((a, b) => b - a);
+const arr = [1, 4, 6, 12, 43, 7];
+if (!Array.isArray(arr)) null;
+console.log(reverseArray(arr));
+console.log(arr);
