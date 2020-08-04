@@ -1,3 +1,3 @@
-const compareObjects = (obj1, obj2) => {
-    return Object.entries(obj1).toString() === Object.entries(obj2).toString()
-}
+const squareArray = numbers => numbers.map(number => number * number);
+const arr = [1, 3, 4, 5];
+console.log(squareArray(arr));
