@@ -1,28 +1,19 @@
-const mergeObjectsV1 = (obj1, obj2) => {
-    const result = Object.assign({}, obj1, obj2);
-    return result;
-};
-const mergeObjectsV2 = (obj1, obj2) => {
-    const result = Object.assign({}, obj2, obj1);
-    return result;
-};
-const mergeObjectsV3 = (obj1, obj2) => {
-    const result = {...obj1, ...obj2 };
-    return result;
-};
-const mergeObjectsV4 = (obj1, obj2) => {
-    const result = {...obj2, ...obj1 };
-    return result;
-};
-const user1 = {
-    name: 'Bob',
-    age: 17,
-};
-const user2 = {
-    name: 'Patrick',
-    student: false,
-};
-// console.log(mergeObjectsV1(user1, user2));
-// console.log(mergeObjectsV2(user1, user2));
-// console.log(mergeObjectsV3(user1, user2));
-// console.log(mergeObjectsV4(user1, user2));
+const addPropertyV1 = (userData, userId) => {
+    userData.id = userId;
+    return userData
+}
+const addPropertyV2 = (userData, userId) => {
+    const id = { id: userId }
+    Object.assign(userData, id)
+    return userData
+}
+const addPropertyV3 = (userData, userId) => {
+    const id = { id: userId };
+    return Object.assign({}, userData, id)
+}
+const addPropertyV4 = (userData, userId) => {
+    return {
+        ...userData,
+        id: userId
+    }
+}
