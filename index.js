@@ -1,3 +1,4 @@
-const increaseEvenEI = (arr, delta) =>
-    arr.map(el => el % 2 === 0 ? el + delta : el);
-console.log(increaseEvenEI([2, 5, 6, 7, 8], 20));
+const sum = arr =>
+    arr.reduce((count, el) => count + el);
+
+console.log(sum([2, 5, 6, 3]));
