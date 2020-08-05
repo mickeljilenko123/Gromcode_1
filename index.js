@@ -1,19 +1,28 @@
-const users = {
-    'Tom': 19,
-    'Ann': 16,
-    'Bob': 20,
-}
+//algo
+//1. gather all args
+//2. multiply
 
-const players = {
-    'John Doe': 19,
-    'Bob': 18,
-};
+// const multiply = function(...args) {
+//     let res = 1;
+//     args.forEach(el => {
+//         res = res * el;
+//     });
+//     return res;
+// };
+// console.log(multiply(1, 2, 5));
 
-const copyObj = obj => Object.assign({}, obj);
-console.log(copyObj(players));
 
-// const getAdults = usersObj => Object.entries(usersObj)
-// .filter(user => user[1] >= 18)
-// .map(user => user[0]);
+// const multiply = function(...args) {
 
-// console.log(getAdults(users));
+//    const res = args.reduce((count, el) => {
+//         console.log(count);
+//         return res * el;
+//     });
+//     return res;
+// };
+// console.log(multiply(1, 2, 5));
+
+
+const multiply = (...args) => args.reduce((count, el) => res * el);
+
+ console.log(multiply(1, 2, 5));
