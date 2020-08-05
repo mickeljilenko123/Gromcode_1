@@ -10,11 +10,13 @@ const rooms = {
     ],
 };
 
-const getPeople = rooms => {
-    const roomArray = Object.values(rooms);
+const getPeople = roomsObj => {
+    const roomArray = Object.values(roomsObj);
     console.log(roomArray);
-    const flatArray = roomArray.flat();
-    console.log(flatArray);
+    const filterArray = roomArray.flat();
+    // const flatArray = filterArray.flat(room => room);
+    const mapArray = filterArray.map(room => (room = room.name));
+    return mapArray;
 
 }
 console.log(getPeople(rooms));
