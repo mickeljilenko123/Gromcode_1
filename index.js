@@ -1,7 +1,3 @@
-const reverseArray = numbers =>
-    numbers.slice().reverse();
-if (!Array.isArray(Array)) null;
-const arr = [1, 4, 6, 12, 43, 7];
-
-console.log(reverseArray(arr));
-console.log(arr);
+const increaseEvenEI = (arr, delta) =>
+    arr.map(el => el % 2 === 0 ? el + delta : el);
+console.log(increaseEvenEI([2, 5, 6, 7, 8], 20));
