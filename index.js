@@ -1,29 +1,20 @@
-//algo
-//1. gather all args
-//2. multiply
+const rooms = {
+    room1: [
+        { name: 'room1 name1' }, { name: 'room1 name2' }, { name: 'room1 name3' }, { name: 'room1 name4' }
+    ],
+    room2: [
+        { name: 'room2 name1' }, { name: 'room2 name2' }, { name: 'room2 name3' }, { name: 'room2 name4' }
+    ],
+    room3: [
+        { name: 'room3 name1' }, { name: 'room3 name2' }, { name: 'room3 name3' }, { name: 'room3 name4' }
+    ],
+};
 
-// const multiply = function(...args) {
-//     let res = 1;
-//     args.forEach(el => {
-//         res = res * el;
-//     });
-//     return res;
-// };
-// console.log(multiply(1, 2, 5));
+const getPeople = rooms => {
+    const roomArray = Object.values(rooms);
+    console.log(roomArray);
+    const flatArray = roomArray.flat();
+    console.log(flatArray);
 
-
-// const multiply = function(...args) {
-
-//    const res = args.reduce((count, el) => {
-//         console.log(count);
-//         return res * el;
-//     });
-//     return res;
-// };
-// console.log(multiply(1, 2, 5));
-
-
-const multiply = (...args) =>
-args.reduce((count, el) => count * el);
-
-console.log(multiply(1, 2, 5));
+}
+console.log(getPeople(rooms));
