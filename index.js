@@ -23,6 +23,7 @@
 // console.log(multiply(1, 2, 5));
 
 
-const multiply = (...args) => args.reduce((count, el) => res * el);
+const multiply = (...args) =>
+args.reduce((count, el) => count * el);
 
- console.log(multiply(1, 2, 5));
+console.log(multiply(1, 2, 5));
