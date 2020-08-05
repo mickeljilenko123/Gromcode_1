@@ -1,4 +1,10 @@
-const sum = arr =>
-    arr.reduce((count, el) => count + el);
+const multiply = function() {
+    let total = 0;
 
-console.log(sum([2, 5, 6, 3]));
+    for (let i = 0; i < arguments.length; i += 1) {
+        total += arguments[i];
+    }
+    return total;
+};
+
+console.log(multiply(1, 3, 7));
