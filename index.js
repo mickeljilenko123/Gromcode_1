@@ -8,10 +8,12 @@ const dayTransactions = [
 
 const getTotalBalance = dayTransactions => {
     let total = 0;
-    for (const dayTransaction of dayTransactions) {
-        total += dayTransaction.amount;
-    }
-    console.log(total);
+    dayTransactions.map((el) => {
+        total += el.amount
+    });
+
+    return total;
 
 };
-getTotalBalance(dayTransactions);
+const result = getTotalBalance(dayTransactions);
+console.log(result);
