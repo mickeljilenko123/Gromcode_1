@@ -1,11 +1,7 @@
-const getTotalPrice = arr => {
-    let sum = 0;
-    arr.forEach(element => {
-        sum += element
-    });
-    return '$' + Math.floor(sum * 100) / 100;
+const getRandomNumbers = (len, start, end) => {
+    if (Math.floor(start) >= Math.floor(end))
+        return null;
+    return len.map(len => Math.floor(Math.random() * (start - end + 1) + end));
 }
 
-const numbersArr = [17.159];
-
-console.log(getTotalPrice(numbersArr));
+console.log(getRandomNumbers(10, 1, 7));
