@@ -3,7 +3,7 @@ const getTotalPrice = arr => {
     arr.forEach(element => {
         sum += element
     });
-    return Math.floor(sum * 100) / 100;
+    return '$' + Math.floor(sum * 100) / 100;
 }
 
 const numbersArr = [17.159];
