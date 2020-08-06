@@ -1,43 +1,17 @@
-//input: obhect, string
-//output: object
+'use strict'
 
-function addPropertyV1(urerData, userId) {
-    userData.id = userId;
-    return userData;
-}
+const dayTransactions = [
+    { userld: 22, amount: 60, operation: 'sell' },
+    { userld: 22, amount: 160, operation: 'buy' },
+    { userld: 44, amount: 90, operation: 'sell' },
+];
 
-function addPropertyV2(userData, userId) {
-    Object.assign(userData, { id: userId });
-    return userData;
-}
+const getTotalBalance = dayTransactions => {
+    let total = 0;
+    for (const dayTransaction of dayTransactions) {
+        total += dayTransaction.amount;
+    }
+    console.log(total);
 
-function addPropertyV3(userData, userId) {
-    return Object.assign({}, userData, { id: userId });
-
-}
-
-function addPropertyV4(urerData, userId) {
-    const userDataCopy = {...userData };
-    console.log(userDataCopy);
-}
-
-// function addPropertyV5(urerData, userId) {
-//     const userDataCopy = {...userData };
-//     console.log(userDataCopy);
-// }
-
-
-const obj = {
-    name: 'Andrey',
-    age: 100,
-    city: 'test'
-}
-
-console.log(addPropertyV1(obj, '22222'));
-console.log(obj);
-console.log(addPropertyV2(obj, '33333'));
-console.log(obj);
-console.log(addPropertyV3(obj, '44444'));
-console.log(obj);
-console.log(addPropertyV4(obj, '55555'));
-console.log(obj);
+};
+getTotalBalance(dayTransactions);
