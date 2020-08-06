@@ -1,19 +1,38 @@
-const customers = {
-    "customer-id-1": {
-        name: "William",
-        age: 54
-    },
-    "customer-id-2": {
-        name: "Tom",
-        age: 17
-    }
-};
+//input: obhect, string
+//output: object
 
-const getCustomersList = obj => Object.entries(obj)
-    .map(elem => ({ id: elem[0], ...obj[elem[0]] }))
-    .sort((a, b) => a.age - b.age);
+function addPropertyV1(urerData, userId) {
+    userData.id = userId;
+    return userData;
+}
 
-// const getCustomersList = obj => Object.entries(obj).forEach([key, value]);
+function addPropertyV2(urerData, userId) {
+    Object.assign(userData, { id: userId });
+    return userData;
+}
 
-console.log(getCustomersList(customers));
-console.log(Object.values(customers));
+function addPropertyV3(urerData, userId) {
+    return Object.assign({}, userData, { id: userId });
+
+}
+
+function addPropertyV4(urerData, userId) {
+    const userDataCopy = urerData.slice();
+    console.log(userDataCopy);
+}
+
+
+const obj = {
+    name: 'Andrey',
+    age: 100,
+    city: 'test'
+}
+
+console.log(addPropertyV1(obj, '22222'));
+console.log(obj);
+console.log(addPropertyV1(obj, '33333'));
+console.log(obj);
+console.log(addPropertyV1(obj, '44444'));
+console.log(obj);
+console.log(addPropertyV1(obj, '55555'));
+console.log(obj);
