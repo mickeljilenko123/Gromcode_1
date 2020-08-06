@@ -1,4 +1,6 @@
-const getParsedIntegers = arr => arr.map(item => Number.parseInt(item));
-const getParsedIntegersV2 = arr => [...arr].map(item => parseInt(item));
-const getParsedFloats = arr => [...arr].map(item => Number.parseFloat(item));
-const getParsedFloatsV2 = arr => [...arr].map(item => parseFloat(item));
+const multiRound = num => [
+    Math.floor(num * 100) / 100,
+    Math.round(num * 100) / 100,
+    Math.ceil(num * 100) / 100,
+    Math.trunc(num * 100) / 100, +num.toFixed(2)
+]
