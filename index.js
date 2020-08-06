@@ -6,7 +6,7 @@ const dayTransactions = [
     { userld: 44, amount: 90, operation: 'sell' },
 ];
 
-const getTotalBalance = dayTransactions => {
+const getTotalRevenue = dayTransactions => {
     let total = 0;
     dayTransactions.map((el) => {
         total += el.amount
@@ -15,5 +15,5 @@ const getTotalBalance = dayTransactions => {
     return total;
 
 };
-const result = getTotalBalance(dayTransactions);
+const result = getTotalRevenue(dayTransactions);
 console.log(result);
