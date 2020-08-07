@@ -1,17 +1,28 @@
 const splitText = (text, len) => {
-    const srtArr = [];
+    const strArr = [];
     let startPosition = 0;
+
+    if (text === !String) {
+        return null;
+    }
+
     while (true) {
         let chunk = text.substr(startPosition, len);
+        // if (chunk === !String) {
+        //     return null;
+        // }
         if (chunk.length === 0) {
             break;
         }
-
-        srtArr.push(chunk[0].toUpperCase() + chunk.slice(1));
-        startPosition += len;
-
+        if (len === undefined) {
+            strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+            startPosition += 10;
+        } else {
+            strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+            startPosition += len;
+        }
     }
+    return strArr.join('\n');
 
-    return srtArr.join('\n');
 };
 console.log(splitText('wetwtwew', 4));
