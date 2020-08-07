@@ -1,28 +1,41 @@
-const splitText = (text, len) => {
-    const strArr = [];
-    let startPosition = 0;
+const contacts = [{
+        name: "William",
+        phoneNumber: "555-55-55"
+    },
+    {
+        name: "Kate",
+        phoneNumber: "444-44-44"
+    },
+    {
+        name: "Sam",
+        phoneNumber: "333-33-33"
+    },
+    {
+        name: "Alex",
+        phoneNumber: "222-22-22"
+    },
+    {
+        name: "Linda",
+        phoneNumber: "111-11-11"
+    }
+];
 
-    if (text === !String) {
+const direction = true;
+
+const sortContacts = (contacts, isAsc) => {
+    if (!Array.isArray(contacts)) {
         return null;
     }
+    const result = contacts.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+    });
+    if (isAsc === false) {
 
-    while (true) {
-        let chunk = text.substr(startPosition, len);
-        // if (chunk === !String) {
-        //     return null;
-        // }
-        if (chunk.length === 0) {
-            break;
-        }
-        if (len === undefined) {
-            strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
-            startPosition += 10;
-        } else {
-            strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
-            startPosition += len;
-        }
+        contacts.sort((a, b) => {
+            return b.name.localeCompare(a.name)
+        });
     }
-    return strArr.join('\n');
-
+    return result;
 };
-console.log(splitText('wetwtwew', 4));
+
+console.log(sortContacts(contacts, direction));
