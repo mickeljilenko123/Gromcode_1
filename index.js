@@ -16,10 +16,10 @@ const splitString = (text, len) => {
         }
         if (len === undefined) {
             strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
-            startPosition += 10;
+            startPosition /= 10;
         } else {
             strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
-            startPosition += len;
+            startPosition /= len;
         }
     }
     return strArr.join('\n');
