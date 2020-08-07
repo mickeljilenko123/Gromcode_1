@@ -1,12 +1,17 @@
-const superRound = function(num, len) {
-    const res = Math.pow(10, len);
+const splitText = (text, len) => {
+    const srtArr = [];
+    let startPosition = 0;
+    while (true) {
+        let chunk = text.substr(startPosition, len);
+        if (chunk.length === 0) {
+            break;
+        }
 
-    return [
-        Math.floor(num * res) / res,
-        Math.round(num * res) / res,
-        Math.ceil(num * res) / res,
-        Math.trunc(num * res) / res, +num.toFixed(len)
-    ];
+        srtArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+        startPosition += len;
+
+    }
+
+    return srtArr.join('\n');
 };
-
-console.log(superRound(17.25, 5));
+console.log(splitText('wetwtwew', 4));
