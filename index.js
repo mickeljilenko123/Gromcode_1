@@ -1,17 +1,22 @@
-const countOccurrences = (str1, str2) => {
-    if (str2 === '') return null;
+const calc = expression => {
+    const [a, operator, b] = expression.split(' ');
+    let result;
 
-    let count = 0;
-    let pos = str1.indexOf(str2)
-    while (pos !== -1) {
-        count++;
-        pos = str1.indexOf(str2, pos + 1);
+    switch (operator) {
+        case '+':
+            result = Number(a) + +b;
+            break;
+        case '-':
+            result = a - b;
+            break;
+        case '*':
+            result = a * b;
+            break;
+        case '/':
+            result = a / b;
+            break;
     }
-    return count;
-}
+    return `${expression} = ${result}`;
+};
 
-const someStr = 'hola cola mola';
-
-const countStr = 'ola';
-
-console.log(countOccurrences(someStr, countStr));
+console.log(calc('1 + 2'));
