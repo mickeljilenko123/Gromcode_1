@@ -1,7 +1,13 @@
-const reverseString = str => {
-    // if (str !== String)  return null;
-    if (typeof(str) !== 'string') return null;
-    return str.split('').reverse().join('');
-}
+const cleanTransactionsList = sum => {
+    let resA = sum.filter(elem => {
+        console.log(Number(elem));
+        if (Number(elem)) {
+            return elem;
+        }
+    });
 
-console.log(reverseString('tpircSavaJ'));
+    return resA.map(elem => "$" + (+elem).toFixed(2));
+    // console.log(w)
+};
+
+console.log(cleanTransactionsList(["1.9", "16.4", 17, "6 dollars "]));
