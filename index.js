@@ -1,26 +1,17 @@
-function splitString(str, number = 10) {
+const countOccurrences = (str1, str2) => {
+    if (str2 === '') return null;
 
-
-    const arrStr = [];
-    let startPosition = 0;
-
-    if (typeof str !== 'string') return null;
-
-    while (true) {
-        let word = str.substr(startPosition, number);
-        if (word.length === 0) break;
-
-        startPosition += number;
-        arrStr.push(word);
+    let count = 0;
+    let pos = str1.indexOf(str2)
+    while (pos !== -1) {
+        count++;
+        pos = str1.indexOf(str2, pos + 1);
     }
-
-    let lastElement = arrStr[arrStr.length - 1];
-
-    lastElement += '.'.repeat(number - lastElement.length);
-    arrStr[arrStr.length - 1] = lastElement;
-
-    return arrStr;
-
+    return count;
 }
 
-console.log(splitString('asdasadasd', 3));
+const someStr = 'hola cola mola';
+
+const countStr = 'ola';
+
+console.log(countOccurrences(someStr, countStr));
