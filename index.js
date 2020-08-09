@@ -1,22 +1,7 @@
-const calc = expression => {
-    const [a, operator, b] = expression.split(' ');
-    let result;
+const reverseString = str => {
+    // if (str !== String)  return null;
+    if (typeof(str) !== 'string') return null;
+    return str.split('').reverse().join('');
+}
 
-    switch (operator) {
-        case '+':
-            result = Number(a) + +b;
-            break;
-        case '-':
-            result = a - b;
-            break;
-        case '*':
-            result = a * b;
-            break;
-        case '/':
-            result = a / b;
-            break;
-    }
-    return `${expression} = ${result}`;
-};
-
-console.log(calc('1 + 2'));
+console.log(reverseString('tpircSavaJ'));
