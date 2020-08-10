@@ -1,13 +1,29 @@
-const cleanTransactionsList = sum => {
-    let resA = sum.filter(elem => {
-        console.log(Number(elem));
-        if (Number(elem)) {
-            return elem;
-        }
-    });
-
-    return resA.map(elem => "$" + (+elem).toFixed(2));
-    // console.log(w)
+const obj1 = {
+    name: "Diego",
+    age: 33,
+    country: "Costa Rica",
 };
 
-console.log(cleanTransactionsList(["1.9", "16.4", 17, "6 dollars "]));
+const obj2 = {
+    name: "Diego",
+    age: 33,
+    country: "Costa Rica",
+};
+const compareObjects = (obj1, obj2) => {
+    let keys1 = Object.keys(obj1);
+    let keys2 = Object.keys(obj2);
+
+    if (keys1.length !== keys2.length) {
+        return false;
+    };
+    let bool = true;
+    keys1.forEach((key, index) => {
+        if (obj1[key] !== obj2[keys2[index]]) {
+            return false;
+        }
+    });
+    return bool;
+
+};
+
+console.log(compareObjects(obj1, obj2));
