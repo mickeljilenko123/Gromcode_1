@@ -1,23 +1,6 @@
-export default function createMessenger() {
+ let num = 4;
 
-    let message = 'Just learn it!';
-    let sender = 'Gromcode';
-
-    function sendMessage(name) {
-        console.log(`${name}, ${message} Your ${sender}`);
-    };
-
-    function setMessage(text) {
-        message = text;
-    };
-
-    function setSender(text) {
-        sender = text;
-    };
-
-    return {
-        sendMessage,
-        setMessage,
-        setSender,
-    };
-}
+ function add(n) {
+     console.log(`${n} + ${num}`);
+ }
+ add(4);
