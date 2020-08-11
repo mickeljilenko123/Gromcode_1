@@ -3,22 +3,22 @@ export const createCalculator = () => {
 
     function add(num) {
         // console.log(memory += num);
-        memory += num;
+        return memory += num;
     };
 
     function decrease(num) {
         // console.log(memory -= num);
-        memory -= num;
+        return memory -= num;
     };
 
     function reset() {
         // console.log(memory = 0);
-        memory = 0;
+        return memory = 0;
     };
 
     function getMemo() {
         // console.log(memory);
-        memory;
+        return memory;
     };
 
     return {
