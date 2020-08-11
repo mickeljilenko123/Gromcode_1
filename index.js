@@ -1,22 +1,16 @@
-let memory = 0;
+export const makeCounter = () => {
+    let count = 0;
 
-export function add(num) {
-    memory += num;
+    return function() {
+        return count++;
+    };
 };
 
-export function decrease(num) {
-    memory -= num;
-};
+const counter1 = makeCounter();
+const counter2 = makeCounter();
 
-export function reset() {
-    memory = 0;
-};
-
-export function getMemo() {
-    return memory;
-};
-
-// console.log(add(4));
-// console.log(decrease(4));
-// console.log(reset(4));
-// console.log(getMemo(4));
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter2());
+// console.log(counter1());
+// console.log(counter2());
