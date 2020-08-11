@@ -8,11 +8,11 @@ export function decrease(num) {
     memory -= num;
 };
 
-export function reset(num) {
-    memory = num;
+export function reset() {
+    memory = 0;
 };
 
-export function getMemo(num) {
+export function getMemo() {
     return memory;
 };
 
