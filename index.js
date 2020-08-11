@@ -18,7 +18,7 @@ export const createCalculator = () => {
 
     function getMemo() {
         // console.log(memory);
-        return memory;
+        memory;
     };
 
     return {
@@ -28,3 +28,9 @@ export const createCalculator = () => {
         getMemo,
     }
 };
+
+// const calculator1 = createCalculator();
+// calculator1.add(9);
+// calculator1.decrease(9);
+// calculator1.reset(9);
+// calculator1.getMemo(9);
