@@ -4,7 +4,7 @@ export const createArrayOfFunctions = (n) => {
     if (typeof(num) !== 'number') return null;
 
     for (let i = 0; i < n; i++) {
-        newArr[i] = () => {
+        arr[i] = () => {
             return i;
         };
     }
