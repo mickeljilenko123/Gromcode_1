@@ -1,15 +1,11 @@
-export const createArrayOfFunctions = (n) => {
-    let arr = [];
-    if (n === undefined) return arr;
-    if (typeof(n) !== 'number') return null;
+var foo = 1;
 
-    for (let i = 0; i < n; i++) {
-        arr[i] = () => {
-            return i;
-        };
+export default function bar() {
+    if (!foo) {
+        let foo = 10;
     }
-    return arr;
+
+    return foo;
 }
 
-// createArrayOfFunctions(9);
-// console.log(createArrayOfFunctions(7));
+var foo = bar();
