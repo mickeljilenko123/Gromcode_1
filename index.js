@@ -1,36 +1,55 @@
-export const createCalculator = () => {
-    let memory = 0;
+const name = 'Test';
 
-    function add(num) {
-        // console.log(memory += num);
-        return memory += num;
-    };
+function run() {
+    console.log('run');
+}
 
-    function decrease(num) {
-        // console.log(memory -= num);
-        return memory -= num;
-    };
+function createMessenger() {
+    let message = 'Just learn it';
+    let sender = 'Gromcode';
 
-    function reset() {
-        // console.log(memory = 0);
-        return memory = 0;
-    };
-
-    function getMemo() {
-        // console.log(memory);
-        return memory;
-    };
-
-    return {
-        add,
-        decrease,
-        reset,
-        getMemo,
+    function sendMessage(name) {
+        console.log(`${name}, ${message}! Your ${sender}`);
     }
-};
 
-// const calculator1 = createCalculator();
-// calculator1.add(9);
-// calculator1.decrease(9);
-// calculator1.reset(9);
-// calculator1.getMemo(9);
+    function setSender(newSender) {
+        sender = newSender;
+    }
+
+    function setMessage(text) {
+        message = text;
+    }
+    return {
+        sendMessage,
+        setMessage,
+        setSender,
+    };
+}
+console.log(name);
+
+const messanger1 = createMessenger();
+messanger1.setSender('Set sender');
+messanger1.sendMessage('Hello')
+
+const messanger2 = createMessenger();
+
+// Global lex env
+// {
+//     enviromentRecord: {
+//         name: 'Test',
+//         run: func,
+//         createMessenger: func
+//     },
+//     outer: null
+// }
+
+
+//createMessager lex env
+// {
+// 
+//
+//
+//
+//
+//
+//
