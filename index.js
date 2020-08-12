@@ -1,55 +1,56 @@
-const name = 'Test';
+export function createLogger() {
+    let memory = [];
 
-function run() {
-    console.log('run');
-}
-
-function createMessenger() {
-    let message = 'Just learn it';
-    let sender = 'Gromcode';
-
-    function sendMessage(name) {
-        console.log(`${name}, ${message}! Your ${sender}`);
-    }
-
-    function setSender(newSender) {
-        sender = newSender;
-    }
-
-    function setMessage(text) {
-        message = text;
-    }
-    return {
-        sendMessage,
-        setMessage,
-        setSender,
+    function warn(elem) {
+        memory.push({
+            message: elem,
+            dateTime: new Date(),
+            type: 'warn',
+        });
     };
-}
-console.log(name);
 
-const messanger1 = createMessenger();
-messanger1.setSender('Set sender');
-messanger1.sendMessage('Hello')
+    function error(elem) {
+        memory.push({
+            message: elem,
+            dateTime: new Date(),
+            type: 'error',
+        });
+    };
 
-const messanger2 = createMessenger();
+    function log(elem) {
+        memory.push({
+            message: elem,
+            dateTime: new Date(),
+            type: 'log',
+        });
+    };
 
-// Global lex env
-// {
-//     enviromentRecord: {
-//         name: 'Test',
-//         run: func,
-//         createMessenger: func
-//     },
-//     outer: null
-// }
+    function getRecords(type) {
+        // console.log(type)
+        // if (type !== undefined) {
+        //     let result = memory.filter(el => el.type === type);
+        //     return result;
+        // }
 
+        if (type !== undefined) {
+            let result = memory.map(el => el.type === type)
+                .sort((a, b) => b.dateTime - a.dateTime);
+            console.log(result)
+            return result;
+        }
+    };
 
-//createMessager lex env
-// {
-// 
-//
-//
-//
-//
-//
-//
+    return {
+        warn,
+        error,
+        log,
+        getRecords,
+    };
+};
+// const logger = createLogger();
+// logger.log('User logger in');
+// logger.warn('User try to restricted page');
+// logger.log('User logger out');
+// logger.error('Unexpected error on the site');
+// logger.getRecords();
+// console.log(logger);
