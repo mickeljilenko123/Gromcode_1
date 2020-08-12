@@ -37,9 +37,7 @@ export function createLogger() {
                 .sort((a, b) => b.dateTime - a.dateTime);
             console.log(result)
             return result;
-        } else {
-            return memory.sort((a, b) => b.dateTime - a.dateTime);
-        };
+        }
     };
 
     return {
