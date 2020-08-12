@@ -33,11 +33,13 @@ export function createLogger() {
         // }
 
         if (type !== undefined) {
-            let result = memory.map(el => el.type === type)
+            let result = memory.filter(el => el.type === type)
                 .sort((a, b) => b.dateTime - a.dateTime);
             console.log(result)
             return result;
-        }
+        } else {
+            return memory.sort((a, b) => b.dateTime - a.dateTime);
+        };
     };
 
     return {
@@ -47,10 +49,3 @@ export function createLogger() {
         getRecords,
     };
 };
-// const logger = createLogger();
-// logger.log('User logger in');
-// logger.warn('User try to restricted page');
-// logger.log('User logger out');
-// logger.error('Unexpected error on the site');
-// logger.getRecords();
-// console.log(logger);
