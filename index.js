@@ -9,4 +9,3 @@
      }
      return arr;
  }
- console.log(createArrayOfFunctions(5));
