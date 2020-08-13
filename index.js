@@ -1,13 +1,29 @@
-var foo = 1;
+//hoisting example 1
+console.log(message);
+var message = 'Hoisting is here!';
 
-function bar() {
-    if (!foo) {
-        let foo = 10;
-    }
 
-    return foo;
+//hoisting example 2
+var a = 55;
+console.log(a);
+
+if (a) {
+    let a = 1;
+
+    console.log(a);
 }
 
-var foo = bar();
+console.log(a);
 
-export default foo;
+
+//hoisting example 3
+var a = 77;
+console.log(a);
+
+function print() {
+    let a = 2;
+    console.log(a);
+}
+print();
+
+console.log(a);
