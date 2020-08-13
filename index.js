@@ -29,20 +29,21 @@ const student = {
         console.log(this.name);
     }
 };
-
+export const sayStudentName = student.sayName.bind(student);
+sayStudentName();
 
 /*
  * создайте ф-цию sayStudentName которая будет выводить в консоль имя студента 'Tom'
  * используйте .bind и ф-цию sayName
  */
-const sayStudentName = student.sayName.bind(student);
+export const sayStudentName = student.sayName.bind(student);
 sayStudentName();
 
 /*
  * создайте ф-цию sayBruceName которая будет выводить в консоль имя 'Bruce'
  * используйте ф-цию sayName и .bind с нужным объектом
  */
-const sayBruceName = student.sayName.bind({ name: 'Bruce' });
+export const sayBruceName = student.sayName.bind({ name: 'Bruce' });
 sayBruceName();
 
 // /* ===> 2 <=== */
@@ -60,7 +61,7 @@ const company = {
 //  * используйте ф-цию greeting и .bind с нужным объектом и аргументами
 //  * specialGreeting не должна принимать ни одного аргумента
 //  */
-const specialGreeting = company.greeting.bind(company, 'Bob', 'Marley');
+export const specialGreeting = company.greeting.bind(company, 'Bob', 'Marley');
 specialGreeting();
 
 
@@ -81,7 +82,7 @@ const country = {
 //  * используйте ф-цию getPopulation и .bind с нужным объектом и аргументами
 //  * getUkrainePopulation не должна принимать ни одного аргумента
 //  */
-const getUkrainePopulation = country.getPopulation.bind(country, 43000)
+export const getUkrainePopulation = country.getPopulation.bind(country, 43000)
 
 getUkrainePopulation();
 
@@ -109,5 +110,5 @@ const anotherTransaction = {
 //  * используйте метод transaction.printTransaction и .bind с нужным объектом
 //  * printSpecialTransaction не должна принимать ни одного аргумента
 //  */
-const printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
+export const printSpecialTransaction = transaction.printTransaction.bind(anotherTransaction);
 printSpecialTransaction();
