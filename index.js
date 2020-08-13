@@ -42,8 +42,8 @@ sayStudentName();
  * создайте ф-цию sayBruceName которая будет выводить в консоль имя 'Bruce'
  * используйте ф-цию sayName и .bind с нужным объектом
  */
-// const sayBruceName = student.sayName.bind({ name: 'Bruce' });
-// sayBruceName();
+const sayBruceName = student.sayName.bind({ name: 'Bruce' });
+sayBruceName();
 
 // /* ===> 2 <=== */
 const company = {
