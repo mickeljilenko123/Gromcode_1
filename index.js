@@ -1,6 +1,6 @@
 export const user = {
     getFullName(firstName, lastName) {
-        console.log(`${firstName}, ${lastName}`);
+        return `${firstName}, ${lastName}`;
     }
 }
 
