@@ -1,9 +1,11 @@
 export const user = {
-    getFullName(firstName, lastName) {
-        console.log(`${firstName} ${lastName}`);
-        return `${firstName} ${lastName}`;
+    firstName: 'John',
+    lastName: 'Doe',
+    getFullName() {
+        // console.log(`${this.firstName} ${this.lastName}`);
+        return `${this.firstName} ${this.lastName}`;
     }
 }
 
 const fullName = user.getFullName;
-fullName.call(user, 'John', 'Doe');
+fullName.call(user);
