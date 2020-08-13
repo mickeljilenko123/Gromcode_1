@@ -1,8 +1,8 @@
-const user = {
-    firtsName: 'John',
+export const user = {
+    firstName: 'John',
     lastName: 'Doe',
     getFullName() {
-        console.log(`Hi, I am ${this.firtsName} ${this.lastName}`);
+        console.log(`${this.firsName} ${this.lastName}`);
     }
 }
 
