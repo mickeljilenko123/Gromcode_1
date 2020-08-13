@@ -34,12 +34,12 @@ export function sayName() {
 
 // вызовите ф-цию sayName так, чтобы в консоль вывелось имя студента 
 // ... your code here
-sayName.call(student);
+sayName.apply(student);
 
 // вызовите ф-цию sayName так, чтобы в консоль вывелось имя 'Bruce' (используйте другой объект)
 // ... your code here
 
-sayName.call({ name: 'Bruce' });
+sayName.apply({ name: 'Bruce' });
 
 /* ===> 2 <=== */
 const company = {
@@ -54,7 +54,7 @@ function greeting(firstName, lastName) {
 // 'Hello, Bob Marley. Welcome to the Microsoft'
 
 // используйте объект company
-greeting.call(company, 'Bob', 'Marley');
+greeting.apply(company, ['Bob', 'Marley']);
 
 
 /* ===> 3 <=== */
@@ -66,7 +66,7 @@ const country = {
 function getPopulation(population) {
     console.log(`Population in ${this.countryName} is ${population}`);
 }
-getPopulation.call(country, 43000);
+getPopulation.apply(country, [43000]);
 
 // вызовите ф-цию getPopulation так, чтобы она вернула 
 // 'Population in Ukraine is 43000'
@@ -99,4 +99,4 @@ const anotherTransaction = {
 // '400 USD - buy on NASDAQ'
 // используйте объект anotherTransaction как контекст
 const func = transaction.printTransaction;
-func.call(anotherTransaction);
+func.apply(anotherTransaction);
