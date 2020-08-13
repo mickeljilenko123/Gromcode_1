@@ -34,19 +34,21 @@ export function sayName() {
 
 // вызовите ф-цию sayName так, чтобы в консоль вывелось имя студента 
 // ... your code here
-sayName.apply(student);
+const say1 = sayName.bind(student);
+say1();
 
 // вызовите ф-цию sayName так, чтобы в консоль вывелось имя 'Bruce' (используйте другой объект)
 // ... your code here
 
-sayName.apply({ name: 'Bruce' });
+const say = sayName.bind({ name: 'Bruce' });
+say();
 
 /* ===> 2 <=== */
 const company = {
     companyName: 'Microsoft'
 };
 
-function greeting(firstName, lastName) {
+export function greeting(firstName, lastName) {
     console.log(`Hello, ${firstName} ${lastName}. Welcome to the ${this.companyName}`);
 }
 
@@ -54,8 +56,9 @@ function greeting(firstName, lastName) {
 // 'Hello, Bob Marley. Welcome to the Microsoft'
 
 // используйте объект company
-greeting.apply(company, ['Bob', 'Marley']);
+const reggie = greeting.bind(company, 'Bob', 'Marley');
 
+reggie()
 
 /* ===> 3 <=== */
 const country = {
@@ -63,10 +66,12 @@ const country = {
     capital: 'Kyiv'
 };
 
-function getPopulation(population) {
+export function getPopulation(population) {
     console.log(`Population in ${this.countryName} is ${population}`);
 }
-getPopulation.apply(country, [43000]);
+
+const pop = getPopulation.bind(country, [43000]);
+pop();
 
 // вызовите ф-цию getPopulation так, чтобы она вернула 
 // 'Population in Ukraine is 43000'
@@ -98,5 +103,5 @@ const anotherTransaction = {
 // вызовите метод transaction.printTransaction так, чтобы в консоль вывелось
 // '400 USD - buy on NASDAQ'
 // используйте объект anotherTransaction как контекст
-const func = transaction.printTransaction;
-func.apply(anotherTransaction);
+const func = transaction.printTransaction.bind(anotherTransaction);
+func();
