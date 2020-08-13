@@ -1,8 +1,8 @@
-const user = {
+export const user = {
     getFullName(firstName, lastName) {
         console.log(`${firstName}, ${lastName}`);
     }
 }
 
-export const fullName = user.getFullName;
+const fullName = user.getFullName;
 fullName.call(user, 'John', 'Doe');
