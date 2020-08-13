@@ -54,7 +54,7 @@ function greeting(firstName, lastName) {
 // 'Hello, Bob Marley. Welcome to the Microsoft'
 
 // используйте объект company
-greeting.apply(company, ['Bob', 'Marley']);
+greeting.call(company, 'Bob', 'Marley');
 
 
 /* ===> 3 <=== */
@@ -66,7 +66,7 @@ const country = {
 function getPopulation(population) {
     console.log(`Population in ${this.countryName} is ${population}`);
 }
-getPopulation.apply(country, [43000]);
+getPopulation.call(country, 43000);
 
 // вызовите ф-цию getPopulation так, чтобы она вернула 
 // 'Population in Ukraine is 43000'
