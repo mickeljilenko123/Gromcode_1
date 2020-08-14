@@ -1,0 +1,5 @@
+no-unused-vars
+no-var
+no-var
+eqeqeq
+no-under
