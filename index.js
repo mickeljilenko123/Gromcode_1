@@ -1,20 +1,11 @@
-'use strict;'
-
-export const event = {
-    guests: [
-        { name: 'Tom', age: 17, email: 'exampe@server.com' },
-        { name: 'John', age: 18, email: 'exampe@server.com' },
-    ],
-    message: 'Welcome to the party!',
-    getInvitations() {
-        return this.guests
-            .filter(({ age }) => age >= 18)
-            .map(({ name, email }) => ({
-                email: `${email} `,
-                message: `Dear ${name}! ${this.message}`,
-                email
-            }));
+const wallet = {
+    transactions: [1, 2, 56, 31, 65],
+    getMax() {
+        return Math.max(...this.transactions)
+    },
+    getMin() {
+        return Math.min(...this.transactions)
     }
-}
-
-console.log(event.getInvitations());
+};
+console.log(wallet.getMax());
+console.log(wallet.getMin());
