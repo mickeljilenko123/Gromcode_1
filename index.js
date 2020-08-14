@@ -1,4 +1,4 @@
-const wallet = {
+export const wallet = {
     transactions: [1, 2, 56, 31, 65],
     getMax() {
         return Math.max(...this.transactions)
