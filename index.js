@@ -1,11 +1,7 @@
-export const wallet = {
-    transactions: [1, 2, 56, 31, 65],
-    getMax() {
-        return Math.max(...this.transactions)
-    },
-    getMin() {
-        return Math.min(...this.transactions)
-    }
-};
-console.log(wallet.getMax());
-console.log(wallet.getMin());
+export function sumOfSquares() {
+    return [].reduce.apply(arguments, [(acc, elem) => {
+        elem = elem * elem;
+        return acc + elem;
+    }, 0]);
+}
+console.log(sumOfSquares(1, 3, 4));
