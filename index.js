@@ -3,17 +3,18 @@
 export const event = {
     guests: [
         { name: 'Tom', age: 17, email: 'exampe@server.com' },
-        { name: 'John', age: 18, email: 'exampe@server.com' }
+        { name: 'John', age: 18, email: 'exampe@server.com' },
     ],
     message: 'Welcome to the party!',
     getInvitations() {
         return this.guests
             .filter(({ age }) => age >= 18)
-            .map(({ email, name }) => ({
+            .map(({ name, email }) => ({
                 email: `${email} `,
-                text: `Dear ${name}! ${this.message}`,
+                message: `Dear ${name}! ${this.message}`,
                 email
             }));
     }
 }
+
 console.log(event.getInvitations());
