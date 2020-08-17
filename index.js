@@ -1,37 +1,28 @@
-class Vehicle {
-    constructor(name, numberOfWheels) {
-        this.name = name;
-        this.numberOfWheels = numberOfWheels;
-    }
+class Wallet {
+    balance = 0;
 
-    move() {
-        console.log(`${this.name} is moving`);
+    getBalance() {
+        return this.balance;
     }
-
-    stop() {
-        console.log(`${this.name} stopped`);
+    deposit(amount) {
+        this.balance += amount;
     }
-};
-
-class Ship extends Vehicle {
-    constructor(name, numberOfWheels, maxSpeed) {
-        super(name, numberOfWheels);
-        this.maxSpeed = maxSpeed;
-    }
-
-    move() {
-        console.log(`${this.name} lifting anchor up`);
-        super.move();
-    }
-
-    stop() {
-        super.stop();
-        console.log(`${this.name} lifting anchor down`);
+    withdraw(amount) {
+        if (amount > this.balance) {
+            console.log('No enough funds');
+            return;
+        }
+        this.balance -= amount;
     }
 };
 
-// const ship1 = new Ship('Argo');
+const walletUser = new Wallet();
 
-// ship1.move();
+// console.log(walletUser.getBalance());
+// walletUser.deposit(100);
+// console.log(walletUser.getBalance());
+// walletUser.withDraw(45);
+// walletUser.withDraw(100);
+// console.log(walletUser.getBalance());
 
-export { Vehicle, Ship };
+export { Wallet };
