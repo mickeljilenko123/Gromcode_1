@@ -1,44 +1,37 @@
-class User {
-    constructor(name, age) {
+class Vehicle {
+    constructor(name, numberOfWheels) {
         this.name = name;
-        this.age = age;
+        this.numberOfWheels = numberOfWheels;
     }
 
-    static createEmpty() {
-        return new User('', null);
+    move() {
+        console.log(`${this.name} is moving`);
     }
 
-    sayHi() {
-        console.log(`Hi, I am ${this.name}`);
-    }
-
-    requestNewPhoto() {
-        console.log(`New photo request was sent for ${this.name}`);
-    }
-
-    setAge(age) {
-        this.age = age;
-        // console.log(age);
-
-        if (age < 0) {
-            return false;
-        }
-
-        if (age >= 25) {
-            console.log(`New photo request was sent for ${this.name}`);
-            // this.age = age;
-        }
-        return age;
+    stop() {
+        console.log(`${this.name} stopped`);
     }
 };
 
-// const anotherUser1 = new User("Olaf", 3);
-console.log(User.createEmpty());
+class Ship extends Vehicle {
+    constructor(name, numberOfWheels, maxSpeed) {
+        super(name, numberOfWheels);
+        this.maxSpeed = maxSpeed;
+    }
 
-// anotherUser1.sayHi()
-// anotherUser1.setAge()
-// anotherUser1.requestNewPhoto()
+    move() {
+        console.log(`${this.name} lifting anchor up`);
+        super.move();
+    }
 
-export {
-    User
+    stop() {
+        super.stop();
+        console.log(`${this.name} lifting anchor down`);
+    }
 };
+
+// const ship1 = new Ship('Argo');
+
+// ship1.move();
+
+export { Vehicle, Ship };
