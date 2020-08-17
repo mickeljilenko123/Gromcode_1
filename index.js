@@ -1,25 +1,29 @@
-// const footballClub = {
-//     name: 'Liverpool',
-//     country: 'England',
-//     color: 'red',
-//     stadium: 'Enfield',
-// };
+const vehicle = {
+    move() {
+        console.log(`${this.name} is moving`);
+    },
+    stop() {
+        console.log(`${this.name} stopped`);
+    },
+}
 
-function saveCalls(allCalls) {
-
-    // let calls = [];
-    function withMemory() {
-        withMemory.calls.push([...arguments]);
-        return allCalls.call(this, arguments);
-    }
-    withMemory.calls = [];
-    return withMemory;
-
+const ship = {
+    name: 'Argo',
+    hasWheels: false,
+    startMachine() {
+        console.log(`${this.name} lifting anchor up`);
+        ship.move();
+    },
+    stopMachine() {
+        ship.stop();
+        console.log(`${this.name} lifting anchor down`);
+    },
+    __proto__: vehicle,
 };
 
+// ship.startMachine()
 
 export {
-    saveCalls
+    vehicle,
+    ship
 };
-
-// =============================================================
