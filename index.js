@@ -1,20 +1,44 @@
-const user = {
-    firstName: 'Bruce',
-    lastName: 'Wayne',
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
-        // console.log(`${this.firstName} ${this.lastName}`);
-    },
-    set fullName(value) {
-        const [firstName, lastName] = value.split(' ');
-        this.firstName = firstName;
-        this.lastName = lastName;
-    },
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    static createEmpty() {
+        return new User('', null);
+    }
+
+    sayHi() {
+        console.log(`Hi, I am ${this.name}`);
+    }
+
+    requestNewPhoto() {
+        console.log(`New photo request was sent for ${this.name}`);
+    }
+
+    setAge(age) {
+        this.age = age;
+        // console.log(age);
+
+        if (age < 0) {
+            return false;
+        }
+
+        if (age >= 25) {
+            console.log(`New photo request was sent for ${this.name}`);
+            // this.age = age;
+        }
+        return age;
+    }
 };
-// user.fullName
 
-// user.fullName = 'Tom Lee';
+// const anotherUser1 = new User("Olaf", 3);
+console.log(User.createEmpty());
 
-// user.fullName
+// anotherUser1.sayHi()
+// anotherUser1.setAge()
+// anotherUser1.requestNewPhoto()
 
-export default user;
+export {
+    User
+};
