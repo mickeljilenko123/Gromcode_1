@@ -21,9 +21,20 @@ const ship = {
     __proto__: vehicle,
 };
 
-// ship.startMachine()
+function getOwnProps(value) {
+    // console.log(Object.keys(value))
+    // return Object.keys(value);
+    for (let prop in value) {
+        if (value.hasOwnProperty(prop)) {
+            // console.log(prop);
+            return [prop];
+        };
+    };
+};
+
+
+console.log(getOwnProps(ship));
 
 export {
-    vehicle,
-    ship
+    getOwnProps
 };
