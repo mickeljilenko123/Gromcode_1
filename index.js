@@ -1,40 +1,20 @@
-const vehicle = {
-    move() {
-        console.log(`${this.name} is moving`);
+const user = {
+    firstName: 'Bruce',
+    lastName: 'Wayne',
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+        // console.log(`${this.firstName} ${this.lastName}`);
     },
-    stop() {
-        console.log(`${this.name} stopped`);
+    set fullName(value) {
+        const [firstName, lastName] = value.split(' ');
+        this.firstName = firstName;
+        this.lastName = lastName;
     },
-}
-
-const ship = {
-    name: 'Argo',
-    hasWheels: false,
-    startMachine() {
-        console.log(`${this.name} lifting anchor up`);
-        ship.move();
-    },
-    stopMachine() {
-        ship.stop();
-        console.log(`${this.name} lifting anchor down`);
-    },
-    __proto__: vehicle,
 };
+// user.fullName
 
-function getOwnProps(value) {
-    // console.log(Object.keys(value))
-    // return Object.keys(value);
-    for (let prop in value) {
-        if (value.hasOwnProperty(prop)) {
-            // console.log(prop);
-            return [prop];
-        };
-    };
-};
+// user.fullName = 'Tom Lee';
 
+// user.fullName
 
-console.log(getOwnProps(ship));
-
-export {
-    getOwnProps
-};
+export default user;
