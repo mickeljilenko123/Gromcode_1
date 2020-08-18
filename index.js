@@ -1,48 +1,41 @@
-const timer = {
-    secondsPassed: 0,
-    minsPassed: 0,
-    // startTimer() {
-    //     const adder = function() {
-    //         console.log(this);
-    //         this.secondsPassed++;
-    //     };
-    //const adderBinded = adder.bind(this);
-    //setInterval(adderBinder, 1000);
-    // }
-    startTimer() {
-        setInterval(() => {
-            console.log(this);
-            this.secondsPassed += 1;
-        }, 1000);
-    },
-    getTime() {
-
+class Order {
+    constructor(price, city, type) {
+        this.id = `${Math.random()}`;
+        this.price = price;
+        this.dateCreated = new Date();
+        this.isConfirmed = false;
+        this.dateConfirmed = null;
+        this.city = city;
+        this.type = type;
     }
-    reset() {
 
+    checkPrice() {
+        if (this.price < 1000) {
+            return false;
+        }
+        return true;
     }
-}
 
+    confirmOrder() {
+        if (!this.isConfirmed) {
+            this.isConfirmed = true;
+            this.dateConfirmed = new Date();
+        }
+    }
 
-// setTimeout(() => {
-//     console.log('hello');
-// }, 2000);
-// setInterval(() => {
-//     console.log(this.secondsPassed);
-// }, 60);
+    isValidType() {
+        if (this.type === 'Buy' || this.type === 'Sell') {
+            return true;
+        }
+        return false;
+    }
+};
 
+const newOrder = new Order(3443, 'Lion', 'Sell');
 
-// const user = {
-//     name: 'Text',
-//     run() {
-//         console.log(this);
-//     }
-// }
-// user.run();
+console.log(newOrder)
+console.log(newOrder.checkPrice());
+console.log(newOrder.confirmOrder());
+console.log(newOrder.isValidType());
 
-// function printer(func) {
-//     console.log('I am running');
-//     func();
-// }
-// const func = user.run;
-// printer
+export { Order };
