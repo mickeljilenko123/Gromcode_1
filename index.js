@@ -1,28 +1,48 @@
-class Wallet {
-    balance = 0;
+const timer = {
+    secondsPassed: 0,
+    minsPassed: 0,
+    // startTimer() {
+    //     const adder = function() {
+    //         console.log(this);
+    //         this.secondsPassed++;
+    //     };
+    //const adderBinded = adder.bind(this);
+    //setInterval(adderBinder, 1000);
+    // }
+    startTimer() {
+        setInterval(() => {
+            console.log(this);
+            this.secondsPassed += 1;
+        }, 1000);
+    },
+    getTime() {
 
-    getBalance() {
-        return this.balance;
     }
-    deposit(amount) {
-        this.balance += amount;
+    reset() {
+
     }
-    withdraw(amount) {
-        if (amount > this.balance) {
-            console.log('No enough funds');
-            return;
-        }
-        this.balance -= amount;
-    }
-};
+}
 
-const walletUser = new Wallet();
 
-// console.log(walletUser.getBalance());
-// walletUser.deposit(100);
-// console.log(walletUser.getBalance());
-// walletUser.withDraw(45);
-// walletUser.withDraw(100);
-// console.log(walletUser.getBalance());
+// setTimeout(() => {
+//     console.log('hello');
+// }, 2000);
+// setInterval(() => {
+//     console.log(this.secondsPassed);
+// }, 60);
 
-export { Wallet };
+
+// const user = {
+//     name: 'Text',
+//     run() {
+//         console.log(this);
+//     }
+// }
+// user.run();
+
+// function printer(func) {
+//     console.log('I am running');
+//     func();
+// }
+// const func = user.run;
+// printer
