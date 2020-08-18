@@ -1,60 +1,48 @@
-class User {
-    constructor(id, name, sessionId) {
-        this._id = id;
-        this._name = name;
-        this._sessionId = sessionId;
-    }
-    get id() {
-        return this._id;
-    }
+const tasks = [{
+        text: 'Buy milk',
+        done: false
+    },
+    {
+        text: 'Pick up Tom from airport',
+        done: false
+    },
+    {
+        text: 'Visit party',
+        done: false
+    },
+    {
+        text: 'Visit doctor',
+        done: true
+    },
+    {
+        text: 'Buy meat',
+        done: true
+    },
+];
 
-    get name() {
-        return this._name;
-    }
+const renderListItem = listItems => {
+    const listElement = document.querySelector('.list');
 
-    get sessionId() {
-        return this._sessionId;
-    }
-};
-
-class UserRepository {
-    constructor(users) {
-        // super(id, name, sessionId, users)
-        this._users = Object.freeze(users);
-    }
-
-    get users() {
-        return this._users;
-    }
-
-    getUserNames() {
-        return this._users.map(pers => pers._name);
-    }
-
-    getUserIds() {
-        return this._users.map(pers => pers._id);
-    }
-
-    getUserNameById(id) {
-        for (let pers of this._users) {
-            console.log(this._users)
-            if (pers.id === id) {
-                console.log(pers)
-                return pers.name;
+    const listItemsElements = listItems
+        .sort((a, b) => a.done - b.done)
+        .map(({
+            text,
+            done
+        }) => {
+            const listItemElement = document.createElement('li');
+            listItemElement.classList.add('list__item');
+            if (done) {
+                listItemElement.classList.add('list__item_done');
             }
-        }
-    }
+            const checkboxElement = document.createElement('input');
+            checkboxElement.setAttribute('type', 'checkbox');
+            checkboxElement.checked = done;
+            checkboxElement.classList.add('list__item-checkbox');
+            listItemElement.append(checkboxElement, text);
+
+            return listItemElement;
+        })
+    listElement.append(...listItemsElements);
 };
 
-const usersArr = new User(`${Math.random()}`, 'Leon', '12345');
-
-console.log(usersArr);
-
-const getUsersData = new UserRepository(['Lynn', 'Freddy', 'Mark', 'Spiderman']);
-
-console.log(getUsersData);
-console.log(getUsersData.getUserNames());
-console.log(getUsersData.getUserIds());
-console.log(getUsersData.getUserNameById());
-
-export { User, UserRepository };
+console.log(renderListItem(tasks));
