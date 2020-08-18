@@ -1,41 +1,60 @@
-class Order {
-    constructor(price, city, type) {
-        this.id = `${Math.random()}`;
-        this.price = price;
-        this.dateCreated = new Date();
-        this.isConfirmed = false;
-        this.dateConfirmed = null;
-        this.city = city;
-        this.type = type;
+class User {
+    constructor(id, name, sessionId) {
+        this._id = id;
+        this._name = name;
+        this._sessionId = sessionId;
+    }
+    get id() {
+        return this._id;
     }
 
-    checkPrice() {
-        if (this.price < 1000) {
-            return false;
-        }
-        return true;
+    get name() {
+        return this._name;
     }
 
-    confirmOrder() {
-        if (!this.isConfirmed) {
-            this.isConfirmed = true;
-            this.dateConfirmed = new Date();
-        }
-    }
-
-    isValidType() {
-        if (this.type === 'Buy' || this.type === 'Sell') {
-            return true;
-        }
-        return false;
+    get sessionId() {
+        return this._sessionId;
     }
 };
 
-const newOrder = new Order(3443, 'Lion', 'Sell');
+class UserRepository {
+    constructor(users) {
+        // super(id, name, sessionId, users)
+        this._users = Object.freeze(users);
+    }
 
-console.log(newOrder)
-console.log(newOrder.checkPrice());
-console.log(newOrder.confirmOrder());
-console.log(newOrder.isValidType());
+    get users() {
+        return this._users;
+    }
 
-export { Order };
+    getUserNames() {
+        return this._users.map(pers => pers._name);
+    }
+
+    getUserIds() {
+        return this._users.map(pers => pers._id);
+    }
+
+    getUserNameById(id) {
+        for (let pers of this._users) {
+            console.log(this._users)
+            if (pers.id === id) {
+                console.log(pers)
+                return pers.name;
+            }
+        }
+    }
+};
+
+const usersArr = new User(`${Math.random()}`, 'Leon', '12345');
+
+console.log(usersArr);
+
+const getUsersData = new UserRepository(['Lynn', 'Freddy', 'Mark', 'Spiderman']);
+
+console.log(getUsersData);
+console.log(getUsersData.getUserNames());
+console.log(getUsersData.getUserIds());
+console.log(getUsersData.getUserNameById());
+
+export { User, UserRepository };
