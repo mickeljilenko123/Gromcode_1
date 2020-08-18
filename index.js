@@ -1,15 +1,15 @@
-export const getTitleElement = () => {
-    const titleElem = document.querySelector('.title');
-    console.dir(titleElem);
-    return titleElem;
+export function getItemsList() {
+    const elementsList = document.querySelectorAll('.technology');
+    console.dir(elementsList);
+    return elementsList;
 };
 
-getTitleElement();
+getItemsList();
 
-export const getInputElement = () => {
-    const inputElem = document.querySelector('input[type="text"]');
-    console.dir(inputElem);
-    return inputElem;
+export function getItemsArray() {
+    const elementsArray = document.querySelectorAll('.tool');
+    console.dir(Array.from(elementsArray).map(elem => elem));
+    return Array.from(elementsArray).map(elem => elem);
 };
 
-getInputElement();
+getItemsArray();
