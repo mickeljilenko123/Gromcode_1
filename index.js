@@ -1,15 +1,11 @@
-export function getItemsList() {
-    const elementsList = document.querySelectorAll('.technology');
-    console.dir(elementsList);
-    return elementsList;
+function setTitle(text) {
+    const setText = document.querySelector('.title');
+    setText.textContent = text;
+    // console.log(setText)
 };
 
-getItemsList();
 
-export function getItemsArray() {
-    const elementsArray = document.querySelectorAll('.tool');
-    console.dir(Array.from(elementsArray).map(elem => elem));
-    return Array.from(elementsArray).map(elem => elem);
-};
 
-getItemsArray();
+// setTitle('hg');
+
+export{ setTitle };
