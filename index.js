@@ -1,4 +1,4 @@
-function finishList() {
+export function finishList() {
 
     const itemOne = document.createElement('li');
     itemOne.textContent = '1';
