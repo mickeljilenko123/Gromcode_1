@@ -1,21 +1,16 @@
-export const manageClasses = () => {
-        // const ul = document.querySelector('ul');
-        // console.log(ul);
+function squaredNumbers() {
 
-        const liCreate = document.querySelector('.one');
-        liCreate.classList.add('selected')
-        console.log(liCreate);
+    const squareNum = document.querySelectorAll('li[data-number');
+    squareNum.forEach(function(item) {
+            // item.dataset.number;
+            // console.log(item)
+            // console.log(a.dataset.number)
+            item.dataset.squaredNumber = item.dataset.number * item.dataset.number;
+            // console.log(item)
+        })
+        // console.log(findClass2)
+};
 
-        const liTwo = document.querySelector('.two');
-        liTwo.classList.remove('selected')
-        console.log(liTwo);
+// squaredNumbers();
 
-        const liThree = document.querySelector('.three');
-        liThree.classList.remove('three_done')
-        console.log(liThree);
-
-        const liFour = document.querySelector('.four');
-        liFour.classList.add('another-class')
-        console.log(liFour);
-    }
-    // manageClasses();
+export { squaredNumbers };
