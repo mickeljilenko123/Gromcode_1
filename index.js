@@ -1,8 +1,8 @@
-export const setButton = (buttonText) => {
-    const setBut = document.querySelector('body');
-    setBut.innerHTML = `<button>${buttonText}</button>`;
-    console.log(setBut);
-    return setBut;
-}
-const buttonText = 'Как дела?';
-setButton(buttonText);
+ export const clearList = () => {
+     const clearL = document.querySelector('.categories');
+     clearL.innerHTML = ' ';
+     console.log(clearL);
+     return clearL;
+ }
+
+ clearList();
