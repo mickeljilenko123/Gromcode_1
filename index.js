@@ -1,4 +1,4 @@
-const finishForm = () => {
+export const finishForm = () => {
     const formCreate = document.createElement('form');
     formCreate.classList.add('login-form');
     const inputCreate = document.createElement('input');
