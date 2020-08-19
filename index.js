@@ -17,4 +17,3 @@ export function finishList() {
     document.querySelector('ul').append(itemEight);
 
 }
-finishList();
