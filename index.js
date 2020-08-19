@@ -12,5 +12,3 @@
      // console.log(setNewInput)
      // console.log(setLogin)
  };
-
- finishForm();
