@@ -1,10 +1,18 @@
-export const finishForm = () => {
-    const formCreate = document.createElement('form');
-    formCreate.classList.add('login-form');
-    const inputCreate = document.createElement('input');
-    formCreate.append(inputCreate);
-    inputCreate.setAttribute('text', 'password');
-    inputCreate.setAttribute('name', 'password');
-    return formCreate;
-}
-finishForm();
+export function finishForm() {
+    const setLogin = document.querySelector('input');
+    setLogin.setAttribute('name', 'login')
+
+    const newInput = document.createElement('input');
+
+    const setNewInput = document.querySelector('.login-form');
+    setNewInput.append(newInput);
+
+    newInput.setAttribute('type', 'password');
+    newInput.setAttribute('name', 'password');
+    // console.log(setNewInput)
+    // console.log(setLogin)
+};
+
+// finishForm();
+
+export { finishForm };
