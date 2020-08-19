@@ -30,7 +30,7 @@
 // timer.startTimer();
 // // timer.stopTimer();
 
-export const setButton = () => {
+export function setButton() {
     const setBut = document.querySelector('body');
     setBut.innerHTML = '<button>buttonText</button>';
     console.log(setBut);
