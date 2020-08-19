@@ -1,11 +1,11 @@
-const getTitleElement = title => {
+const getTitleElement = () => {
     const titleElem = document.querySelector('.title');
     console.dir(titleElem);
     return titleElem;
 }
 getTitleElement();
 
-const getInputElement = input => {
+const getInputElement = () => {
     const inputElem = document.querySelector('input', 'text');
     console.dir(inputElem);
     return inputElem;
