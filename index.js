@@ -1,14 +1,21 @@
- export function finishForm() {
-     const setLogin = document.querySelector('input');
-     setLogin.setAttribute('name', 'login')
+export const manageClasses = () => {
+        // const ul = document.querySelector('ul');
+        // console.log(ul);
 
-     const newInput = document.createElement('input');
+        const liCreate = document.querySelector('.one');
+        liCreate.classList.add('selected')
+        console.log(liCreate);
 
-     const setNewInput = document.querySelector('.login-form');
-     setNewInput.append(newInput);
+        const liTwo = document.querySelector('.two');
+        liTwo.classList.remove('selected')
+        console.log(liTwo);
 
-     newInput.setAttribute('type', 'password');
-     newInput.setAttribute('name', 'password');
-     // console.log(setNewInput)
-     // console.log(setLogin)
- };
+        const liThree = document.querySelector('.three');
+        liThree.classList.remove('three_done')
+        console.log(liThree);
+
+        const liFour = document.querySelector('.four');
+        liFour.classList.add('another-class')
+        console.log(liFour);
+    }
+    // manageClasses();
