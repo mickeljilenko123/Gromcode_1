@@ -1,19 +1,19 @@
-const getTitle = () => {
+function getTitle() {
     return document.querySelector('.title').textContent;
 }
 getTitle();
 
-const getDescription = () => {
+function getDescription() {
     return document.querySelector('.about').innerText;
 }
 getDescription();
 
-const getPlans = () => {
+function getPlans() {
     return document.querySelector('.plans').innerHTML;
 }
 getPlans();
 
-const getGoal = () => {
+function getGoal() {
     return document.querySelector('.goal').outerHTML;
 }
 getGoal();
