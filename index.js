@@ -1,18 +1,20 @@
-export const finishList = () => {
-    const addElem = document.createElement('ul');
-    addElem.classList.add('.list');
+function finishList() {
 
-    const addList = document.createElement('li');
-    const addList2 = document.createElement('li');
-    const addList3 = document.createElement('li');
-    addList3.classList.add('special');
-    const addList4 = document.createElement('li');
-    addElem.append(addList, addList2, addList3, addList4);
-    addList.textContent = '3';
-    addList2.textContent = '2';
-    addList3.textContent = '5';
-    addList4.textContent = '7';
-    console.log(addElem);
+    const itemOne = document.createElement('li');
+    itemOne.textContent = '1';
+    document.querySelector('ul').prepend(itemOne);
+
+    const itemFour = document.createElement('li');
+    itemFour.textContent = '4';
+    document.querySelector('.special').before(itemFour);
+
+    const itemSix = document.createElement('li');
+    itemSix.textContent = '6';
+    document.querySelector('.special').after(itemSix);
+
+    const itemEight = document.createElement('li');
+    itemEight.textContent = '8';
+    document.querySelector('ul').append(itemEight);
 
 }
 finishList();
