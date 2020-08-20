@@ -1,4 +1,3 @@
+const getText = document.querySelector('.text-input');
 
-document.querySelector('.create-btn').addEventListener('click', () => {alert('done')});
-
-
+document.querySelector('.text-input').addEventListener('change',() => {console.log(getText.value)});
