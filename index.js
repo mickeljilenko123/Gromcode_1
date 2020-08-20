@@ -1,16 +1,19 @@
-function squaredNumbers() {
+function getSection(num) {
+    const findNumberSec = document.querySelector(`span[data-number="${num}"]`);
+    const getTag = findNumberSec.closest('div');
+    const getDataSection = getTag.getAttribute('data-section');
+    // console.log(findNumberSec)
+    // console.log(getTag)
+    // console.log(getDataSection)
+    // findNumberSec.forEach(function(item) {
+    //     console.log(item.dataset.number)
+    //     if (item.dataset.number === num) {
+    //         console.log(item)
+    //     }
+    // })
+    return getDataSection;
+}
 
-    const squareNum = document.querySelectorAll('li[data-number');
-    squareNum.forEach(function(item) {
-            // item.dataset.number;
-            // console.log(item)
-            // console.log(a.dataset.number)
-            item.dataset.squaredNumber = item.dataset.number * item.dataset.number;
-            // console.log(item)
-        })
-        // console.log(findClass2)
-};
+// getSection(5);
 
-// squaredNumbers();
-
-export { squaredNumbers };
+export { getSection };
