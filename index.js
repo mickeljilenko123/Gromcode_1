@@ -1,12 +1,11 @@
 
-const onceClick = document.querySelector('.single-use-btn');
-
-function myClickHandler() {
-    console.log('clicked')
-    onceClick.removeEventListener('click', myClickHandler, false);
+function hendleClick(event) {
+    const getText = event.target;
+    console.log(getText.textContent);
 };
 
-onceClick.addEventListener('click', myClickHandler);
+const setText = document.querySelectorAll('.btn');
 
-// onceClick.addEventListener('click', myClickHandler, {once: true});
-
+setText.forEach(function(btn) {
+    btn.addEventListener('click', hendleClick);
+});
