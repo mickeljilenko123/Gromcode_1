@@ -1,11 +1,8 @@
+const getInputValue = document.querySelector('.text-input');
 
-function hendleClick(event) {
-    const getText = event.target;
-    console.log(getText.textContent);
-};
+const foo = (event) => {
+    const getEvent = event.target;
+    console.log(getEvent.value)
+}
 
-const setText = document.querySelectorAll('.btn');
-
-setText.forEach(function(btn) {
-    btn.addEventListener('click', hendleClick);
-});
+getInputValue.addEventListener('change', foo);
