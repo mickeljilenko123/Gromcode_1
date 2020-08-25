@@ -1,10 +1,7 @@
-function hendleClick(event) {
-    const getText = event.target;
-    console.log(getText.dataset.pageNumber);
-};
+"use strict";
+const inputElem = document.querySelector(".text-input");
+console.log(inputElem);
 
-const setText = document.querySelectorAll('.pagination__page');
-
-setText.forEach(function(btn) {
-    btn.addEventListener('click', hendleClick);
-})
+inputElem.addEventListener("change", () => {
+    console.log(inputElem.value);
+});
