@@ -1,12 +1,10 @@
-const checkBox = document.querySelector('.task-status');
-
-const foo = (event) => {
-    const getEvent = event.target;
-    if (getEvent.checked) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
+function hendleClick(event) {
+    const getText = event.target;
+    console.log(getText.dataset.pageNumber);
 };
 
-checkBox.addEventListener('change', foo);
+const setText = document.querySelectorAll('.pagination__page');
+
+setText.forEach(function(btn) {
+    btn.addEventListener('click', hendleClick);
+})
