@@ -1,32 +1,33 @@
+const students = [
+    { name: 'Sem', birthDate: '01/10/2000', },
+    { name: 'Alex', birthDate: '05/12/2001', },
+    { name: 'Robert', birthDate: '10/05/2003', },
+    { name: 'Monica', birthDate: '01/05/2002', },
+];
 
-const startNewDate = new Date();
-const endNewDate = new Date(2021, 1, 10, 10, 10, 10);
+// const studentsBirthDays = (students) => {
+//     const allMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+//     // ===========================================================
+//     students.forEach(elem => {})
 
-const getDiff = (startDate, endDate) => {
 
-    console.log(startDate)
-    let getNewDate = new Date(startDate - endDate);
+const studentsBirthDays = allStudents => {
 
-    if (startDate < endDate)
-    getNewDate = new Date(endDate) - new Date(startDate);
+    const allMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    const newDay = parseInt(getNewDate / (1000 * 60 * 60 * 24));
-    const newHour = parseInt((getNewDate / (1000 * 60 * 60)) % 24);
-    const newMin = parseInt((getNewDate / (1000 * 60)) % 60);
-    const newSec = parseInt((getNewDate / 1000) % 60);
+    const sortAllStudents = allStudents.sort((a, b) => new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate());
+    // console.log(new Date(allStudents.birthDate).getDate())
+    console.log(sortAllStudents)
 
-    // let newDay = getNewDate.getDate();
-    // let newHour = getNewDate.getHours();
-    // let newMin = getNewDate.getMinutes();
-    // let newSec = getNewDate.getSeconds();
+    const getDatesOfStudents = sortAllStudents.reduce((acc, { name, birthDate }) => {
+        const monthsName = allMonth[new Date(birthDate).getMonth()];
+        return { ...acc, [monthsName]: acc[monthsName] ? acc[monthsName].concat(name) : [name] };
+    }, {});
 
-    // console.log(`${newDay}d ${newHour}h ${newMin}m ${newSec}s`);
-    return `${newDay}d ${newHour}h ${newMin}m ${newSec}s`;
+    console.log(getDatesOfStudents)
+    return getDatesOfStudents;
 };
 
-const myDate = getDiff(startNewDate, endNewDate);
+studentsBirthDays(students)
 
-console.log(myDate);
-
-export { getDiff };
-
+export { studentsBirthDays };
