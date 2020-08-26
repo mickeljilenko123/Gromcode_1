@@ -1,38 +1,70 @@
-class Sportman {
+const generateNumbersRange = (from, to) => {
+    const result = [];
 
-    constructor(name) {
-        this.name = name;
+    for (let i = from; i <= to; i++) {
+        result.push(i);
     }
-    run() {
-        console.log(`${this.name} is running`);
-    }
-}
+    return result;
+};
 
-class Swimmer extends Sportman {
-    constructor(name, style) {
-        super(name);
-        console.log(this);
-        console.log(name);
-        this.style = style;
-    }
-    swim() {
-        console.log(`${this.name} is swimming ${this.style}`);
-    }
+const getLineSeats = () => generateNumbersRange(1, 10)
+    .map(
+        seatNumber =>
+            `<div class="sector__seat"
+             data-seat-number="${seatNumber}">
+             </div>`
+    )
+    .join("");
 
-    test() {
-        console.log(this);
-    }
-}
-//testing
-const sportman = new Sportman('Denis');
-console.log(sportman);
-sportman.run();
+const getSectorLines = () => {
+    const seatsString = getLineSeats();
 
-const swimmer1 = new Swimmer('Denis', 'test style');
-console.log(swimming);
-swimmer1.test();
-swimmer1.swim();
+    return generateNumbersRange(1, 10)
+        .map(
+            lineNumber =>
+                `<div class="sector__line"
+             data-line-number="${lineNumber}">
+             ${seatsString}
+             </div>`
+        )
+        .join("");
+};
 
+const arenaElem = document.querySelector('.arena');
 
+const renderArena = () => {
+    // const arenaElem = document.querySelector(".arena");
+    const linesString = getSectorLines();
 
-//class vs object
+    const sectorsString = generateNumbersRange(1, 3)
+        .map(
+            sectorNumber =>
+                `<div class="sector"
+             data-sector-number="${sectorNumber}">
+             ${linesString}
+             </div>`
+        )
+        .join("");
+
+    arenaElem.innerHTML = sectorsString;
+};
+
+const onSeatSelect = event => {
+    const isSeat = event.target.classList.contains('sector__seat');
+
+    if (!isSeat) {
+        return;
+    };
+
+    const seatNumber = event.target.dataset.seatNumber;
+    const lineNumber = event.target.closest('.sector__line').dataset.lineNumber;
+    const sectorNumber = event.target.closest('.sector').dataset.sectorNumber;
+
+    const selectedSeatElem = document.querySelector('.board__selected-seat');
+
+    selectedSeatElem.textContent = `S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`;
+};
+
+arenaElem.addEventListener('click', onSeatSelect);
+
+renderArena();
