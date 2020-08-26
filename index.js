@@ -1,14 +1,12 @@
-const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'St'];
+const formatter = new Intl.DateTimeFormat('en', {
+    timeZone: 'UTC',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+});
 
-const dayOfWeek = (date, days) => {
-    const day = new Date(date).getDate();
-    const dateInFuture = new Date(date).setDate(day + days);
+const getGreenwichTime = date => formatter.format(date);
 
-    return weekDays[new Date(dateInFuture).getDay()];
-};
+console.log(getGreenwichTime(new Date()));
 
-const result = dayOfWeek(new Date(2020, 0, 1), 0);
-
-console.log(result);
-
-export { dayOfWeek };
+export { getGreenwichTime };
