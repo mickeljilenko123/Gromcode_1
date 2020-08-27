@@ -1,26 +1,39 @@
+const counterElem = document.querySelector('.counter');
+const counterValueElem = document.querySelector('.counter__value');
 
-localStorage.clear();
-localStorage.setItem('hobbies', JSON.stringify({ name: 'Tom' }));
-localStorage.setItem('name', 'Tom');
-localStorage.setItem('age', JSON.stringify(17));
+const onCounterChange = e => {
+    console.log(e)
+    const isButton = e.target.classList.contains('counter__button');
 
-const getLocalStorageData = () => {
-    return Object.entries(localStorage)
-        .reduce((acc, [key, value]) => {
-            let newValue;
-            try {
-                newValue = JSON.parse(value);
-            }
-            catch (e) {
-                newValue = value;
-            }
-            return {
-                ...acc,
-                [key]: newValue,
-            };
-        }, {});
+    if (!isButton) {
+        return;
+    }
+
+    const action = e.target.dataset.action;
+
+    const oldValue = Number(counterValueElem.textContent);
+
+    const newValue = action === 'decrease'
+        ? oldValue - 1
+        : oldValue + 1;
+
+    localStorage.setItem('counterValue', newValue);
+
+    counterValueElem.textContent = newValue;
 };
 
-console.log(getLocalStorageData());
+counterElem.addEventListener('click', onCounterChange);
 
-export { getLocalStorageData };
+
+const onStorageChange = e => {
+    console.log(e)
+    counterValueElem.textContent = e.newValue;
+};
+
+window.addEventListener('storage', onStorageChange);
+
+const onDocumentLoaded = () => {
+    counterValueElem.textContent = localStorage.getItem('counterValue') || 0;
+};
+
+document.addEventListener('DOMcContentLoaded', onDocumentLoaded);
