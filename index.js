@@ -1,39 +1,42 @@
-const counterElem = document.querySelector('.counter');
-const counterValueElem = document.querySelector('.counter__value');
+//algo
+//1. read form data after submit +++
+//2. validate email
+//3. validate password
 
-const onCounterChange = e => {
-    console.log(e)
-    const isButton = e.target.classList.contains('counter__button');
+const emailInput = document.querySelector('#email');
+const emailErrorText = document.querySelector('.error-text_email');
+const passwordInput = document.querySelector('#password');
+const passwordErrorText = document.querySelector('.error-text_password');
 
-    if (!isButton) {
-        return;
-    }
+const handleEmail = (event) => {
+    let email = event.target.value;
+    const error = email ? validateEmail(email) : 'Email required';
+    emailErrorText.textContent = error;
+}
 
-    const action = e.target.dataset.action;
+// draft solution
+// const handleEmail = (event) => {
+//     let error = event.target.value ?  null : 'Email required';
+//     if(!error) {
+//         error = event.target.value.includes('0') ? null 
+//         : 'Incorrect email';
+//     }
+//     emailErrorText.textContent = error;
+// }
 
-    const oldValue = Number(counterValueElem.textContent);
+emailInput.addEventListener('input', handleEmail);
+const handlePassword = (event) => {
+    const error = event.target.value ? null : 'Password required';
+    passwordErrorText.textContent = error;
 
-    const newValue = action === 'decrease'
-        ? oldValue - 1
-        : oldValue + 1;
+}
 
-    localStorage.setItem('counterValue', newValue);
+passwordInput.addEventListener('input', handlePassword);
 
-    counterValueElem.textContent = newValue;
-};
-
-counterElem.addEventListener('click', onCounterChange);
-
-
-const onStorageChange = e => {
-    console.log(e)
-    counterValueElem.textContent = e.newValue;
-};
-
-window.addEventListener('storage', onStorageChange);
-
-const onDocumentLoaded = () => {
-    counterValueElem.textContent = localStorage.getItem('counterValue') || 0;
-};
-
-document.addEventListener('DOMcContentLoaded', onDocumentLoaded);
+const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData =
+        JSON.stringify(Object.fromEnties(new FormData(formElem)));
+    alert(formData);
+}
+formElem.addEventListener('submit', handleSubmit);
