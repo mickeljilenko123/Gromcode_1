@@ -25,5 +25,6 @@ const calc = initValue => {
     return calculator;
 };
 
-calc(3).add(10).substract(4).mult(2).div(6).result();
+const result = calc(3).add(10).substract(4).mult(2).div(6).result();
+console.log(result);
 export { calc }
