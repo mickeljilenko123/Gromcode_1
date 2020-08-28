@@ -1,5 +1,5 @@
 //calc(3).add(2).mult(4).div(10).substract(5).result();
-export const calc = initValue => {
+const calc = initValue => {
     let result = initValue;
     const calculator = {
         add(value) {
@@ -25,5 +25,5 @@ export const calc = initValue => {
     return calculator;
 };
 
-const result = calc(3).add(10).substract(4).mult(2).div(6).result();
-console.log(result);
+calc(3).add(10).substract(4).mult(2).div(6).result();
+export { calc }
