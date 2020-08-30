@@ -1,28 +1,37 @@
-//calc(3).add(2).mult(4).div(10).substract(5).result();
-const calc = (initialValue) => {
-    let result = initialValue;
-    const calculator = {
-        add(value) {
-            result += value;
-            return this;
+const favorites = ['id-6', 'id-17'];
+
+const tree = {
+    id: 'id-1',
+    name: 'Products',
+    nodes: [{
+            id: 'id-2',
+            name: 'Food',
+            nodes: [{
+                id: 'id-6',
+                name: 'Drinks',
+                nodes: []
+            }]
         },
-        mult(value) {
-            result *= value;
-            return this;
-        },
-        subtract(value) {
-            result -= value;
-            return this;
-        },
-        div(value) {
-            result /= value;
-            return this;
-        },
-        result() {
-            return result;
-        },
-    };
-    return calculator;
+        {
+            id: 'id-17',
+            name: 'Vehicles',
+            nodes: []
+        }
+    ],
 };
-const result = calc(5).add(20).div(43).result();
-export { calc };
+
+const markFovorites = (tree, favorites) => {
+    const isFavorite = favorites.includes(tree.id) // Проверить входит ли этот id в массив favorite
+
+
+
+    //Нужно вернуть новый массив с фложком favorites
+    return {
+        ...tree, //Используем спред оператор что бы разобрать обьект 
+        isFavorite,
+        nodes: tree.nodes.map(childNodes => markFovorites(childNodes, favorites)), //Создаем новое под дерево
+    }
+
+};
+const res = markFovorites(tree, favorites);
+console.log(res);
