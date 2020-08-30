@@ -20,7 +20,7 @@ const tree = {
     ],
 };
 
-const markFovorites = (tree, favorites) => {
+export const markFovorites = (tree, favorites) => {
     const isFavorite = favorites.includes(tree.id) // Проверить входит ли этот id в массив favorite
 
 
