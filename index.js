@@ -20,7 +20,7 @@ const tree = {
     ],
 };
 
-export const markFovorites = (tree, favorites) => {
+export const markFavorites = (tree, favorites) => {
     const isFavorite = favorites.includes(tree.id) // Проверить входит ли этот id в массив favorite
 
 
@@ -29,9 +29,9 @@ export const markFovorites = (tree, favorites) => {
     return {
         ...tree, //Используем спред оператор что бы разобрать обьект 
         isFavorite,
-        nodes: tree.nodes.map(childNodes => markFovorites(childNodes, favorites)), //Создаем новое под дерево
+        nodes: tree.nodes.map(childNodes => markFavorites(childNodes, favorites)), //Создаем новое под дерево
     }
 
 };
-const res = markFovorites(tree, favorites);
+const res = markFavorites(tree, favorites);
 console.log(res);
