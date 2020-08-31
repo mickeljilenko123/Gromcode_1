@@ -1,14 +1,11 @@
-const add3 = value => value + 3;
-const mult2 = value => value * 2;
-const div4 = value => value / 4;
+import { renderList } from './render.js';
+import { tasks } from './storage.js';
+import { createTaskBoard, checkthisDone } from './gateway.js';
 
-export const compose = (...funcs) => value => {
-    return funcs.reduce((acc, func) => func(acc), value);
-};
+renderList(tasks);
 
-const doEverything = compose(
-    add3,
-    mult2,
-    div4,
-);
-console.log(doEverything(3));
+const listElem = document.querySelector('.list');
+listElem.addEventListener('click', checkthisDone);
+
+const createBtn = document.querySelector('.create-task-btn');
+createBtn.addEventListener('click', createTaskBoard);
