@@ -1,47 +1,35 @@
-const getMethodsNames = {
-    years: 'getFullYear',
-    months: 'getMonth',
-    days: 'getDate',
-    hours: 'getHours',
-    minutes: 'getMinutes',
-    seconds: 'getSeconds',
-    milliseconds: 'getMilliseconds',
-};
+const addImage = (imgSrc, callback) => {
+    const imgElem = document.createElement('img');
+    imgElem.setAttribute('alt', 'My Photo');
+    imgElem.src = imgSrc;
 
-const setMethodsNames = {
-    years: 'setFullYear',
-    months: 'setMonth',
-    days: 'setDate',
-    hours: 'setHours',
-    minutes: 'setMinutes',
-    seconds: 'setSeconds',
-    milliseconds: 'setMilliseconds',
-};
+    const containerElem = document.querySelector('.page');
+    containerElem.append(imgElem);
 
-const shmoment = date => {
-    let result = new Date(date);
+    const onImageLoaded = () => {
+        const { width, height } = imgElem;
+        // console.log(imgElem);
 
-    const calculator = {
-        add(units, value) {
-            const currentUnitValue = result[getMethodsNames[units]]();
-            result = new Date(
-                result[setMethodsNames[units]](currentUnitValue + value),
-            );
-            return this;
-        },
-        subtract(units, value) {
-            return this.add(units, -value);
-        },
-        result() {
-            return result;
-        },
+        callback(null, { width, height });
     };
 
-    return calculator;
+    imgElem.addEventListener('load', onImageLoaded);
+
+    imgElem.addEventListener('error', () => callback('Image load failed'))
 };
 
-const result = shmoment(new Date(2020, 1, 2, 17, 10)).add('minutes', 8).add('days', 3).subtract('years', 1).result();
 
-console.log(result)
 
-export { shmoment };
+const onImageLoaded = (error, data) => {
+    if (error) {
+        console.log(error);
+        return;
+    }
+    const { width, height } = data;
+    const sizeElem = document.querySelector('.image-size');
+    sizeElem.textContent = `${width}: x ${height}`;
+};
+
+// addImage(imgSrc, onImageLoaded);
+
+export { addImage };
