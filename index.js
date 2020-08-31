@@ -1,37 +1,11 @@
-const favorites = ['id-6', 'id-17'];
+import { renderList } from './render.js';
+import { tasks } from './storage.js';
+import { createTaskBoard, checkthisDone } from './gateway.js';
 
-const tree = {
-    id: 'id-1',
-    name: 'Products',
-    nodes: [{
-            id: 'id-2',
-            name: 'Food',
-            nodes: [{
-                id: 'id-6',
-                name: 'Drinks',
-                nodes: []
-            }]
-        },
-        {
-            id: 'id-17',
-            name: 'Vehicles',
-            nodes: []
-        }
-    ],
-};
+renderList(tasks);
 
-export const markFavorites = (tree, favorites) => {
-    const isFavorite = favorites.includes(tree.id) // Проверить входит ли этот id в массив favorite
+const listElem = document.querySelector('.list');
+listElem.addEventListener('click', checkthisDone);
 
-
-
-    //Нужно вернуть новый массив с фложком favorites
-    return {
-        ...tree, //Используем спред оператор что бы разобрать обьект 
-        isFavorite,
-        nodes: tree.nodes.map(childNodes => markFavorites(childNodes, favorites)), //Создаем новое под дерево
-    }
-
-};
-const res = markFavorites(tree, favorites);
-console.log(res);
+const createBtn = document.querySelector('.create-task-btn');
+createBtn.addEventListener('click', createTaskBoard);
