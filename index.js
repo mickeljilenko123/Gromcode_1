@@ -1,11 +1,30 @@
-const printing = () => {
-    console.log(1);
-    setTimeout(function() {console.log(5);}, 1000);
-    console.log(2);
-    setTimeout(function() {console.log(4);}, 0);
-    console.log(3);
+
+const addImage = imgSrc => {
+    const p = new Promise((resolveCb, rejectCb) => {
+        const imgElem = document.createElement('img');
+        imgElem.setAttribute('alt', 'My Photo');
+        imgElem.src = imgSrc;
+
+        const containerElem = document.querySelector('.page');
+        containerElem.append(imgElem);
+
+        const onImageLoaded = () => {
+            const { width, height } = imgElem;
+            resolveCb({ width, height });
+        };
+
+        imgElem.addEventListener('load', onImageLoaded);
+
+        imgElem.addEventListener('error', () => rejectCb(new Error('Image load failed')))
+    });
+    return p;
 };
 
-printing();
+const imgSrc = 'https://server.com/image.png';
 
-export { printing };
+const resultPromise = addImage(imgSrc);
+
+resultPromise.catch(error => console.log(error));
+
+
+export { addImage };
