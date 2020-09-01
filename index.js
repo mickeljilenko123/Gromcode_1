@@ -1,27 +1,12 @@
-const requestUserData = userId => {
-    const request = new Promise((resolve, reject) => {
-        if (userId === 'broken') {
-            setTimeout(() => {
-                reject(new Error('User not found'));
-            }, 500);
-        }
-        else {
-            setTimeout(() => {
-                resolve({
-                    name: 'John',
-                    age: 17,
-                    email: `${userId}@example.com`,
-                    userId: `${userId}`,
-                });
-            }, 1000);
-        }
-    });
-    return request;
-};
+import { renderList } from "./render.js";
+import { tasks } from "./storage.js";
 
-requestUserData('broken-1')
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
-    .finally(() => console.log('finally'));
+import { updateTask, createTask } from "./gateway.js";
 
-export { requestUserData };
+renderList(tasks);
+
+const listElem = document.querySelector(".list");
+listElem.addEventListener("click", updateTask);
+
+const createBtn = document.querySelector(".create-task-btn");
+createBtn.addEventListener("click", createTask);
