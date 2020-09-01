@@ -1,17 +1,11 @@
-const pinger = (num, period) => {
-    let i = num;
-    console.log('Ping');
-
-    const interval = setInterval(() => {
-        if (--i > 0) {
-            console.log('Ping');
-        }
-        else {
-            clearInterval(interval);
-        }
-    }, period);
+const printing = () => {
+    console.log(1);
+    setTimeout(function() {console.log(5);}, 1000);
+    console.log(2);
+    setTimeout(function() {console.log(4);}, 0);
+    console.log(3);
 };
 
-pinger(5, 1000);
+printing();
 
-export { pinger };
+export { printing };
