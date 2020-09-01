@@ -1,33 +1,18 @@
-/* ===> 1 <=== */
-
 /*
- * successPromise должен зарезолвить число 67
- * Ответьте себе на вопрос, какой тип данных имеет переменная successPromise
+ * failedPromise должен зареджектить ошибку new Error('Oops, error!');
+ * Ответьте себе на вопрос, какой тип данных имеет переменная failedPromise
  */
 
-const successPromise = new Promise((resolve) => {
+const failedPromise = new Promise((resolve, reject) => {
     /* ...code here */
-    // const a = 67;
-    // resolve(a);
-    resolve(67);
+    reject(new Error("Oops, error!"));
 });
-console.log(typeof successPromise);
+console.log(typeof failedPromise);
 /*
- * допишите обработчик успешного промиса (аргументы и тело ф-ции onSuccess)
- * чтобы в консоль вывелся квадрат числа, которое резолвиться из successPromise
+ * выведите в консоль ошибку в ф-ции onError
  */
 
-successPromise.then(function onSuccess(number) {
+failedPromise.catch(function onError(error) {
     /* ...code here */
-    console.log(number * number);
-});
-
-/*
- * в обработчике ошибок промиса (ф-ция onError внутри .catch()) выведите в консоль текст 'I am an error'
- * текст вывелся в консоль?
- * подумайте почему
- */
-successPromise.catch(function onError() {
-    /* ...code here */
-    console.log(new Error("I am an error"));
+    console.log(error);
 });
