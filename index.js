@@ -1,18 +1,26 @@
-/*
- * failedPromise должен зареджектить ошибку new Error('Oops, error!');
- * Ответьте себе на вопрос, какой тип данных имеет переменная failedPromise
- */
+const requestUserData = userId => {
+    const request = new Promise((resolve, reject) => {
+        if (userId === 'broken') {
+            setTimeout(() => {
+                reject(new Error('User not found'));
+            }, 500);
+        } else {
+            setTimeout(() => {
+                resolve({
+                    name: 'John',
+                    age: 17,
+                    email: `${userId}`,
+                    userId
+                });
+            }, 1000);
+        }
+    });
+    return request;
+};
+requestUserData('broken-1')
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+    .finally(() => console.log('finally'));
 
-const failedPromise = new Promise((resolve, reject) => {
-    /* ...code here */
-    reject(new Error("Oops, error!"));
-});
-console.log(typeof failedPromise);
-/*
- * выведите в консоль ошибку в ф-ции onError
- */
-
-failedPromise.catch(function onError(error) {
-    /* ...code here */
-    console.log(error);
-});
+requestUserData('broken-1')
+.then(data => console.log(data));
