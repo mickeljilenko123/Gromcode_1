@@ -1,12 +1,23 @@
-import { renderList } from "./render.js";
-import { tasks } from "./storage.js";
+const asyncCalculator = num => new Promise((resolve) => {
+    setTimeout(() => {
+        console.log(`Initial value: ${num}`);
+        resolve(num);
+    }, 500);
+})
+    .then(value => new Promise((resolve) => {
+        setTimeout(() => {
+            const result = value * value;
+            console.log(`Squared value: ${result}`);
+            resolve(result);
+        }, 500);
+    }))
+    .then(value => {
+        const result = value * 2;
+        console.log(`Doubled value: ${result}`);
+        return result;
+    });
 
-import { updateTask, createTask } from "./gateway.js";
-
-renderList(tasks);
-
-const listElem = document.querySelector(".list");
-listElem.addEventListener("click", updateTask);
-
-const createBtn = document.querySelector(".create-task-btn");
-createBtn.addEventListener("click", createTask);
+asyncCalculator(5)
+    .then(value => console.log(value)); 
+    
+export { asyncCalculator };    
