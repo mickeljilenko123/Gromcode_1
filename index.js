@@ -1,31 +1,37 @@
-export const addImage = (imgSrc) => {
-    const p = new Promise((resolve, reject) => {
-        const imgElem = document.createElement("img");
-        imgElem.src = imgSrc;
-        imgElem.setAttribute("alt", "My Photo");
-        const containerElement = document.querySelector(".page");
-        containerElement.append(imgElem);
-        const onImageLoaded = () => {
-            const { width, height } = imgElem;
-            resolve({ width, height });
-        };
-        imgElem.addEventListener("load", onImageLoaded);
-
-        imgElem.addEventListener("error", () =>
-            reject(new Error("Image load is failed..."))
-        );
+/* здесь мы создаем промис, который резолвит объект { name: 'Tom', age: 17 } через 3 секунды */
+const userDataPromise = new Promise(resolve => {
+    setTimeout(() => {
+      resolve({ name: 'Tom', age: 17 });
+    }, 1500);
+  });
+  
+  /*
+   * Выведите в консоль переменную userDataPromise
+   * Ответьте себе на вопрос, какой тип данных имеет переменная userDataPromise?
+   */
+  
+  /* ...code here */
+  console.log(userDataPromise);
+  
+  /*
+   * Выведите в консоль переменную userData в обработчике промиса
+   * Ответьте себе на вопрос, что находится в переменной userData?
+   */
+  userDataPromise
+    .then(function onSuccess(userData) {
+      /* ...code here */
+      console.log(userData);
     });
-    return p;
-};
-
-const imgSrc =
-    "https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg";
-
-const resultPromise = addImage(imgSrc);
-resultPromise.then((data) => onImageLoaded(data));
-const onImageLoaded = (data) => {
-    const { width, height } = data;
-    const sizeElem = document.querySelector(".image-size");
-    sizeElem.textContent = `${width} x ${height}`;
-};
-resultPromise.catch((error) => console.log(error));
+  
+  /*
+   * подпишитесь на успешное выполнение промиса userDataPromise
+   * используйте метод .then
+   * в обработчике промиса (ф-ция внутри .then() ) выведите в консоль строку 'My name is Tom. I am 17 years old'
+   * Tom и 17 достаньте с данных, которые приходят в ф-цию onSuccess
+   */
+  
+  userDataPromise
+    .then(function onSuccess(/* ...code here */userData ) {
+      /* ...code here */
+      console.log(`My name is ${userData.name}. I am ${userData.age} years old`);
+    });
