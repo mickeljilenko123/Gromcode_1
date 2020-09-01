@@ -4,23 +4,24 @@ const requestUserData = userId => {
             setTimeout(() => {
                 reject(new Error('User not found'));
             }, 500);
-        } else {
+        }
+        else {
             setTimeout(() => {
                 resolve({
                     name: 'John',
                     age: 17,
-                    email: `${userId}`,
-                    userId
+                    email: `${userId}@example.com`,
+                    userId: `${userId}`,
                 });
             }, 1000);
         }
     });
     return request;
 };
+
 requestUserData('broken-1')
     .then(data => console.log(data))
     .catch(error => console.log(error))
     .finally(() => console.log('finally'));
 
-requestUserData('broken-1')
-.then(data => console.log(data));
+export { requestUserData };
