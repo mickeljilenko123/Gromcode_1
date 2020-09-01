@@ -1,30 +1,17 @@
-export const addImage = (imgSrc, callback) => {
-    const imgElem = document.createElement("img");
-    imgElem.src = imgSrc;
-    imgElem.setAttribute("alt", "My Photo");
-    const containerElement = document.querySelector(".page");
-    containerElement.append(imgElem);
-    const onImageLoaded = () => {
-        callback(null, imgElem);
-    };
-    imgElem.addEventListener("load", onImageLoaded);
+const pinger = (num, period) => {
+    let i = num;
+    console.log('Ping');
 
-
-    imgElem.addEventListener("error", () => callback("Image load is failed..."));
-
-
+    const interval = setInterval(() => {
+        if (--i > 0) {
+            console.log('Ping');
+        }
+        else {
+            clearInterval(interval);
+        }
+    }, period);
 };
 
-// const imgSrc =
-//   "https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg";
+pinger(5, 1000);
 
-//callack example
-const onImageLoaded = (error, imgElem) => {
-    if (error) {
-        console.log(error);
-        return;
-    }
-    const { width, height } = imgElem;
-    const sizeElem = document.querySelector(".image-size");
-    sizeElem.textContent = `${width} x ${height}`;
-};
+export { pinger };
