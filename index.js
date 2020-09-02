@@ -1,18 +1,23 @@
-/*
- * ф-ция makePromise должна вернуть промис со значением переданным в ф-цию
- */
-
-/* ...code here */
-const makePromise = num => {
-    return Promise.resolve(num)
-};
+const promiseNumber1 = Promise.resolve(67);
+const promiseNumber2 = Promise.resolve(23);
+const promiseNumber3 = Promise.resolve(8);
 
 /*
- * пример использования
+ * создайте промис и присвойте переменной resultPromise
+ * чтобы в консоль вывелась сумма всех чисел из трех промисов
  */
-makePromise(17)
-    .then(number => {
-        console.log(number); // 17
+
+const resultPromise = Promise.all([promiseNumber1, promiseNumber2, promiseNumber3])
+        .then(numbersOfArr => numbersOfArr)
+
+resultPromise
+    .then(numbersList => {
+        // console.log(numbersList);
+        const sum = numbersList.reduce((acc, num) => acc + num, 0);
+        return sum;
+    })
+    .then(result => {
+        console.log(result); // 98
     });
 
-export { makePromise };    
+export { resultPromise };
