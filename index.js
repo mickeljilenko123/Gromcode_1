@@ -1,23 +1,37 @@
-const promiseNumber1 = Promise.resolve(67);
-const promiseNumber2 = Promise.resolve(23);
-const promiseNumber3 = Promise.resolve(8);
+const userAvatarElem = document.querySelector('.user__avatar');
+const userNameElem = document.querySelector('.user__name');
+const userLocationElem = document.querySelector('.user__location');
 
-/*
- * создайте промис и присвойте переменной resultPromise
- * чтобы в консоль вывелась сумма всех чисел из трех промисов
- */
+const defaultAvatar = 'https:avatars3.githubusercontent.com/u10001';
+// const defaultAvatar = 'https:api.github.com/users/USERNAME';
 
-const resultPromise = Promise.all([promiseNumber1, promiseNumber2, promiseNumber3])
-        .then(numbersOfArr => numbersOfArr)
+userAvatarElem.src = defaultAvatar;
 
-resultPromise
-    .then(numbersList => {
-        // console.log(numbersList);
-        const sum = numbersList.reduce((acc, num) => acc + num, 0);
-        return sum;
-    })
-    .then(result => {
-        console.log(result); // 98
-    });
+const fetchUserData = userName => {
+    return fetch(`https://api.github.com/users/${userName}`)
+        .then(response => response.json());
+};
 
-export { resultPromise };
+const renderUserData = userData => {
+    console.log(userData);
+    const { avatar_url, name, location } = userData;
+    console.log(avatar_url);
+    userAvatarElem.src = avatar_url;
+    userNameElem.textContent = name;
+    userLocationElem.textContent = location
+        ? `from ${location}`
+        : '';
+};
+
+const showUserBtnElem = document.querySelector('.name-form__btn');
+const userNameInputElem = document.querySelector('.name-form__input');
+
+const onSearchUser = () => {
+    const userName = userNameInputElem.value;
+    console.log(userName);
+    fetchUserData(userName)
+        .then(userData => renderUserData(userData));
+};
+
+showUserBtnElem.addEventListener('click', onSearchUser);
+
