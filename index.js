@@ -1,37 +1,21 @@
-const userAvatarElem = document.querySelector('.user__avatar');
-const userNameElem = document.querySelector('.user__name');
-const userLocationElem = document.querySelector('.user__location');
+const baseUrl = 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/tasks';
 
-const defaultAvatar = 'https:avatars3.githubusercontent.com/u10001';
-// const defaultAvatar = 'https:api.github.com/users/USERNAME';
-
-userAvatarElem.src = defaultAvatar;
-
-const fetchUserData = userName => {
-    return fetch(`https://api.github.com/users/${userName}`)
-        .then(response => response.json());
+/* getTasksList code here */
+const getTasksList = () => {
+    return fetch(baseUrl)
+        .then(response => response.json())
+        .then(result => console.log(result));
 };
 
-const renderUserData = userData => {
-    console.log(userData);
-    const { avatar_url, name, location } = userData;
-    console.log(avatar_url);
-    userAvatarElem.src = avatar_url;
-    userNameElem.textContent = name;
-    userLocationElem.textContent = location
-        ? `from ${location}`
-        : '';
+/* getTaskById code here */
+
+function getTaskById(tasksId) {
+    // const { id } = baseUrl;
+    return fetch(`https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/tasks/${tasksId}`)
+        .then(response => response.json())
+        .then(result => console.log(result))
 };
 
-const showUserBtnElem = document.querySelector('.name-form__btn');
-const userNameInputElem = document.querySelector('.name-form__input');
+// getTaskById(2);
 
-const onSearchUser = () => {
-    const userName = userNameInputElem.value;
-    console.log(userName);
-    fetchUserData(userName)
-        .then(userData => renderUserData(userData));
-};
-
-showUserBtnElem.addEventListener('click', onSearchUser);
-
+export { getTasksList, getTaskById };
