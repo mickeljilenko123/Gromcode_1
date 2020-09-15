@@ -8,8 +8,8 @@
 const serverUrl = "https://5f60907d90cf8d0016557f3a.mockapi.io/api/v1/users";
 
 const loginForm = document.querySelector(".login-form");
-const submitButton = document.querySelector(".submit-button");
-const errorField = document.querySelector(".error-text");
+const submit = document.querySelector(".submit-button");
+const error = document.querySelector(".error-text");
 
 
 // let userBody = {
@@ -19,12 +19,12 @@ const errorField = document.querySelector(".error-text");
 
 // console.log(res);
 
-const formChanges = () => {
+const form = () => {
     if (loginForm.reportValidity()) {
-        submitButton.disabled = false;
+        submit.disabled = false;
     }
 };
-loginForm.addEventListener("input", formChanges);
+loginForm.addEventListener("input", form);
 
 const sendData = (event) => {
     event.preventDefault();
@@ -43,7 +43,7 @@ const sendData = (event) => {
             alert(JSON.stringify(data));
         })
         .catch(() => {
-            errorField.textContent = "Failed to create user";
+            error.textContent = "Failed to create user";
         });
 };
 
