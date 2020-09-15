@@ -1,4 +1,4 @@
-const baseUrl = 'https://5f60907d90cf8d0016557f3a.mockapi.io/api/v1/tasks/';
+const baseUrl = 'https://5f60907d90cf8d0016557f3a.mockapi.io/api/v1/users/';
 
 /* getUsersList code here */
 const getUsersList = () => {
@@ -10,8 +10,8 @@ const getUsersList = () => {
 getUsersList();
 
 /* getUserById code here */
-const getUserById = (taskId) => {
-    return fetch(`${baseUrl}/${taskId}`)
+const getUserById = (userId) => {
+    return fetch(`${baseUrl}/${userId}`)
         .then(response => response.json())
         .then(res => console.log(res))
 }
@@ -30,8 +30,8 @@ const createUser = data => {
 
 
 // /* updateUser code here */
-const updateUser = (taskId, data) => {
-    return fetch(`${baseUrl}/${taskId}`, {
+const updateUser = (userId, data) => {
+    return fetch(`${baseUrl}/${userId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
@@ -42,8 +42,8 @@ const updateUser = (taskId, data) => {
 
 
 // /* deleteUser code here */
-const deleteUser = (taskId) => {
-    return fetch(`${baseUrl}/${taskId}`, {
+const deleteUser = (userId) => {
+    return fetch(`${baseUrl}/${userId}`, {
         method: 'DELETE',
     })
 };
