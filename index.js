@@ -18,34 +18,34 @@ const getUserById = (taskId) => {
 getUserById(2);
 
 // /* createUser code here */
-// const createUser = data => {
-//     return fetch(baseUrl, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json;charset=utf-8'
-//         },
-//         body: JSON.stringify(data)
-//     })
-// };
-// createUser();
+const createUser = data => {
+    return fetch(baseUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+    })
+};
 
-// // /* updateUser code here */
-// const updateUser = (taskId, data) => {
-//     return fetch(`${baseUrl}/${taskId}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json;charset=utf-8'
-//         },
-//         body: JSON.stringify(data)
-//     })
-// };
-// updateUser();
 
-// // /* deleteUser code here */
-// const deleteUser = (userId) => {
-//     return fetch(`${baseUrl}/${userId}`, {
-//         method: 'DELETE',
-//     })
-// };
+// /* updateUser code here */
+const updateUser = (taskId, data) => {
+    return fetch(`${baseUrl}/${taskId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+    })
+};
 
-// export { getUsersList, getUserById, createUser, updateUser, deleteUser };
+
+// /* deleteUser code here */
+const deleteUser = (taskId) => {
+    return fetch(`${baseUrl}/${taskId}`, {
+        method: 'DELETE',
+    })
+};
+
+export { getUsersList, getUserById, createUser, updateUser, deleteUser };
