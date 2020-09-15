@@ -15,37 +15,37 @@ const getUserById = (taskId) => {
         .then(response => response.json())
         .then(res => console.log(res))
 }
-getUserById(1);
+getUserById(2);
 
 // /* createUser code here */
-const createUser = data => {
-    return fetch(baseUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-    })
-};
-createUser();
+// const createUser = data => {
+//     return fetch(baseUrl, {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json;charset=utf-8'
+//         },
+//         body: JSON.stringify(data)
+//     })
+// };
+// createUser();
 
-// /* updateUser code here */
-const updateUser = (taskId, data) => {
-    return fetch(`${baseUrl}/${taskId}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-    })
-};
-updateUser();
+// // /* updateUser code here */
+// const updateUser = (taskId, data) => {
+//     return fetch(`${baseUrl}/${taskId}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json;charset=utf-8'
+//         },
+//         body: JSON.stringify(data)
+//     })
+// };
+// updateUser();
 
-// /* deleteUser code here */
-const deleteUser = (userId) => {
-    return fetch(`${baseUrl}/${userId}`, {
-        method: 'DELETE',
-    })
-};
+// // /* deleteUser code here */
+// const deleteUser = (userId) => {
+//     return fetch(`${baseUrl}/${userId}`, {
+//         method: 'DELETE',
+//     })
+// };
 
-export { getUsersList, getUserById, createUser, updateUser, deleteUser };
+// export { getUsersList, getUserById, createUser, updateUser, deleteUser };
