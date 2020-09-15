@@ -1,50 +1,50 @@
-const baseUrl = 'https://5e9e6e6ffb467500166c3f84.mockapi.io/api/v1/users';
+//1. querySelector elements
+//2. считать данные формы
+//3. отправка через POST и обработать ответ (handle response)
+//4. валидация инпута
+//
+"use strict";
 
-/* getUsersList code here */
-const getUsersList = () => {
-    return fetch(baseUrl)
-        .then(response => response.json())
-        .then(result => console.log(result))
+const serverUrl = "https://5f577f7f1a07d600167e6e96.mockapi.io/users";
+
+const loginForm = document.querySelector(".login-form");
+const submitButton = document.querySelector(".submit-button");
+const errorField = document.querySelector(".error-text");
+
+
+// let userBody = {
+//   email: "apple@example.com",
+//   name: "Apple",
+// };
+
+// console.log(res);
+
+const formChanges = () => {
+    if (loginForm.reportValidity()) {
+        submitButton.disabled = false;
+    }
+};
+loginForm.addEventListener("input", formChanges);
+
+const sendData = (event) => {
+    event.preventDefault();
+    const userBody = Object.fromEntries([...new FormData(loginForm)]);
+
+    fetch(serverUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charser= utf-8",
+            },
+            body: JSON.stringify(userBody),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            loginForm.reset();
+            alert(JSON.stringify(data));
+        })
+        .catch(() => {
+            errorField.textContent = "Failed to create user";
+        });
 };
 
-// getUsersList();
-
-/* getUserById code here */
-const getUserById = (userId) => {
-    return fetch(`${baseUrl}/${userId}`)
-        .then(response => response.json())
-        .then(result => console.log(result))
-}
-// getUserById();
-
-/* createUser code here */
-const createUser = data => {
-    return fetch(baseUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-    })
-};
-// createUser();
-
-/* updateUser code here */
-const updateUser = (userId, data) => {
-    return fetch(`${baseUrl}/${userId}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json;charset=utf-8'
-        },
-        body: JSON.stringify(data)
-    })
-};
-
-/* deleteUser code here */
-const deleteUser = (userId) => {
-    return fetch(`${baseUrl}/${userId}`, {
-        method: 'DELETE',
-    })
-};
-
-export { getUsersList, getUserById, createUser, updateUser, deleteUser };
+loginForm.addEventListener("submit", sendData);
