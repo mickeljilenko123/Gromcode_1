@@ -1,4 +1,4 @@
-const baseUrl = 'https://5f60907d90cf8d0016557f3a.mockapi.io/api/v1/users/';
+const baseUrl = 'https://5f60907d90cf8d0016557f3a.mockapi.io/api/v1/users';
 
 /* getUsersList code here */
 const getUsersList = () =>
@@ -8,7 +8,7 @@ const getUsersList = () =>
 /* getUserById code here */
 const getUserById = (userId) =>
     fetch(`${baseUrl}/${userId}`).then((response) => response.json());
-
+console.log(getUserById(2));
 
 /* createUser code here */
 const createUser = (user) =>
