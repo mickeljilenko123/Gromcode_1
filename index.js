@@ -5,7 +5,7 @@
 //
 "use strict";
 
-const serverUrl = "https://5f577f7f1a07d600167e6e96.mockapi.io/users";
+const serverUrl = "https://5f60907d90cf8d0016557f3a.mockapi.io/api/v1/users";
 
 const loginForm = document.querySelector(".login-form");
 const submitButton = document.querySelector(".submit-button");
