@@ -1,13 +1,18 @@
-const strJson = '{"name": "Jack"}';
-// const a = JSON.parse(strJson);
-
-export const parseUser = str => {
+const fetchUser = async userTd => {
     try {
-        return JSON.parse(str)
+        const response = await fetch(`https://api.github.com/users/${userTd}`);
+        if (!response.ok) {
+            return null;
+        }
+        const userData = await response.json();
+        return userData;
+    } catch (err) {
+        throw new Error('Failed to fetch user');
     }
-    catch {
-        return null;
-    }
-}
+};
 
-console.log(parseUser(strJson));
+fetchUser('facebook')
+    .then(userData => console.log(userData))
+    .catch(arr => alert(arr.message));
+
+export { fetchUser };    
