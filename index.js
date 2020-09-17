@@ -1,25 +1,37 @@
-const successRequest = Promise.resolve({ name: "Tom" });
+import { fetchUserData, fetchRepositories } from './gateways.js';
+import { renderUserData } from './user.js';
+import { renderRepos, cleanReposList } from './repos.js';
+import { showSpinner, hideSpinner } from './spinner.js';
 
-successRequest
-    .then(function onSuccess1(data) {
-        // console.log(data);
-        throw new Error('Error with data');
-    })
-    .catch(function onError1(error) {
-        console.error("onError1", error.message);
-    })
+const defaultUser = {
+    avatar_url: 'https://avatars3.githubusercontent.com/u10001',
+    name: '',
+    location: '',
+};
 
+renderUserData(defaultUser)
 
-const failRequest = Promise.reject(new Error("Something went wrong"));
+const showUserBtnElem = document.querySelector('.name-form__btn');
+const userNameInputElem = document.querySelector('.name-form__input');
 
-failRequest
-    .catch(function onError2(error) {
-        // console.error("onError2", error.message);
-        throw new Error('Server error');
-    })
-    .then(function onSuccess2(data) {
-        console.log("onSuccess2", data);
-    })
-    .catch(function onError3(error) {
-        console.error("onError3", error.message);
-    });
+const onSearchUser = () => {
+    showSpinner();
+    cleanReposList();
+    const userName = userNameInputElem.value;
+    fetchUserData(userName)
+        .then(userData => {
+            renderUserData(userData);
+            return userData.repos_url;
+        })
+        .then(url => fetchRepositories(url))
+        .then(reposList => {
+            renderRepos(reposList);
+            hideSpinner();
+        })
+        .catch(err => {
+            hideSpinner();
+            alert(err.message);
+        });
+};
+
+showUserBtnElem.addEventListener('click', onSearchUser);
