@@ -1,18 +1,33 @@
-const fetchUser = async userTd => {
+import { fetchUserData, fetchRepositories } from './gateways.js';
+import { renderUserData } from './user.js';
+import { renderRepos, cleanReposList } from './repos.js';
+import { showSpinner, hideSpinner } from './spinner.js';
+
+const defaultUser = {
+    avatar_url: 'https://avatars3.githubusercontent.com/u10001',
+    name: '',
+    location: '',
+};
+
+renderUserData(defaultUser)
+
+const showUserBtnElem = document.querySelector('.name-form__btn');
+const userNameInputElem = document.querySelector('.name-form__input');
+
+const onSearchUser = async () => {
+    showSpinner();
+    cleanReposList();
+    const userName = userNameInputElem.value;
     try {
-        const response = await fetch(`https://api.github.com/users/${userTd}`);
-        if (!response.ok) {
-            return null;
-        }
-        const userData = await response.json();
-        return userData;
+        const userData = await fetchUserData(userName);
+        renderUserData(userData);
+        const reposList = await fetchRepositories(userData.repos_url)
+        renderRepos(reposList);
     } catch (err) {
-        throw new Error('Failed to fetch user');
+        alert(err.message);
+    } finally {
+        hideSpinner();
     }
 };
 
-fetchUser('facebook')
-    .then(userData => console.log(userData))
-    .catch(arr => alert(arr.message));
-
-export { fetchUser };    
+showUserBtnElem.addEventListener('click', onSearchUser);
