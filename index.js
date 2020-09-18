@@ -1,6 +1,6 @@
 const dataUrl = `https://api.github.com/users`;
 
-async function getUsersBlogs(users) {
+export async function getUsersBlogs(users) {
     console.log(users)
 
     try {
