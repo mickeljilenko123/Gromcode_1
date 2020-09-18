@@ -1,33 +1,35 @@
-import { fetchUserData, fetchRepositories } from './gateways.js';
-import { renderUserData } from './user.js';
-import { renderRepos, cleanReposList } from './repos.js';
-import { showSpinner, hideSpinner } from './spinner.js';
+const dataUrl = `https://api.github.com/users`;
 
-const defaultUser = {
-    avatar_url: 'https://avatars3.githubusercontent.com/u10001',
-    name: '',
-    location: '',
-};
+async function getUsersBlogs(users) {
+    console.log(users)
 
-renderUserData(defaultUser)
-
-const showUserBtnElem = document.querySelector('.name-form__btn');
-const userNameInputElem = document.querySelector('.name-form__input');
-
-const onSearchUser = async () => {
-    showSpinner();
-    cleanReposList();
-    const userName = userNameInputElem.value;
     try {
-        const userData = await fetchUserData(userName);
-        renderUserData(userData);
-        const reposList = await fetchRepositories(userData.repos_url)
-        renderRepos(reposList);
-    } catch (err) {
-        alert(err.message);
-    } finally {
-        hideSpinner();
+        const getDataUsers = await users.forEach(userId => {
+                fetch(`${dataUrl}/${userId}`)
+                console.log(dataUrl)
+                console.log(userId)
+                    .then(response => {
+                        if (response.ok) {
+                            console.log(response.json());
+                        }
+                    })
+                throw new Error('Failed to fetch users blog');
+            })
+            .then(userBlog => userBlog.blog);
+
+
+        const dataUser = Promise.all(getDataUsers);
+        console.log(dataUser)
+        return dataUser;
+    } catch (error) {
+        throw new Error(error);
     }
 };
 
-showUserBtnElem.addEventListener('click', onSearchUser);
+getUsersBlogs(['google', 'facebook', 'gaearon'])
+
+// getUsersBlogs(['google'])
+// .then(response => response.json())
+// .then(data => console.log(data))
+
+// Promise.all([getUsersBlogs(['google']), getUsersBlogs(['facebook']), getUsersBlogs(['gaearon'])])
