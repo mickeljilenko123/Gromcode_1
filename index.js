@@ -1,4 +1,4 @@
-const elem = document.querySelector('.create-btn');
-elem.addEventListener('click', () => {
-    alert('done');
+const elem = document.querySelector('.text-input');
+elem.addEventListener('change', () => {
+    console.log(elem.value);
 });
