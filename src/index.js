@@ -1,8 +1,10 @@
-import fetchUser from './profile/gateway.js';
-import { printProfile } from './profile/index.js';
 
-fetchUser('github')
-    .then(userData => printProfile({
-        name: userData.name,
-        company: userData.location,
-    }));
+import renderProfile from './profile/renderProfile';
+import './index.css';
+
+const profileData = {
+    name: 'Tom',
+    location: 'The World'
+};
+
+renderProfile(profileData);
